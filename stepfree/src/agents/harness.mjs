@@ -56,11 +56,10 @@ export async function runAgent({
   const abort = new AbortController();
   const timer = setTimeout(() => abort.abort(new Error(`agent ${name} timed out`)), timeoutMs);
 
-  const allowedTools = [...fileTools, ...mcpToolNames.map((t) => `mcp__stepfree__${t}`)];
-
   const startedAt = Date.now();
   let resultMsg = null;
   let lastText = '';
+  let streamError = null;
 
   try {
     const q = query({
@@ -72,7 +71,11 @@ export async function runAgent({
         abortController: abort,
         systemPrompt,
         settingSources: [],
-        allowedTools,
+        // `tools` limits which built-in tools exist at all; our own MCP tools
+        // are pre-approved; built-in file tools stay unapproved so every call
+        // is adjudicated by the canUseTool path guard below.
+        tools: fileTools,
+        allowedTools: mcpToolNames.map((t) => `mcp__stepfree__${t}`),
         disallowedTools: ['Bash', 'WebFetch', 'WebSearch', 'Task', 'TodoWrite', 'KillShell', 'BashOutput'],
         mcpServers: mcpServer ? { stepfree: mcpServer } : undefined,
         canUseTool: makePathGuard(workdir),
@@ -88,16 +91,22 @@ export async function runAgent({
       }
       if (msg.type === 'result') resultMsg = msg;
     }
+  } catch (e) {
+    // A max-turns or process error still leaves us with the text produced so
+    // far; record it and let the orchestrator decide, rather than crashing.
+    streamError = e;
+    logger?.log('stream-error', { message: String(e.message || e) });
   } finally {
     clearTimeout(timer);
   }
 
   return {
-    success: resultMsg?.subtype === 'success',
-    text: resultMsg?.result ?? lastText,
+    success: resultMsg?.subtype === 'success' && !streamError,
+    text: (resultMsg?.subtype === 'success' ? resultMsg.result : null) ?? lastText,
     costUsd: resultMsg?.total_cost_usd ?? 0,
     turns: resultMsg?.num_turns ?? 0,
     durationMs: Date.now() - startedAt,
+    error: streamError ? String(streamError.message || streamError) : undefined,
     logger,
   };
 }

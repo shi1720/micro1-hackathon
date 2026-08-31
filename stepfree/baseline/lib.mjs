@@ -29,7 +29,7 @@ export async function runBaseline({ siteDir, outDir, model = DEFAULT_MODEL }) {
       name: `baseline:${pageRel}`, task: 'one-shot fix', page: pageRel,
       systemPrompt: 'You are an expert web accessibility engineer.',
       prompt: `Fix all WCAG 2.2 A and AA accessibility violations in the following HTML page. Keep the visual design and content intact. Return the complete fixed HTML document and nothing else — no explanations, no markdown fences.\n\n${html}`,
-      workdir, model, maxTurns: 1, fileTools: [], mcpToolNames: [],
+      workdir, model, maxTurns: 4, fileTools: [], mcpToolNames: [],
       trajectoryPath: join(trajDir, `${pageRel.replace(/[^\w.-]+/g, '_').replace(/\.html$/, '')}-baseline.jsonl`),
     });
     ledger.totals.costUsd += res.costUsd;
