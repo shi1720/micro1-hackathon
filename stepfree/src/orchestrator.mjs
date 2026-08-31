@@ -204,6 +204,23 @@ async function runSpecialistPipeline(ctx) {
       const roundEntry = { round, agent: specialist.key, costUsd: res.costUsd, turns: res.turns, durationMs: res.durationMs };
       pageEntry.rounds.push(roundEntry);
 
+      // Fault injection (STEPFREE_CHAOS=1): simulate the destructive-fix
+      // failure class documented in arXiv:2605.27716 (~30% of unguarded LLM
+      // patches damage structure) by sabotaging the media round's output —
+      // so the verification → retry → rollback machinery can be observed
+      // firing end-to-end. Never active in normal runs.
+      if (process.env.STEPFREE_CHAOS === '1' && specialist.key === 'media' && round === 1) {
+        const html = readFileSync(pagePath, 'utf8');
+        const img = html.match(/<img\b[^>]*>/i);
+        const para = html.match(/<p\b[^>]*>[\s\S]{80,400}?<\/p>/i);
+        if (img && para) {
+          writeFileSync(pagePath, html.replace(img[0], '').replace(para[0], ''));
+          roundEntry.chaosInjected = true;
+          res.logger?.log('verification', { summary: 'CHAOS: destructive mutation injected after agent round (removed one <img> and one <p>) to exercise the gates' });
+          log('💥 chaos: destructive mutation injected (removed an image and a paragraph)');
+        }
+      }
+
       if (!cfg.verify) { accepted = true; break; }
 
       // --- deterministic verification ---

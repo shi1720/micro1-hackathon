@@ -68,14 +68,20 @@ for (const fixtureDir of listFixtures(fixturesRoot)) {
       if (src) origImgs.set(src, attr(tag, 'alt'));
     }
     const items = [];
-    for (const tag of readFileSync(fixedPage, 'utf8').match(IMG_RE) || []) {
+    const fixedHtml = readFileSync(fixedPage, 'utf8');
+    for (const tag of fixedHtml.match(IMG_RE) || []) {
       const src = attr(tag, 'src');
       if (!src) continue;
       const alt = attr(tag, 'alt');
       const origAlt = origImgs.get(src);
       // Judge only images whose alt the system WROTE (was absent/changed).
       if (alt === undefined || alt === origAlt) continue;
-      items.push({ src, alt });
+      // Surrounding markup so the judge can see link wrappers / captions —
+      // a linked image's alt should describe the destination, and the judge
+      // can only credit that if it sees the <a> around it.
+      const idx = fixedHtml.indexOf(tag);
+      const context = fixedHtml.slice(Math.max(0, idx - 220), idx + tag.length + 120).replace(/\s+/g, ' ');
+      items.push({ src, alt, context });
     }
     if (!items.length) continue;
 
@@ -90,7 +96,7 @@ for (const fixtureDir of listFixtures(fixturesRoot)) {
       const png = `img${i + 1}.png`;
       try {
         await renderToPng(absImg, join(ws, png));
-        manifest.push({ file: png, src: items[i].src, alt: items[i].alt });
+        manifest.push({ file: png, src: items[i].src, alt: items[i].alt, context: items[i].context });
       } catch { /* unrenderable image — skip */ }
     }
     if (!manifest.length) continue;
@@ -106,7 +112,7 @@ Scoring rubric:
 - 0 = wrong or harmful: describes content NOT in the image (hallucination), contradicts it, or buries a decorative element in verbose description.
 
 Items:
-${manifest.map((m, i) => `${i + 1}. file: ${m.file} — alt text written: ${m.alt === '' ? '(empty alt="")' : JSON.stringify(m.alt)}`).join('\n')}
+${manifest.map((m, i) => `${i + 1}. file: ${m.file} — alt text written: ${m.alt === '' ? '(empty alt="")' : JSON.stringify(m.alt)}\n   surrounding markup: ${m.context || ''}`).join('\n')}
 
 After viewing ALL images, output ONLY a JSON array (no fences): [{"item":1,"score":2,"reason":"..."}, ...]`;
 

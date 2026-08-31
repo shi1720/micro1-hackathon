@@ -2,3 +2,4 @@ node_modules/
 runs/
 *.FAILED
 .DS_Store
+VIDEO_SCRIPT.md

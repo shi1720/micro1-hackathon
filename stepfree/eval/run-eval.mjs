@@ -23,7 +23,7 @@ import { listFixtures, listFixturePages } from './fixtures.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const RESULTS_DIR = join(ROOT, 'stepfree', 'eval', 'results');
-const STAGE_ORDER = ['baseline', 'v1', 'v2', 'v3', 'v4', 'final'];
+const STAGE_ORDER = ['baseline', 'baseline2', 'v1', 'v2', 'v3', 'v4', 'final'];
 
 const [cmd] = process.argv.slice(2);
 const flag = (name, dflt) => {

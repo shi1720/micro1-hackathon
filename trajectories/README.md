@@ -33,3 +33,4 @@ Every agent run in this project is captured as JSONL (one event per line: prompt
 | final / 07-candles | review | [index-review.md](./final--07-candles/index-review.md) ([raw](./final--07-candles/index-review.jsonl)) |
 | final / 07-candles | structure-r1 | [index-structure-r1.md](./final--07-candles/index-structure-r1.md) ([raw](./final--07-candles/index-structure-r1.jsonl)) |
 | final (validation run) / 02-dental | reporter | [reporter.md](./final--02-dental/reporter.md) ([raw](./final--02-dental/reporter.jsonl)) |
+| fault injection (STEPFREE_CHAOS=1) / 08-shelter | media r1+r2: injected damage, gate FAILED, retry, ROLLBACK | [index-media-r1.md](./fault-injection--08-shelter/index-media-r1.md) · [index-media-r2.md](./fault-injection--08-shelter/index-media-r2.md) |

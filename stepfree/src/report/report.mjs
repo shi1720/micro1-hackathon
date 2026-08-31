@@ -3,7 +3,7 @@ import { join } from 'node:path';
 import { runAgent } from '../agents/harness.mjs';
 
 /**
- * The remediation report a site owner actually receives — the deliverable
+ * The remediation report a site owner actually receives - the deliverable
  * they can hand to their developer, their lawyer, or their own conscience.
  * Structure and numbers are rendered deterministically from the run ledger;
  * a reporter agent contributes only the narrative prose. The report itself
@@ -89,7 +89,7 @@ function renderHtml({ ledger, stats, prose, outDir }) {
   try {
     const meta = JSON.parse(readFileSync(join(ledger.siteDir, 'meta.json'), 'utf8'));
     if (meta.name) site = meta.name;
-  } catch { /* no meta.json — keep directory name */ }
+  } catch { /* no meta.json - keep directory name */ }
   const pct = stats.wcagBefore ? Math.round(((stats.wcagBefore - stats.wcagAfter) / stats.wcagBefore) * 100) : 100;
 
   const pageRows = ledger.pages.map((p) => {
@@ -107,7 +107,7 @@ function renderHtml({ ledger, stats, prose, outDir }) {
       ${before && after ? `
       <div class="shots">
         <figure><img src="${before}" alt="Screenshot of ${esc(p.file)} before remediation"><figcaption>Before</figcaption></figure>
-        <figure><img src="${after}" alt="Screenshot of ${esc(p.file)} after remediation — visually equivalent, with contrast corrections"><figcaption>After</figcaption></figure>
+        <figure><img src="${after}" alt="Screenshot of ${esc(p.file)} after remediation - visually equivalent, with contrast corrections"><figcaption>After</figcaption></figure>
       </div>` : ''}
     </section>`;
   }).join('\n');
@@ -136,7 +136,7 @@ function renderHtml({ ledger, stats, prose, outDir }) {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Accessibility Remediation Report — ${esc(site)} — StepFree</title>
+<title>Accessibility Remediation Report - ${esc(site)} - StepFree</title>
 <style>
   :root { --ink:#16241f; --paper:#fbfaf7; --accent:#0b6e4f; --accent-ink:#ffffff; --line:#d8d5cc; --soft:#eef2ee; --warn:#8a5a00; }
   * { box-sizing: border-box; }
@@ -205,21 +205,21 @@ function renderHtml({ ledger, stats, prose, outDir }) {
   <div class="method">
     <p>Every fix in this report survived three independent checks, none of which rely on the AI that wrote the fix:</p>
     <ol>
-      <li><strong>Re-scan:</strong> the page was re-tested with axe-core ${'(the industry-standard accessibility engine)'} — the violation had to be gone, with zero new violations anywhere on the page.</li>
-      <li><strong>Content integrity:</strong> the page's visible text and images were compared word-by-word and element-by-element against the original — nothing may disappear.</li>
-      <li><strong>Visual comparison:</strong> before/after screenshots were diffed pixel-by-pixel; changes must stay inside the elements each fix was allowed to touch (a contrast fix may recolor its own text — nothing else).</li>
+      <li><strong>Re-scan:</strong> the page was re-tested with axe-core ${'(the industry-standard accessibility engine)'} - the violation had to be gone, with zero new violations anywhere on the page.</li>
+      <li><strong>Content integrity:</strong> the page's visible text and images were inventoried word-by-word and element-by-element against the original - content that goes missing fails the fix.</li>
+      <li><strong>Visual comparison:</strong> before/after screenshots were diffed pixel-by-pixel; changes must stay inside the elements each fix was allowed to touch (a contrast fix may recolor its own text - nothing else).</li>
     </ol>
     <p>Fixes that failed any check were automatically rolled back and routed to the review queue above${stats.rollbacks ? ` (${stats.rollbacks} on this run)` : ''}. ${stats.retries ? `${stats.retries} fix(es) needed a correction round before passing.` : ''}</p>
   </div>
 
   <h2>Honest scope</h2>
-  <p>Automated scanners detect roughly half of accessibility issues by volume (Deque's coverage study: 57%). This report therefore makes two kinds of claims: <strong>verified fixes</strong> for everything the scanner can measure, and <strong>expert-drafted proposals</strong> — the review items above — for what requires human judgment. No tool can truthfully promise "full compliance" from automation alone; the ones that did got sued and fined. StepFree's promise is narrower and real: the detectable layer fixed and proven, the judgment layer drafted and routed to you.</p>
+  <p>Automated scanners detect roughly half of accessibility issues by volume (Deque's coverage study: 57%). This report therefore makes two kinds of claims: <strong>verified fixes</strong> for everything the scanner can measure, and <strong>expert-drafted proposals</strong> - the review items above - for what requires human judgment. No tool can truthfully promise "full compliance" from automation alone; the ones that did got sued and fined. StepFree's promise is narrower and real: the detectable layer fixed and proven, the judgment layer drafted and routed to you.</p>
 
   <h2>Recommended next steps</h2>
   <p>${esc(prose.closingRecommendation)}</p>
 
   <footer>
-    <p>Generated by StepFree — the accessibility engineer that fixes your code and proves it. Scan engine: axe-core (Deque Systems). Conformance target: WCAG 2.2 A/AA. This report describes automated testing results and is not legal advice.</p>
+    <p>Generated by StepFree - the accessibility engineer that fixes your code and proves it. Scan engine: axe-core (Deque Systems). Conformance target: WCAG 2.2 A/AA. This report describes automated testing results and is not legal advice.</p>
   </footer>
 </main>
 </body>

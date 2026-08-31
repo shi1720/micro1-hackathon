@@ -1,0 +1,281 @@
+{
+  "stage": "v1",
+  "model": "claude-opus-5",
+  "judgedAt": "2026-08-31T12:22:36.830Z",
+  "pages": [
+    {
+      "fixture": "01-bakery",
+      "page": "index.html",
+      "items": [
+        {
+          "src": "images/hero-loaf.svg",
+          "alt": "Freshly baked round sourdough loaf resting on a wooden board",
+          "score": 2,
+          "reason": "Image shows an illustrated round/oval scored loaf sitting on a wooden board (with wheat stalks at the sides). The alt accurately names the loaf, its scored round shape and the wooden board, and is appropriately concise for a menu/product context."
+        },
+        {
+          "src": "images/croissant.svg",
+          "alt": "Golden butter croissant with flaky, curled layers",
+          "score": 2,
+          "reason": "Image is an illustrated croissant on a pale plate, with the classic curled tapered ends and ridged layer lines. 'Golden butter croissant with flaky, curled layers' matches the visible form and color; omitting the plate is a fine editorial choice."
+        },
+        {
+          "src": "images/baguette.svg",
+          "alt": "Long golden baguette with a crackling crust",
+          "score": 2,
+          "reason": "Image shows a long tan baguette with diagonal slash marks resting against a basket/bag shape. The alt correctly identifies it as a long golden baguette with a crusty scored surface; concise and accurate, no invented content."
+        },
+        {
+          "src": "images/cinnamon-roll.svg",
+          "alt": "Iced cinnamon roll with swirled layers and cream-cheese icing",
+          "score": 2,
+          "reason": "Image shows a round cinnamon roll with concentric brown spirals and white icing drizzling over the top. The alt accurately captures the swirl and the icing; describing it as cream-cheese icing is a reasonable menu-context reading of the plain white glaze."
+        }
+      ],
+      "costUsd": 0.068829
+    },
+    {
+      "fixture": "03-trattoria",
+      "page": "index.html",
+      "items": [
+        {
+          "src": "images/spaghetti.svg",
+          "alt": "A twirled plate of spaghetti garnished with fresh herbs",
+          "score": 2,
+          "reason": "Image is a flat illustration of a plate of spaghetti with basil leaves, tomatoes and a fork; the alt accurately conveys the key content (pasta dish with herbs) concisely. Minor omission of the tomatoes/fork, but nothing inaccurate or misleading."
+        },
+        {
+          "src": "images/wine.svg",
+          "alt": "Two glasses of red wine beside a bottle",
+          "score": 0,
+          "reason": "The illustration shows a single wine glass next to a labeled green bottle (plus two small grapes/corks), not two glasses. The alt contradicts the visible count, giving the user false information."
+        }
+      ],
+      "costUsd": 0.0340195
+    },
+    {
+      "fixture": "04-lawfirm",
+      "page": "index.html",
+      "items": [
+        {
+          "src": "images/attorney-harrison.svg",
+          "alt": "Portrait of Marcus Harrison",
+          "score": 2,
+          "reason": "Image is an illustrated avatar headshot of an older man with gray hair, dark navy suit, white shirt and dark red tie — consistent with an attorney bio portrait. Naming the person ('Portrait of Marcus Harrison') is the correct, concise convention for a staff bio image; identity is the key information a screen reader user needs here. Only trivial nitpick: it doesn't signal that the image is a stylized illustration rather than a photo, which is not enough to drop the score."
+        },
+        {
+          "src": "images/attorney-vance.svg",
+          "alt": "Portrait of Elena Vance",
+          "score": 2,
+          "reason": "Image is an illustrated avatar headshot of a woman with long dark hair, gold earrings, a gray-blue blazer and pearl necklace — a matching attorney bio portrait. 'Portrait of Elena Vance' accurately conveys the image's purpose and identity, is appropriately concise, and matches its context in the team/bio section. No hallucinated details; the unstated 'illustration vs. photo' distinction is a minor omission only."
+        }
+      ],
+      "costUsd": 0.0384505
+    },
+    {
+      "fixture": "05-yoga",
+      "page": "index.html",
+      "items": [
+        {
+          "src": "images/tree-pose.svg",
+          "alt": "Illustration of a person balancing on one leg in tree pose",
+          "score": 2,
+          "reason": "Accurately describes the flat illustration: a figure standing on one leg with the other foot tucked against the inner thigh and arms joined overhead (tree pose), on a grass line with small trees. Concise and correct for context; omitting the decorative purple circle/trees is appropriate."
+        },
+        {
+          "src": "images/meditation.svg",
+          "alt": "Illustration of a person seated cross-legged in meditation beside a candle",
+          "score": 2,
+          "reason": "Correctly identifies the central figure seated cross-legged on a cushion in meditation with a lit candle at each side. Minor shortfalls only: it says 'a candle' when two flank the figure, and it omits the prominent night sky with crescent moon and stars that sets the scene (and echoes the 'Moonrise' theme) — accurate and useful enough to remain a 2."
+        }
+      ],
+      "costUsd": 0.0414755
+    },
+    {
+      "fixture": "06-autoshop",
+      "page": "index.html",
+      "items": [
+        {
+          "src": "images/car-lift.svg",
+          "alt": "Car raised on a hydraulic lift in the TorqueWorks garage",
+          "score": 2,
+          "reason": "Image shows a flat illustration of a red car raised on a two-post hydraulic lift inside a dark garage, with a mechanic standing beneath it. The alt accurately captures the key content (car on a lift in the shop) and is appropriately concise; omitting the small mechanic figure is a minor detail, not a factual error."
+        },
+        {
+          "src": "images/oil-change.svg",
+          "alt": "Illustration of an oil can pouring oil, representing an oil and filter change",
+          "score": 2,
+          "reason": "Image is a stylized icon of a red oil can with a spout releasing a drop of oil above a dark car silhouette. The alt correctly identifies the oil can pouring oil and gives useful service context (oil and filter change) matching its likely service-card use; not mentioning the car silhouette is negligible."
+        }
+      ],
+      "costUsd": 0.042416999999999996
+    },
+    {
+      "fixture": "07-candles",
+      "page": "index.html",
+      "items": [
+        {
+          "src": "images/amber-jar.svg",
+          "alt": "Amber apothecary jar candle with a fitted wooden lid",
+          "score": 2,
+          "reason": "Image shows an amber/honey-colored jar candle with a dark brown lid across the top, a lit wick, and a blank cream label. The alt accurately captures the jar color, type, and wooden lid concisely; omitting the lit flame is a minor gap, not an error."
+        },
+        {
+          "src": "images/pine-tin.svg",
+          "alt": "Brushed-steel travel tin candle with a pine bough label",
+          "score": 1,
+          "reason": "Image shows a grey brushed-metal tin candle with a lit wick and a blank label, with a small green pine tree and a leaf/seed sitting beside the tin. The 'brushed-steel travel tin' part is accurate, but the pine is a separate decorative element next to the candle, not artwork on the label, so 'pine bough label' misstates where the key content sits."
+        },
+        {
+          "src": "images/lavender-jar.svg",
+          "alt": "Glass jar candle with dried lavender sprigs beside it",
+          "score": 2,
+          "reason": "Image shows a pale glass jar candle with a brown lid and lit wick, flanked by purple lavender sprigs on both sides. The alt matches the actual content and is appropriately concise for a product image."
+        }
+      ],
+      "costUsd": 0.0593605
+    },
+    {
+      "fixture": "07-candles",
+      "page": "about.html",
+      "items": [
+        {
+          "src": "images/workshop.svg",
+          "alt": "Workers pouring wax into rows of candle jars in the Ember and Oak workshop",
+          "score": 1,
+          "reason": "The illustration shows a single worker pouring wax from a pitcher into one container on a workbench holding about four jars, not multiple 'workers' pouring into 'rows' of jars. The overall scene (wax pouring in a candle workshop) is right, but the pluralized details overstate what is depicted, making it weak rather than accurate."
+        }
+      ],
+      "costUsd": 0.023537000000000002
+    },
+    {
+      "fixture": "08-shelter",
+      "page": "index.html",
+      "items": [
+        {
+          "src": "images/dog-biscuit.svg",
+          "alt": "Biscuit, a brown hound mix, sitting",
+          "score": 1,
+          "reason": "The image is a flat illustrated head-and-shoulders avatar of a brown dog (beagle/hound-like, floppy ears, red collar with gold tag); the alt correctly gives the name and brown hound coloring but adds \"sitting,\" a posture not visible since no body is shown, and omits that it is a stylized illustration/avatar rather than a photo."
+        },
+        {
+          "src": "images/cat-luna.svg",
+          "alt": "Luna, a sleek black cat with green eyes",
+          "score": 2,
+          "reason": "Matches the illustration well: a solid black cat face with distinctly green eyes (plus pink inner ears and purple collar). Name plus accurate, concise identifying description is right for an adoptable-pet listing context."
+        },
+        {
+          "src": "images/rabbit-clover.svg",
+          "alt": "Clover, a lop-eared gray rabbit",
+          "score": 2,
+          "reason": "Accurate and concise: the illustration shows a gray rabbit with drooping lop ears, pink nose and whiskers, so \"Clover, a lop-eared gray rabbit\" captures the key identifying content for the adoption listing."
+        }
+      ],
+      "costUsd": 0.055775000000000005
+    },
+    {
+      "fixture": "09-salon",
+      "page": "index.html",
+      "items": [
+        {
+          "src": "images/stylist-ava.svg",
+          "alt": "Portrait of Ava Moreau, owner and lead colorist",
+          "score": 2,
+          "reason": "Image is a flat vector avatar of a woman with long dark-brown hair, gold earrings and a mauve top on a pink card background — consistent with a staff headshot. The alt names the person and her role, which is the useful information in a team/bio context. Minor nit: it's an illustration rather than a photo, but it is accurate and concise."
+        },
+        {
+          "src": "images/products.svg",
+          "alt": "Shelf of Velvet &amp; Vine hair care products in glass bottles",
+          "score": 1,
+          "reason": "Image shows salon items on a wooden shelf: open scissors, a black comb, a teal spray/pump bottle with mist droplets, and a small pink bottle. The alt omits the most distinctive elements (scissors and comb) and adds details not visible — no brand marks appear on the labels, the containers read as opaque plastic pump/squeeze bottles rather than 'glass bottles', and there are only two bottles, not a shelf full of products. Present and roughly on-topic, but inaccurate in specifics and misses key content."
+        }
+      ],
+      "costUsd": 0.040787500000000004
+    },
+    {
+      "fixture": "10-news",
+      "page": "index.html",
+      "items": [
+        {
+          "src": "images/bridge.svg",
+          "alt": "Construction crew and equipment staged at the Maple Street bridge approach",
+          "score": 1,
+          "reason": "Flat illustration shows an arched bridge over water with a yellow crane, a red load, and three traffic cones on the deck — equipment is right, but there are no people, so 'construction crew' is not depicted, and the work is on the deck/span rather than the approach. Mostly on target with an invented element."
+        },
+        {
+          "src": "images/market.svg",
+          "alt": "Shoppers browsing produce stalls at the farmers market",
+          "score": 2,
+          "reason": "Image shows two market stalls with striped awnings holding crates of oranges, green produce and round fruits, with a figure carrying a basket in front. Alt accurately conveys the scene and is concise; only quibble is 'shoppers' plural when a single shopper is shown."
+        },
+        {
+          "src": "images/library.svg",
+          "alt": "Groundbreaking ceremony at the library site for the new children's wing",
+          "score": 0,
+          "reason": "Image is a simple columned civic/library building with a door, steps, shrubs and a small yellow cart at the side — there is no groundbreaking ceremony, no people, shovels, or excavation. The alt text describes an event that is not in the image."
+        }
+      ],
+      "costUsd": 0.046328999999999995
+    },
+    {
+      "fixture": "11-venue",
+      "page": "index.html",
+      "items": [
+        {
+          "src": "images/hero-title.svg",
+          "alt": "The Foundry Event Hall — Weddings, galas &amp; corporate events",
+          "score": 0,
+          "reason": "The image is a text/typographic banner reading \"HOST UNFORGETTABLE EVENTS — at The Foundry\" with a diamond-and-rule divider. The alt text substitutes the page title (\"Weddings, galas & corporate events\"), wording that appears nowhere in the image, so it misrepresents the image's actual text content and fails to transcribe it."
+        },
+        {
+          "src": "images/loft.svg",
+          "alt": "The Loft: an upstairs brick room with arched windows set for an intimate gathering",
+          "score": 2,
+          "reason": "Matches the illustration: exposed brick wall, two tall arched windows, a teal sofa with accent pillows, pendant light, floor lamp and rug — a small lounge-style setup. Concise and conveys the room's identity and character; \"upstairs\" is reasonable naming context for The Loft."
+        },
+        {
+          "src": "images/courtyard.svg",
+          "alt": "The Courtyard: an outdoor space with string lights, planters, and a covered bar",
+          "score": 2,
+          "reason": "Accurately captures the night-time outdoor scene: catenary string lights strung between two wooden posts, potted plants on a dark bar counter with bottles and globe lamps, under a moon and stars. Appropriately concise; \"covered\" is a minor stretch but the bar, planters and string lights are all genuinely present."
+        }
+      ],
+      "costUsd": 0.0664215
+    },
+    {
+      "fixture": "12-clinic",
+      "page": "index.html",
+      "items": [
+        {
+          "src": "images/wave-divider.svg",
+          "alt": "",
+          "score": 2,
+          "reason": "The image is a purely decorative layered teal wave divider with no text or informational content; an empty alt correctly hides it from screen readers."
+        },
+        {
+          "src": "images/booking-steps.svg",
+          "alt": "Three steps to becoming a new patient: call the front desk, pick a time, and come meet us",
+          "score": 2,
+          "reason": "Matches the infographic: three numbered steps with phone, calendar, and clinic-building icons labeled 'Call the front desk', 'Choose a time', and 'Come visit us'. Concise and accurate; it omits the sub-details (phone number, '2 weeks', street address), which is acceptable if repeated in page text, though including them would be slightly stronger."
+        },
+        {
+          "src": "images/dr-maya-chen.svg",
+          "alt": "Dr. Maya Chen, smiling in a white coat with a stethoscope around her neck",
+          "score": 2,
+          "reason": "Accurately describes the flat illustrated portrait of a smiling dark-haired woman in a white coat with a stethoscope; naming her is appropriate for a provider bio. Only minor quibble is not noting it is an illustration rather than a photo."
+        }
+      ],
+      "costUsd": 0.066218
+    }
+  ],
+  "aggregate": {
+    "judged": 30,
+    "mean": 1.633,
+    "dist": {
+      "0": 3,
+      "1": 5,
+      "2": 22
+    },
+    "costUsd": 0.584
+  }
+}

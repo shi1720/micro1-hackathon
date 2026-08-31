@@ -1,20 +1,68 @@
 {
   "name": "The Foundry Event Hall",
   "kind": "challenge",
-  "pages": ["index.html"],
-  "expected": { "wcagNodes": 9, "bestPracticeNodes": 2 },
-  "seeded": [
-    { "rule": "color-contrast", "count": 4, "where": "copper (#b87333) small text on slate: capacity specs on all three space cards, footer contact line" },
-    { "rule": "image-alt", "count": 2, "where": "Loft and Courtyard space photos have no alt" },
-    { "rule": "button-name", "count": 1, "where": "fixed back-to-top button contains only an SVG chevron, no accessible name" },
-    { "rule": "aria-hidden-focus", "count": 1, "where": "hero scroll cue is aria-hidden=\"true\" but contains a focusable anchor" },
-    { "rule": "meta-viewport", "count": 1, "where": "viewport meta sets maximum-scale=1 and user-scalable=no" },
-    { "rule": "tabindex", "count": 1, "where": "best practice: hero Check availability CTA carries tabindex=\"1\"" },
-    { "rule": "page-has-heading-one", "count": 1, "where": "best practice: no h1 exists because the page's headline is the hero image (see beyondScanner)" }
+  "pages": [
+    "index.html"
   ],
-  "beyondScanner": [
-    "Image of text (WCAG 1.4.5): the hero headline 'HOST UNFORGETTABLE EVENTS at The Foundry' is images/hero-title.svg rendered as an <img alt=\"\">. Axe stays silent because the alt attribute is present, but the page's core message is invisible to screen readers and there is no h1. The right fix is real HTML heading text (styled to match), not just an alt string.",
-    "Div-soup dropdown (WCAG 2.1.1 / 4.1.2): the main nav 'Spaces' item is <div class=\"nav-drop\" onclick=...> toggling a submenu via classList. No button role, not focusable, no keyboard handler, no aria-expanded — keyboard and screen-reader users cannot open the Spaces menu at all. Needs a real <button> (or link) with aria-expanded and keyboard support.",
-    "Fake button (WCAG 2.1.1 / 4.1.2): 'Take the virtual tour' is a <span class=\"btn-ghost\" onclick=\"location.href=...\"> styled like a button. It is unreachable by keyboard and announced as plain text; it should be an <a href> since it navigates."
-  ]
+  "expected": {
+    "wcagNodes": 9,
+    "bestPracticeNodes": 2
+  },
+  "seeded": [
+    {
+      "rule": "color-contrast",
+      "count": 4,
+      "where": "copper (#b87333) small text on slate: capacity specs on all three space cards, footer contact line"
+    },
+    {
+      "rule": "image-alt",
+      "count": 2,
+      "where": "Loft and Courtyard space photos have no alt"
+    },
+    {
+      "rule": "button-name",
+      "count": 1,
+      "where": "fixed back-to-top button contains only an SVG chevron, no accessible name"
+    },
+    {
+      "rule": "aria-hidden-focus",
+      "count": 1,
+      "where": "hero scroll cue is aria-hidden=\"true\" but contains a focusable anchor"
+    },
+    {
+      "rule": "meta-viewport",
+      "count": 1,
+      "where": "viewport meta sets maximum-scale=1 and user-scalable=no"
+    },
+    {
+      "rule": "tabindex",
+      "count": 1,
+      "where": "best practice: hero Check availability CTA carries tabindex=\"1\""
+    },
+    {
+      "rule": "page-has-heading-one",
+      "count": 1,
+      "where": "best practice: no h1 exists because the page's headline is the hero image (see beyondScanner)"
+    }
+  ],
+  "beyondScanner": {
+    "note": "Scanner-invisible traps, enumerated for machine-checkable recall (see EVALUATION.md).",
+    "traps": [
+      {
+        "id": "trap-1",
+        "what": "Hero headline is an image of text (hero-title.svg with alt=\"\") \u2014 page's main message invisible to AT",
+        "wcag": "1.4.5"
+      },
+      {
+        "id": "trap-2",
+        "what": "\"Spaces\" nav dropdown is a <div onclick> with no keyboard path, role, or aria-expanded",
+        "wcag": "2.1.1, 4.1.2"
+      },
+      {
+        "id": "trap-3",
+        "what": "\"Take the virtual tour\" is a <span onclick=location.href> styled as a button",
+        "wcag": "2.1.1, 4.1.2"
+      }
+    ]
+  }
 }

@@ -1,12 +1,13 @@
 # Evaluation results (auto-generated)
 
-_Regenerate with `node stepfree/eval/run-eval.mjs tables`. Measured: 2026-08-31T12:07:42.067Z_
+_Regenerate with `node stepfree/eval/run-eval.mjs tables`. Measured: 2026-08-31T12:24:26.803Z_
 
 ## Stage comparison — all fixtures
 
 | Stage | WCAG instances (before → after) | Remediated | Introduced | Best-practice (before → after) | Pages damaged | Pages shippable | Rollbacks | Review items | API cost | Wall time |
 |---|---|---|---|---|---|---|---|---|---|---|
 | **baseline** | 134 → 0 | 100.0% (134) | 0 | 34 → 2 | 0/13 | 13/13 | 0 | 0 | $2.03 | 28 min |
+| **baseline2** | 134 → 0 | 100.0% (134) | 0 | 34 → 0 | 0/13 | 13/13 | 0 | 0 | $2.04 | 31 min |
 | **v1** | 134 → 0 | 100.0% (134) | 0 | 34 → 0 | 0/13 | 13/13 | 0 | 0 | $1.48 | 12 min |
 | **v2** | 134 → 0 | 100.0% (134) | 0 | 34 → 0 | 0/13 | 13/13 | 0 | 0 | $1.51 | 11 min |
 | **v3** | 134 → 0 | 100.0% (134) | 0 | 34 → 0 | 0/13 | 13/13 | 0 | 1 | $2.59 | 20 min |
@@ -31,6 +32,23 @@ _Regenerate with `node stepfree/eval/run-eval.mjs tables`. Measured: 2026-08-31T
 | 10-news | 10 → 0 | 10 | 0 | 0 | 1/1 | $0.17 |
 | 11-venue | 9 → 0 | 9 | 0 | 0 | 1/1 | $0.23 |
 | 12-clinic | 11 → 0 | 11 | 0 | 0 | 1/1 | $0.20 |
+
+### baseline2
+
+| Fixture | WCAG before → after | Fixed | Introduced | Damaged pages | Shippable | Cost |
+|---|---|---|---|---|---|---|
+| 01-bakery | 11 → 0 | 11 | 0 | 0 | 1/1 | $0.17 |
+| 02-dental | 10 → 0 | 10 | 0 | 0 | 1/1 | $0.18 |
+| 03-trattoria | 12 → 0 | 12 | 0 | 0 | 1/1 | $0.11 |
+| 04-lawfirm | 10 → 0 | 10 | 0 | 0 | 1/1 | $0.12 |
+| 05-yoga | 10 → 0 | 10 | 0 | 0 | 1/1 | $0.15 |
+| 06-autoshop | 12 → 0 | 12 | 0 | 0 | 1/1 | $0.17 |
+| 07-candles | 16 → 0 | 16 | 0 | 0 | 2/2 | $0.27 |
+| 08-shelter | 11 → 0 | 11 | 0 | 0 | 1/1 | $0.13 |
+| 09-salon | 12 → 0 | 12 | 0 | 0 | 1/1 | $0.15 |
+| 10-news | 10 → 0 | 10 | 0 | 0 | 1/1 | $0.13 |
+| 11-venue | 9 → 0 | 9 | 0 | 0 | 1/1 | $0.23 |
+| 12-clinic | 11 → 0 | 11 | 0 | 0 | 1/1 | $0.22 |
 
 ### v1
 

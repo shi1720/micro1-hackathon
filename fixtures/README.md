@@ -1,12 +1,12 @@
-# Fixture suite — 12 synthetic small-business websites
+# Fixture suite - 12 synthetic small-business websites
 
-The evaluation corpus: 12 fictional small-business sites (13 pages total) written the way real small-business sites actually get built — by a freelancer years ago, visually decent, never audited. All content is synthetic; business names, people, addresses and phone numbers are invented.
+The evaluation corpus: 12 fictional small-business sites (13 pages total) written the way real small-business sites actually get built - by a freelancer years ago, visually decent, never audited. All content is synthetic; business names, people, addresses and phone numbers are invented.
 
 ## Why synthetic?
 
 - **Legal/ethical**: no real business is named as non-compliant (hackathon ground rule 7).
 - **Ground truth**: every seeded violation is verified by axe-core, so "fixed" is deterministic, not a judgment call.
-- **Realistic distribution**: the violation mix mirrors the [WebAIM Million 2026](https://webaim.org/projects/million/) findings for the top-1M home pages — low contrast on ~84% of pages, missing alt on ~53%, missing form labels on ~51%, empty links on ~46%, empty buttons on ~31%, missing document language on ~14%.
+- **Realistic distribution**: the violation mix mirrors the [WebAIM Million 2026](https://webaim.org/projects/million/) findings for the top-1M home pages - low contrast on ~84% of pages, missing alt on ~53%, missing form labels on ~51%, empty links on ~46%, empty buttons on ~31%, missing document language on ~14%.
 
 ## The suite
 
@@ -48,11 +48,11 @@ NN-name/
 }
 ```
 
-`expected` counts are **verified** against `node stepfree/eval/scan-fixture.mjs fixtures/NN-name` — the eval refuses to run on a fixture whose live scan disagrees with its meta.json, so results can't drift from ground truth.
+`expected` counts are **verified** against `node stepfree/eval/scan-fixture.mjs fixtures/NN-name` - the eval refuses to run on a fixture whose live scan disagrees with its meta.json, so results can't drift from ground truth.
 
 ## Rules the suite covers
 
 WCAG A/AA (primary metric): `image-alt`, `color-contrast`, `label`, `select-name`, `button-name`, `link-name`, `html-has-lang`, `html-lang-valid`, `document-title`, `meta-viewport`, `listitem`, `list`, `aria-hidden-focus`, `aria-required-attr`, `aria-valid-attr-value`.
 Best-practice (secondary tier): `heading-order`, `landmark-one-main`, `region`, `page-has-heading-one`, `tabindex`, `empty-heading`.
 
-Challenge fixtures additionally seed issues **no scanner can detect** (image-of-text heroes, click-handler `<div>` "buttons", ambiguous decorative images) to measure how each system behaves at the edge of automation — the honest boundary our product claims respect.
+Challenge fixtures additionally seed issues **no scanner can detect** (image-of-text heroes, click-handler `<div>` "buttons", ambiguous decorative images) to measure how each system behaves at the edge of automation - the honest boundary our product claims respect.
