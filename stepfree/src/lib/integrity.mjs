@@ -103,7 +103,7 @@ export function comparePixels(beforePng, afterPng, allowedRegions = [], { thresh
  * Full integrity verdict for one fix round.
  * Returns { ok, hardFailures: [...], advisories: [...], metrics }.
  */
-export function checkIntegrity(before, after, { allowedRegions = [], maxMissingWords = 2 } = {}) {
+export function checkIntegrity(before, after, { allowedRegions = [], maxMissingWords = 2, strictVisual = false } = {}) {
   const hardFailures = [];
   const advisories = [];
 
@@ -124,6 +124,15 @@ export function checkIntegrity(before, after, { allowedRegions = [], maxMissingW
   }
 
   const px = comparePixels(before.screenshotViewport, after.screenshotViewport, allowedRegions);
+  if (strictVisual && px.comparable && px.pixelDiffRatio > 0.005) {
+    // Removed experiment (kept behind a flag for reproducibility): a naive
+    // "no visual change" gate. It rejects legitimate accessibility fixes —
+    // contrast repairs and heading retags MUST repaint pixels — see CHANGELOG.
+    hardFailures.push({
+      kind: 'strict-visual-change',
+      detail: `${(px.pixelDiffRatio * 100).toFixed(2)}% of viewport pixels changed (strict gate allows 0.5%)`,
+    });
+  }
   if (px.comparable && px.pixelDiffRatio > 0.15) {
     advisories.push({
       kind: 'large-visual-change',

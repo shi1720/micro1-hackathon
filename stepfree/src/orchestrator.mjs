@@ -216,7 +216,10 @@ async function runSpecialistPipeline(ctx) {
       let integrity = null;
       if (cfg.guardrails) {
         const postSnap = await snapshotPage(pagePath);
-        integrity = checkIntegrity(preSnap, postSnap, { allowedRegions });
+        integrity = checkIntegrity(preSnap, postSnap, {
+          allowedRegions,
+          strictVisual: process.env.STEPFREE_STRICT_VISUAL === '1',
+        });
         roundEntry.integrity = { ok: integrity.ok, hardFailures: integrity.hardFailures, advisories: integrity.advisories, metrics: integrity.metrics };
       }
 

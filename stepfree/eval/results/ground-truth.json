@@ -1,0 +1,287 @@
+{
+  "verifiedAt": "2026-08-31T11:10:51.186Z",
+  "fixtures": {
+    "01-bakery": {
+      "pages": {
+        "index.html": {
+          "wcag": 11,
+          "bp": 5,
+          "rules": {
+            "color-contrast": 5,
+            "heading-order": 1,
+            "image-alt": 4,
+            "landmark-one-main": 1,
+            "link-name": 2,
+            "region": 3
+          }
+        }
+      },
+      "wcag": 11,
+      "bp": 5,
+      "expected": {
+        "wcagNodes": 11,
+        "bestPracticeNodes": 5
+      },
+      "match": true
+    },
+    "02-dental": {
+      "pages": {
+        "index.html": {
+          "wcag": 10,
+          "bp": 0,
+          "rules": {
+            "button-name": 1,
+            "color-contrast": 3,
+            "html-has-lang": 1,
+            "label": 4,
+            "select-name": 1
+          }
+        }
+      },
+      "wcag": 10,
+      "bp": 0,
+      "expected": {
+        "wcagNodes": 10,
+        "bestPracticeNodes": 0
+      },
+      "match": true
+    },
+    "03-trattoria": {
+      "pages": {
+        "index.html": {
+          "wcag": 12,
+          "bp": 1,
+          "rules": {
+            "color-contrast": 6,
+            "document-title": 1,
+            "heading-order": 1,
+            "image-alt": 2,
+            "listitem": 3
+          }
+        }
+      },
+      "wcag": 12,
+      "bp": 1,
+      "expected": {
+        "wcagNodes": 12,
+        "bestPracticeNodes": 1
+      },
+      "match": true
+    },
+    "04-lawfirm": {
+      "pages": {
+        "index.html": {
+          "wcag": 10,
+          "bp": 1,
+          "rules": {
+            "color-contrast": 4,
+            "image-alt": 2,
+            "link-name": 3,
+            "meta-viewport": 1,
+            "tabindex": 1
+          }
+        }
+      },
+      "wcag": 10,
+      "bp": 1,
+      "expected": {
+        "wcagNodes": 10,
+        "bestPracticeNodes": 1
+      },
+      "match": true
+    },
+    "05-yoga": {
+      "pages": {
+        "index.html": {
+          "wcag": 10,
+          "bp": 1,
+          "rules": {
+            "aria-hidden-focus": 1,
+            "button-name": 2,
+            "color-contrast": 4,
+            "heading-order": 1,
+            "html-lang-valid": 1,
+            "image-alt": 2
+          }
+        }
+      },
+      "wcag": 10,
+      "bp": 1,
+      "expected": {
+        "wcagNodes": 10,
+        "bestPracticeNodes": 1
+      },
+      "match": true
+    },
+    "06-autoshop": {
+      "pages": {
+        "index.html": {
+          "wcag": 12,
+          "bp": 1,
+          "rules": {
+            "color-contrast": 4,
+            "empty-heading": 1,
+            "image-alt": 2,
+            "label": 3,
+            "link-name": 1,
+            "listitem": 2
+          }
+        }
+      },
+      "wcag": 12,
+      "bp": 1,
+      "expected": {
+        "wcagNodes": 12,
+        "bestPracticeNodes": 1
+      },
+      "match": true
+    },
+    "07-candles": {
+      "pages": {
+        "index.html": {
+          "wcag": 11,
+          "bp": 0,
+          "rules": {
+            "button-name": 2,
+            "color-contrast": 3,
+            "html-has-lang": 1,
+            "image-alt": 3,
+            "link-name": 1,
+            "select-name": 1
+          }
+        },
+        "about.html": {
+          "wcag": 5,
+          "bp": 0,
+          "rules": {
+            "color-contrast": 3,
+            "html-has-lang": 1,
+            "image-alt": 1
+          }
+        }
+      },
+      "wcag": 16,
+      "bp": 0,
+      "expected": {
+        "wcagNodes": 16,
+        "bestPracticeNodes": 0
+      },
+      "match": true
+    },
+    "08-shelter": {
+      "pages": {
+        "index.html": {
+          "wcag": 11,
+          "bp": 1,
+          "rules": {
+            "aria-required-attr": 1,
+            "color-contrast": 3,
+            "image-alt": 3,
+            "label": 3,
+            "link-name": 1,
+            "region": 1
+          }
+        }
+      },
+      "wcag": 11,
+      "bp": 1,
+      "expected": {
+        "wcagNodes": 11,
+        "bestPracticeNodes": 1
+      },
+      "match": true
+    },
+    "09-salon": {
+      "pages": {
+        "index.html": {
+          "wcag": 12,
+          "bp": 0,
+          "rules": {
+            "color-contrast": 5,
+            "document-title": 1,
+            "image-alt": 2,
+            "label": 2,
+            "link-name": 2
+          }
+        }
+      },
+      "wcag": 12,
+      "bp": 0,
+      "expected": {
+        "wcagNodes": 12,
+        "bestPracticeNodes": 0
+      },
+      "match": true
+    },
+    "10-news": {
+      "pages": {
+        "index.html": {
+          "wcag": 10,
+          "bp": 22,
+          "rules": {
+            "color-contrast": 4,
+            "heading-order": 2,
+            "html-has-lang": 1,
+            "image-alt": 3,
+            "landmark-one-main": 1,
+            "link-name": 2,
+            "region": 19
+          }
+        }
+      },
+      "wcag": 10,
+      "bp": 22,
+      "expected": {
+        "wcagNodes": 10,
+        "bestPracticeNodes": 22
+      },
+      "match": true
+    },
+    "11-venue": {
+      "pages": {
+        "index.html": {
+          "wcag": 9,
+          "bp": 2,
+          "rules": {
+            "aria-hidden-focus": 1,
+            "button-name": 1,
+            "color-contrast": 4,
+            "image-alt": 2,
+            "meta-viewport": 1,
+            "page-has-heading-one": 1,
+            "tabindex": 1
+          }
+        }
+      },
+      "wcag": 9,
+      "bp": 2,
+      "expected": {
+        "wcagNodes": 9,
+        "bestPracticeNodes": 2
+      },
+      "match": true
+    },
+    "12-clinic": {
+      "pages": {
+        "index.html": {
+          "wcag": 11,
+          "bp": 0,
+          "rules": {
+            "color-contrast": 3,
+            "html-has-lang": 1,
+            "image-alt": 3,
+            "label": 3,
+            "link-name": 1
+          }
+        }
+      },
+      "wcag": 11,
+      "bp": 0,
+      "expected": {
+        "wcagNodes": 11,
+        "bestPracticeNodes": 0
+      },
+      "match": true
+    }
+  }
+}

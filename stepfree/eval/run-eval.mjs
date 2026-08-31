@@ -130,11 +130,13 @@ async function measureStage() {
       const snapA = await snapshotPage(afterPath);
       const d = diffScans(scanB, scanA);
       const integ = checkIntegrity(snapB, snapA);
+      const tier = (list, t) => list.filter((i) => i.tier === t).length;
       fx.pages.push({
         page: rel,
         wcagBefore: scanB.counts.wcag.nodes, wcagAfter: scanA.counts.wcag.nodes,
         bpBefore: scanB.counts.bestPractice.nodes, bpAfter: scanA.counts.bestPractice.nodes,
-        fixed: d.fixed.length, introduced: d.introduced.length, remaining: d.remaining.length,
+        fixed: tier(d.fixed, 'wcag'), introduced: tier(d.introduced, 'wcag'), remaining: tier(d.remaining, 'wcag'),
+        fixedBp: tier(d.fixed, 'best-practice'), introducedBp: tier(d.introduced, 'best-practice'), remainingBp: tier(d.remaining, 'best-practice'),
         introducedRules: [...new Set(d.introduced.map((i) => i.rule))],
         remainingRules: [...new Set(d.remaining.map((i) => i.rule))],
         integrityOk: integ.ok,
@@ -145,7 +147,7 @@ async function measureStage() {
       });
     }
     const t = fx.totals;
-    for (const k of ['wcagBefore', 'wcagAfter', 'bpBefore', 'bpAfter', 'fixed', 'introduced', 'remaining']) {
+    for (const k of ['wcagBefore', 'wcagAfter', 'bpBefore', 'bpAfter', 'fixed', 'introduced', 'remaining', 'fixedBp', 'introducedBp', 'remainingBp']) {
       t[k] = fx.pages.reduce((s, p) => s + p[k], 0);
     }
     t.pages = fx.pages.length;
@@ -164,7 +166,7 @@ async function measureStage() {
   }
 
   const agg = { fixtures: out.fixtures.length };
-  for (const k of ['pages', 'wcagBefore', 'wcagAfter', 'bpBefore', 'bpAfter', 'fixed', 'introduced', 'remaining', 'pagesDamaged', 'pagesFullyClean', 'pagesShippable', 'rollbacks', 'retries', 'reviewItems']) {
+  for (const k of ['pages', 'wcagBefore', 'wcagAfter', 'bpBefore', 'bpAfter', 'fixed', 'introduced', 'remaining', 'fixedBp', 'introducedBp', 'remainingBp', 'pagesDamaged', 'pagesFullyClean', 'pagesShippable', 'rollbacks', 'retries', 'reviewItems']) {
     agg[k] = out.fixtures.reduce((s, f) => s + (f.totals[k] ?? 0), 0);
   }
   agg.costUsd = out.fixtures.reduce((s, f) => s + (f.totals.costUsd ?? 0), 0);
@@ -186,12 +188,12 @@ function tables() {
   lines.push('# Evaluation results (auto-generated)\n');
   lines.push(`_Regenerate with \`node stepfree/eval/run-eval.mjs tables\`. Measured: ${new Date().toISOString()}_\n`);
   lines.push('## Stage comparison — all fixtures\n');
-  lines.push('| Stage | WCAG instances (before → after) | Remediated | Introduced | Pages damaged | Pages shippable | Rollbacks | Review items | API cost | Wall time |');
-  lines.push('|---|---|---|---|---|---|---|---|---|---|');
+  lines.push('| Stage | WCAG instances (before → after) | Remediated | Introduced | Best-practice (before → after) | Pages damaged | Pages shippable | Rollbacks | Review items | API cost | Wall time |');
+  lines.push('|---|---|---|---|---|---|---|---|---|---|---|');
   for (const d of data) {
     const a = d.aggregate;
     lines.push(
-      `| **${d.stage}** | ${a.wcagBefore} → ${a.wcagAfter} | ${(a.remediationRate * 100).toFixed(1)}% (${a.fixed}) | ${a.introduced} | ${a.pagesDamaged}/${a.pages} | ${a.pagesShippable}/${a.pages} | ${a.rollbacks} | ${a.reviewItems} | $${a.costUsd.toFixed(2)} | ${(a.wallMs / 60000).toFixed(0)} min |`
+      `| **${d.stage}** | ${a.wcagBefore} → ${a.wcagAfter} | ${(a.remediationRate * 100).toFixed(1)}% (${a.fixed}) | ${a.introduced} | ${a.bpBefore} → ${a.bpAfter} | ${a.pagesDamaged}/${a.pages} | ${a.pagesShippable}/${a.pages} | ${a.rollbacks} | ${a.reviewItems} | $${a.costUsd.toFixed(2)} | ${(a.wallMs / 60000).toFixed(0)} min |`
     );
   }
   lines.push('\n## Per-fixture detail\n');
