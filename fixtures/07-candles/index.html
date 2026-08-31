@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ember &amp; Oak Candle Co. — Hand-poured Soy Candles</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+         background: #f7f1e6; color: #5a4632; line-height: 1.65; }
+  h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; color: #3d3128; font-weight: 400; }
+  a { color: #5a4632; }
+  .wrap { max-width: 1060px; margin: 0 auto; padding: 0 24px; }
+  header.site { padding: 20px 0; border-bottom: 1px solid #e2d6bd; }
+  header.site .wrap { display: flex; align-items: baseline; justify-content: space-between; }
+  .logo { font-family: Georgia, serif; font-size: 1.6rem; color: #3d3128; text-decoration: none; }
+  .logo em { font-style: normal; color: #8a5a1c; }
+  nav ul { list-style: none; display: flex; gap: 26px; }
+  nav a { text-decoration: none; font-size: 0.95rem; letter-spacing: 0.6px; text-transform: uppercase; }
+  nav a:hover { color: #8a5a1c; }
+  .eyebrow { color: #c17f24; font-size: 0.82rem; letter-spacing: 3px; text-transform: uppercase;
+             font-weight: 600; margin-bottom: 10px; }
+  .hero { padding: 72px 0 56px; text-align: center; }
+  .hero h1 { font-size: 2.7rem; margin-bottom: 14px; }
+  .hero p { max-width: 54ch; margin: 0 auto 26px; }
+  .btn { display: inline-block; background: #8a5a1c; color: #ffffff; text-decoration: none;
+         padding: 12px 28px; border-radius: 3px; font-size: 0.95rem; letter-spacing: 1px;
+         text-transform: uppercase; border: 0; cursor: pointer; }
+  .btn:hover { background: #6f4715; }
+  section { padding: 48px 0; }
+  section h2 { font-size: 1.8rem; margin-bottom: 22px; }
+  .featured { display: flex; gap: 28px; flex-wrap: wrap; }
+  .feat-card { flex: 1 1 380px; background: #fffdf8; border: 1px solid #e8dcc2; border-radius: 8px;
+               overflow: hidden; position: relative; }
+  .feat-card img { width: 100%; height: 260px; object-fit: cover; display: block; }
+  .feat-card .pad { padding: 20px 24px 26px; }
+  .wish-btn { position: absolute; top: 14px; right: 14px; width: 40px; height: 40px; border-radius: 50%;
+              border: 1px solid #d8c9ac; background: #fffdf8; cursor: pointer;
+              display: flex; align-items: center; justify-content: center; }
+  .heart { width: 12px; height: 12px; background: #b3543f; transform: rotate(-45deg); position: relative; }
+  .heart::before, .heart::after { content: ""; position: absolute; width: 12px; height: 12px;
+                                  border-radius: 50%; background: #b3543f; }
+  .heart::before { top: -6px; left: 0; }
+  .heart::after { top: 0; left: 6px; }
+  .price { font-weight: 700; color: #3d3128; font-size: 1.1rem; margin: 6px 0 10px; }
+  .scent { color: #6b5d49; font-size: 0.92rem; font-style: italic; margin-bottom: 8px; }
+  .feat-card p, .prod-card p { font-size: 0.95rem; margin-bottom: 14px; }
+  .toolbar { display: flex; gap: 20px; align-items: center; margin-bottom: 26px; flex-wrap: wrap; }
+  .toolbar label { font-size: 0.9rem; font-weight: 600; margin-right: 8px; }
+  .toolbar select { padding: 9px 12px; border: 1px solid #d8c9ac; border-radius: 4px;
+                    background: #fffdf8; color: #3d3128; font-size: 0.92rem; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; }
+  .prod-card { background: #fffdf8; border: 1px solid #e8dcc2; border-radius: 8px; overflow: hidden; }
+  .prod-card img { width: 100%; height: 210px; object-fit: cover; display: block; }
+  .prod-card .pad { padding: 16px 20px 22px; }
+  .prod-card h3, .feat-card h3 { font-size: 1.25rem; }
+  .fine-print { color: #c17f24; font-size: 0.88rem; margin-top: 26px; text-align: center; }
+  footer.site { background: #2e2a26; color: #f7f1e6; margin-top: 40px; padding: 40px 0 30px; }
+  footer.site .wrap { display: flex; gap: 40px; flex-wrap: wrap; align-items: flex-start; }
+  footer.site a { color: #f7f1e6; }
+  .foot-brand { flex: 1 1 300px; font-size: 0.93rem; }
+  .foot-links { flex: 1 1 160px; list-style: none; }
+  .foot-links li { margin-bottom: 8px; }
+  .social { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px;
+            border: 1px solid #6b5d49; border-radius: 50%; }
+  .insta { width: 18px; height: 18px; border: 2px solid #f7f1e6; border-radius: 5px; position: relative; display: block; }
+  .insta::before { content: ""; position: absolute; inset: 3px; border: 2px solid #f7f1e6; border-radius: 50%; }
+  .insta::after { content: ""; position: absolute; top: 1px; right: 1px; width: 3px; height: 3px;
+                  border-radius: 50%; background: #f7f1e6; }
+  .copyright { width: 100%; font-size: 0.85rem; margin-top: 22px; }
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="index.html">Ember <em>&amp;</em> Oak</a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Shop</a></li>
+        <li><a href="about.html">Our story</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Hand-poured in small batches</p>
+      <h1>Candles for slow evenings</h1>
+      <p>Every Ember &amp; Oak candle is poured by hand in our Hudson Valley workshop from
+         100% soy wax, cotton wicks, and fragrance oils we blend ourselves. Clean burn,
+         honest ingredients, no shortcuts.</p>
+      <a class="btn" href="#shop">Shop the collection</a>
+    </div>
+  </div>
+  <section id="bestsellers">
+    <div class="wrap">
+      <h2>Bestsellers</h2>
+      <div class="featured">
+        <div class="feat-card">
+          <button class="wish-btn" type="button"><span class="heart"></span></button>
+          <img src="images/amber-jar.svg">
+          <div class="pad">
+            <h3>Hearth — Amber Jar</h3>
+            <p class="price">$34</p>
+            <p class="scent">Sandalwood · smoked vanilla · clove</p>
+            <p>Our signature scent in the 11 oz amber apothecary jar. Roughly 60 hours of
+               burn time, with a lid that doubles as a snuffer.</p>
+            <button class="btn" type="button">Add to cart</button>
+          </div>
+        </div>
+        <div class="feat-card">
+          <button class="wish-btn" type="button"><span class="heart"></span></button>
+          <img src="images/trio-pillars.svg" alt="Three lit pillar candles of varying heights on a wooden tray">
+          <div class="pad">
+            <h3>The Pillar Trio</h3>
+            <p class="price">$48</p>
+            <p class="scent">Unscented · pure soy</p>
+            <p>Three hand-rolled pillars in staggered heights. Unscented on purpose — made
+               for dinner tables, mantels, and long conversations.</p>
+            <button class="btn" type="button">Add to cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="shop">
+    <div class="wrap">
+      <p class="eyebrow">The autumn collection</p>
+      <h2>All candles</h2>
+      <div class="toolbar">
+        <div>
+          <label for="sort">Sort by</label>
+          <select id="sort" name="sort">
+            <option>Featured</option>
+            <option>Price: low to high</option>
+            <option>Price: high to low</option>
+            <option>Newest</option>
+          </select>
+        </div>
+        <div>
+          <select name="scent-family">
+            <option>All scents</option>
+            <option>Woody</option>
+            <option>Floral</option>
+            <option>Citrus</option>
+            <option>Fresh</option>
+          </select>
+        </div>
+      </div>
+      <div class="grid">
+        <div class="prod-card">
+          <img src="images/pine-tin.svg">
+          <div class="pad">
+            <h3>Cabin — Travel Tin</h3>
+            <p class="price">$18</p>
+            <p class="scent">Balsam fir · cedar · birch tar</p>
+            <p>An 8 oz brushed-steel tin that smells like a walk through a December tree lot.</p>
+            <button class="btn" type="button">Add to cart</button>
+          </div>
+        </div>
+        <div class="prod-card">
+          <img src="images/lavender-jar.svg">
+          <div class="pad">
+            <h3>Meadow — Lavender Jar</h3>
+            <p class="price">$28</p>
+            <p class="scent">French lavender · chamomile · oat milk</p>
+            <p>Poured with dried lavender from a farm two towns over. Our bedtime favorite.</p>
+            <button class="btn" type="button">Add to cart</button>
+          </div>
+        </div>
+        <div class="prod-card">
+          <img src="images/citrus-jar.svg" alt="Lit yellow candle jar beside a sliced orange and green leaves">
+          <div class="pad">
+            <h3>Orchard — Citrus Jar</h3>
+            <p class="price">$28</p>
+            <p class="scent">Blood orange · neroli · honey</p>
+            <p>Bright and a little nostalgic, like peeling an orange in a sunny kitchen.</p>
+            <button class="btn" type="button">Add to cart</button>
+          </div>
+        </div>
+      </div>
+      <p class="fine-print">Free shipping on orders over $60 — every order ships in 2–3 business days
+         from our workshop in Beacon, NY.</p>
+    </div>
+  </section>
+</main>
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-brand">
+      <p>Ember &amp; Oak Candle Co.<br>14 Tannery Row, Beacon, NY 12508<br>
+         <a href="tel:+15550145528">(555) 014-5528</a> · <a href="mailto:hello@emberandoak.example">hello@emberandoak.example</a></p>
+    </div>
+    <ul class="foot-links">
+      <li><a href="index.html">Shop</a></li>
+      <li><a href="about.html">Our story</a></li>
+    </ul>
+    <a class="social" href="https://instagram.com/emberandoak.example"><span class="insta"></span></a>
+    <p class="copyright">© 2019 Ember &amp; Oak Candle Co. Soy wax, cotton wicks, and recyclable glass — always.</p>
+  </div>
+</footer>
+</body>
+</html>

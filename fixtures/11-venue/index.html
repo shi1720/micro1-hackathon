@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>The Foundry Event Hall — Weddings, galas &amp; corporate events</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif; background: #2f3640; color: #e8e4dc; line-height: 1.6; }
+  h2, h3, .brand { font-family: Georgia, "Times New Roman", serif; font-weight: normal; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  header { border-bottom: 1px solid #454d59; background: #2f3640; }
+  .bar { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
+  .brand { font-size: 24px; letter-spacing: 4px; text-transform: uppercase; color: #e8e4dc; text-decoration: none; }
+  .brand span { color: #b87333; }
+  .menu { display: flex; align-items: center; gap: 6px; }
+  .menu a { color: #e8e4dc; text-decoration: none; font-size: 14.5px; letter-spacing: 1px; padding: 10px 14px; display: inline-block; }
+  .menu a:hover { color: #b87333; }
+  .nav-drop { position: relative; color: #e8e4dc; font-size: 14.5px; letter-spacing: 1px; padding: 10px 14px; cursor: pointer; }
+  .nav-drop .caret { font-size: 11px; color: #b87333; padding-left: 4px; }
+  .drop-menu { display: none; position: absolute; top: 100%; left: 0; min-width: 200px; background: #262d38; border: 1px solid #454d59; padding: 8px 0; z-index: 5; }
+  .nav-drop.open .drop-menu { display: block; }
+  .drop-menu a { display: block; padding: 11px 18px; }
+  .hero { text-align: center; padding: 96px 0 72px; background: #262d38; }
+  .hero img { max-width: 640px; width: 90%; display: block; margin: 0 auto 26px; }
+  .hero p { max-width: 56ch; margin: 0 auto 34px; font-size: 18px; color: #aab2bd; }
+  .actions { display: flex; gap: 18px; justify-content: center; align-items: center; }
+  .btn { display: inline-block; background: #b87333; color: #1d1509; text-decoration: none; padding: 14px 32px; font-size: 15px; letter-spacing: 1.5px; text-transform: uppercase; }
+  .btn-ghost { display: inline-block; color: #e8e4dc; border: 1px solid #b87333; padding: 13px 30px; font-size: 15px; letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; }
+  .scroll-cue { text-align: center; margin-top: 46px; }
+  .scroll-cue a { color: #b87333; font-size: 26px; text-decoration: none; display: inline-block; padding: 6px 16px; }
+  section { padding: 76px 0; }
+  h2 { font-size: 34px; color: #b87333; margin-bottom: 10px; }
+  .lede { color: #aab2bd; max-width: 62ch; margin-bottom: 40px; }
+  .spaces { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+  .space { background: #39404c; border: 1px solid #454d59; }
+  .space img { width: 100%; display: block; }
+  .space-body { padding: 22px 24px 26px; }
+  .space h3 { font-size: 23px; margin-bottom: 8px; }
+  .space p { font-size: 14.5px; color: #aab2bd; margin-bottom: 12px; }
+  .space .specs { font-size: 13.5px; color: #b87333; letter-spacing: 1px; text-transform: uppercase; }
+  .alt-band { background: #262d38; }
+  .perks { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 48px; list-style: none; max-width: 780px; }
+  .perks li { padding: 10px 0 10px 26px; position: relative; font-size: 15.5px; border-bottom: 1px solid #39404c; }
+  .perks li::before { content: ""; position: absolute; left: 0; top: 18px; width: 12px; height: 12px; background: #b87333; }
+  .book { display: flex; gap: 56px; align-items: flex-start; }
+  .book-info { flex: 1; }
+  .book-info p { color: #aab2bd; margin-bottom: 14px; }
+  .book-info strong { color: #e8e4dc; }
+  form { flex: 1; background: #39404c; border: 1px solid #454d59; padding: 30px; }
+  .field { display: flex; flex-direction: column; margin-bottom: 18px; }
+  .field label { font-size: 13.5px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 7px; color: #e8e4dc; }
+  input, select { font: inherit; padding: 11px 13px; background: #2f3640; border: 1px solid #545d6b; color: #e8e4dc; }
+  form button { font: inherit; background: #b87333; color: #1d1509; border: 0; padding: 13px 30px; letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; }
+  .to-top { position: fixed; right: 26px; bottom: 26px; width: 46px; height: 46px; background: #b87333; border: 0; cursor: pointer; }
+  footer { background: #20262f; padding: 42px 0 34px; }
+  .foot { display: flex; justify-content: space-between; gap: 30px; align-items: flex-start; }
+  .foot .brand { font-size: 19px; }
+  .reach { font-size: 15px; color: #b87333; letter-spacing: .5px; }
+  .fineprint { margin-top: 26px; font-size: 12.5px; color: #aab2bd; }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="index.html">The <span>Foundry</span></a>
+    <nav class="menu">
+      <div class="nav-drop" onclick="this.classList.toggle('open')">Spaces<span class="caret">&#9662;</span>
+        <div class="drop-menu">
+          <a href="#main-hall">The Main Hall</a>
+          <a href="#loft">The Loft</a>
+          <a href="#courtyard">The Courtyard</a>
+        </div>
+      </div>
+      <a href="#included">What's included</a>
+      <a href="#book">Book</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <img src="images/hero-title.svg" alt="">
+      <p>A 1912 iron foundry on the river, stripped to its bones and rebuilt for celebrations. Exposed brick, forty-foot trusses, and staff who have seen every kind of party go right.</p>
+      <div class="actions">
+        <a class="btn" href="#book" tabindex="1">Check availability</a>
+        <span class="btn-ghost" onclick="location.href='virtual-tour.html'">Take the virtual tour</span>
+      </div>
+      <div class="scroll-cue" aria-hidden="true"><a href="#spaces">&#9662;</a></div>
+    </div>
+  </div>
+
+  <section id="spaces">
+    <div class="wrap">
+      <h2>Three rooms, one address</h2>
+      <p class="lede">Rent one space or run the whole building. Every hire includes tables, chairs, and a floor plan session with our events team three weeks out.</p>
+      <div class="spaces">
+        <div class="space" id="main-hall">
+          <img src="images/main-hall.svg" alt="The Main Hall set for a reception: long tables under steel roof trusses and rows of string lights">
+          <div class="space-body">
+            <h3>The Main Hall</h3>
+            <p>The old casting floor. Ceremony, dinner, and dancing fit here without a single table moving between courses.</p>
+            <p class="specs">Seats 180 &middot; Standing 250 &middot; 4,100 sq ft</p>
+          </div>
+        </div>
+        <div class="space" id="loft">
+          <img src="images/loft.svg">
+          <div class="space-body">
+            <h3>The Loft</h3>
+            <p>Upstairs, quieter, all brick and arched windows. Made for rehearsal dinners, board retreats, and small weddings with big opinions.</p>
+            <p class="specs">Seats 60 &middot; Standing 90 &middot; 1,400 sq ft</p>
+          </div>
+        </div>
+        <div class="space" id="courtyard">
+          <img src="images/courtyard.svg">
+          <div class="space-body">
+            <h3>The Courtyard</h3>
+            <p>String lights, planters, and the original crane hook overhead. Cocktail hour lives out here from May through October.</p>
+            <p class="specs">Standing 120 &middot; Covered bar &middot; 2,000 sq ft</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt-band" id="included">
+    <div class="wrap">
+      <h2>Every booking includes</h2>
+      <p class="lede">No surprise line items. One rate, one contract, and a building that photographs like it charges double.</p>
+      <ul class="perks">
+        <li>Tables, chairs, and setup for up to 250 guests</li>
+        <li>On-site events manager from load-in to last call</li>
+        <li>Caterer's kitchen with walk-in cooler</li>
+        <li>House sound system and handheld microphones</li>
+        <li>Free parking lot across Ironworks Alley</li>
+        <li>Rain plan: the Courtyard moves inside, no fee</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="book">
+    <div class="wrap book">
+      <div class="book-info">
+        <h2>Hold a date</h2>
+        <p>Saturdays in peak season book ten to fourteen months out; Fridays and Sundays are kinder to both calendars and budgets. Tell us your date and we will confirm within one business day.</p>
+        <p>Prefer to talk it through? Call <strong>(555) 014-7788</strong> or write to <strong>events@thefoundryhall.example</strong> &mdash; ask for Renata.</p>
+        <p><strong>Tours run Wednesday through Sunday</strong>, on the hour from 10 a.m. to 4 p.m.</p>
+      </div>
+      <form>
+        <div class="field">
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name">
+        </div>
+        <div class="field">
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email">
+        </div>
+        <div class="field">
+          <label for="date">Event date</label>
+          <input type="date" id="date" name="date">
+        </div>
+        <div class="field">
+          <label for="type">Event type</label>
+          <select id="type" name="type">
+            <option>Wedding</option>
+            <option>Corporate event</option>
+            <option>Gala or fundraiser</option>
+            <option>Something else entirely</option>
+          </select>
+        </div>
+        <button type="submit">Request the date</button>
+      </form>
+    </div>
+  </section>
+  <button class="to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1d1509" stroke-width="3"><path d="M4 15 L12 7 L20 15"/></svg></button>
+</main>
+<footer>
+  <div class="wrap foot">
+    <a class="brand" href="index.html">The <span>Foundry</span></a>
+    <div>
+      <p>7 Ironworks Alley, Fairview Heights</p>
+      <p class="reach">(555) 014-7788 &middot; events@thefoundryhall.example</p>
+    </div>
+    <p>Open for tours Wed&ndash;Sun</p>
+  </div>
+  <div class="wrap fineprint">&copy; 2019 The Foundry Event Hall. A landmarked building lovingly kept out of the landfill.</div>
+</footer>
+<script>
+  document.addEventListener('click', function (e) {
+    var open = document.querySelector('.nav-drop.open');
+    if (open && !open.contains(e.target)) open.classList.remove('open');
+  });
+</script>
+</body>
+</html>

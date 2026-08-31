@@ -1,0 +1,14 @@
+{
+  "name": "Harrison & Vance LLP",
+  "kind": "standard",
+  "pages": ["index.html"],
+  "expected": { "wcagNodes": 10, "bestPracticeNodes": 1 },
+  "seeded": [
+    { "rule": "link-name", "count": 3, "where": "two attorney portrait links wrapping images without alt, plus the footer LinkedIn link containing only a CSS-drawn icon" },
+    { "rule": "image-alt", "count": 2, "where": "the two attorney portraits inside those links (scales, courthouse, and gavel illustrations have correct alt)" },
+    { "rule": "color-contrast", "count": 4, "where": "gold #c9a227 on white/off-white: hero tagline, consultation phone number, and the two footer legal links" },
+    { "rule": "meta-viewport", "count": 1, "where": "viewport meta sets user-scalable=no" },
+    { "rule": "tabindex", "count": 1, "where": "hero consultation CTA carries tabindex=\"5\"" }
+  ],
+  "beyondScanner": []
+}

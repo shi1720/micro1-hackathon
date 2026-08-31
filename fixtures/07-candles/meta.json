@@ -1,0 +1,14 @@
+{
+  "name": "Ember & Oak Candle Co.",
+  "kind": "standard",
+  "pages": ["index.html", "about.html"],
+  "expected": { "wcagNodes": 16, "bestPracticeNodes": 0 },
+  "seeded": [
+    { "rule": "color-contrast", "count": 6, "where": "shared .eyebrow (2 per page) and .fine-print (1 per page) classes — amber on cream, identical on both pages" },
+    { "rule": "image-alt", "count": 4, "where": "index: amber-jar, pine-tin, lavender-jar product photos; about: workshop photo" },
+    { "rule": "button-name", "count": 2, "where": "index: wishlist heart icon buttons on both bestseller cards" },
+    { "rule": "select-name", "count": 1, "where": "index: scent-family filter select has no label (sort select is labeled)" },
+    { "rule": "link-name", "count": 1, "where": "index footer Instagram icon link (the about page's copy has an aria-label)" },
+    { "rule": "html-has-lang", "count": 2, "where": "both pages omit the lang attribute" }
+  ]
+}

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 170">
+  <line x1="40" y1="34" x2="235" y2="34" stroke="#b87333" stroke-width="2"/>
+  <line x1="365" y1="34" x2="560" y2="34" stroke="#b87333" stroke-width="2"/>
+  <rect x="292" y="26" width="16" height="16" fill="none" stroke="#b87333" stroke-width="2" transform="rotate(45 300 34)"/>
+  <text x="300" y="80" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="44" letter-spacing="3" fill="#e8e4dc">HOST UNFORGETTABLE</text>
+  <text x="300" y="124" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="44" letter-spacing="3" fill="#e8e4dc">EVENTS</text>
+  <text x="300" y="156" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="20" letter-spacing="2" fill="#b87333">at The Foundry</text>
+</svg>
