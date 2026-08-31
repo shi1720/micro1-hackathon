@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Harrison &amp; Vance LLP — Attorneys at Law, Fairview Heights</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      background: #ffffff; color: #2f3e54; line-height: 1.65;
+    }
+    .skip-link {
+      position: absolute; left: -9999px; top: 0; z-index: 1000;
+      background: #16233f; color: #ffffff; padding: 12px 20px;
+      text-decoration: none; font-size: 15px;
+    }
+    .skip-link:focus { left: 12px; top: 12px; }
+    a:focus-visible,
+    .btn:focus-visible { outline: 3px solid #16233f; outline-offset: 3px; }
+    header a:focus-visible,
+    .skip-link:focus-visible { outline: 3px solid #ffffff; outline-offset: 3px; }
+    header { background: #16233f; }
+    .topbar {
+      max-width: 1000px; margin: 0 auto; padding: 20px 24px;
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
+    }
+    .brand { color: #ffffff; font-size: 22px; letter-spacing: 1.5px; }
+    .brand span { color: #e0bf5a; }
+    nav ul { list-style: none; display: flex; gap: 26px; }
+    nav a { color: #e0bf5a; text-decoration: none; font-size: 15px; letter-spacing: 0.5px; }
+    nav a:hover { color: #ffffff; }
+    .hero { max-width: 1000px; margin: 0 auto; padding: 64px 24px; display: flex; gap: 48px; align-items: center; flex-wrap: wrap; }
+    .hero-copy { flex: 1 1 380px; }
+    h1 { font-size: 40px; color: #16233f; line-height: 1.2; margin-bottom: 12px; }
+    .tagline { font-size: 20px; font-style: italic; color: #8a6d1c; margin-bottom: 28px; }
+    .btn {
+      display: inline-block; background: #16233f; color: #ffffff; padding: 14px 30px;
+      text-decoration: none; font-size: 16px; letter-spacing: 0.5px; border-radius: 3px;
+    }
+    .btn:hover { background: #22345c; }
+    .hero img { flex: 0 1 240px; max-width: 250px; width: 100%; }
+    main section { max-width: 1000px; margin: 0 auto; padding: 48px 24px; }
+    h2 { font-size: 30px; color: #16233f; margin-bottom: 8px; }
+    .rule-line { width: 64px; height: 3px; background: #c9a227; margin-bottom: 26px; }
+    .practice-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; }
+    .practice { border: 1px solid #dfe3ea; border-top: 4px solid #c9a227; padding: 26px; background: #ffffff; }
+    .practice img { width: 110px; display: block; margin-bottom: 16px; }
+    .practice h3 { font-size: 20px; color: #16233f; margin-bottom: 10px; }
+    .practice p { font-size: 15px; color: #5a6a80; }
+    .attorneys { background: #f4f6f9; }
+    .attorneys-inner { max-width: 1000px; margin: 0 auto; padding: 48px 24px; }
+    .attorney-row { display: flex; gap: 36px; flex-wrap: wrap; margin-top: 10px; }
+    .attorney { flex: 1 1 300px; background: #ffffff; border: 1px solid #dfe3ea; padding: 24px; }
+    .attorney a img { width: 150px; border-radius: 6px; display: block; }
+    .attorney h3 { font-size: 21px; color: #16233f; margin: 16px 0 4px; }
+    .attorney .role { font-size: 14px; color: #8a6d1c; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px; }
+    .attorney p { font-size: 15px; color: #5a6a80; }
+    .consult { text-align: center; border-top: 1px solid #dfe3ea; border-bottom: 1px solid #dfe3ea; }
+    .consult p.lead { font-size: 17px; max-width: 560px; margin: 0 auto 10px; }
+    .consult .phone { font-size: 26px; font-weight: bold; color: #8a6d1c; margin: 14px 0 22px; }
+    footer { background: #fbfaf7; border-top: 4px solid #16233f; }
+    .footer-inner {
+      max-width: 1000px; margin: 0 auto; padding: 34px 24px;
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 22px;
+    }
+    .footer-inner p { font-size: 14px; color: #3d4c63; margin-bottom: 4px; }
+    .footer-legal { display: flex; gap: 20px; align-items: center; }
+    .footer-legal a { color: #8a6d1c; font-size: 14px; text-decoration: none; }
+    .footer-legal a:hover { text-decoration: underline; }
+    .footer-legal a.icon-link {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 24px; height: 24px;
+    }
+    .icon-in {
+      display: inline-block; width: 22px; height: 22px; background: #16233f;
+      border-radius: 4px; position: relative;
+    }
+    .icon-in::before {
+      content: ""; position: absolute; left: 5px; top: 5px;
+      width: 4px; height: 4px; background: #fbfaf7; border-radius: 50%;
+    }
+    .icon-in::after {
+      content: ""; position: absolute; left: 5px; top: 11px;
+      width: 4px; height: 6px; background: #fbfaf7;
+      box-shadow: 6px -2px 0 0 #fbfaf7;
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header>
+    <div class="topbar">
+      <p class="brand">HARRISON <span>&amp;</span> VANCE <span>LLP</span></p>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="#practice">Practice Areas</a></li>
+          <li><a href="#attorneys">Attorneys</a></li>
+          <li><a href="#consult">Consultation</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <div class="hero">
+      <div class="hero-copy">
+        <h1>Steady counsel when it matters most.</h1>
+        <p class="tagline">Four decades of quiet, careful advocacy for the families and businesses of Fairview Heights.</p>
+        <a class="btn" href="#consult">Schedule a Consultation</a>
+      </div>
+      <img src="images/scales.svg" alt="Gold scales of justice emblem on a navy circle">
+    </div>
+
+    <section id="practice">
+      <h2>Practice Areas</h2>
+      <div class="rule-line"></div>
+      <div class="practice-grid">
+        <div class="practice">
+          <img src="images/courthouse.svg" alt="A classical courthouse with columns and a triangular pediment against a navy sky">
+          <h3>Civil Litigation</h3>
+          <p>Contract disputes, partnership dissolutions, and property matters, tried by attorneys who have argued before every court in the county for over thirty years.</p>
+        </div>
+        <div class="practice">
+          <img src="images/gavel.svg" alt="A wooden judge's gavel resting beside its sound block">
+          <h3>Estate Planning &amp; Probate</h3>
+          <p>Wills, trusts, and powers of attorney drafted in plain English, plus compassionate probate administration when a family needs it most.</p>
+        </div>
+        <div class="practice">
+          <h3>Small Business Counsel</h3>
+          <p>Formation, leases, employment agreements, and succession planning. Flat-fee packages for new businesses start at $1,200, and the first conversation is always free.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="attorneys" class="attorneys">
+      <div class="attorneys-inner">
+        <h2>Our Attorneys</h2>
+        <div class="rule-line"></div>
+        <div class="attorney-row">
+          <div class="attorney">
+            <a href="#consult"><img src="images/attorney-harrison.svg" alt="Portrait of Marcus Harrison, Senior Partner"></a>
+            <h3>Marcus Harrison</h3>
+            <p class="role">Senior Partner &middot; Litigation</p>
+            <p>A fixture of the Fairview Heights bar since 1984, Marcus has tried more than two hundred civil cases and still answers his own phone. J.D., University of Illinois.</p>
+          </div>
+          <div class="attorney">
+            <a href="#consult"><img src="images/attorney-vance.svg" alt="Portrait of Elena Vance, Managing Partner"></a>
+            <h3>Elena Vance</h3>
+            <p class="role">Managing Partner &middot; Estates</p>
+            <p>Elena built the firm's estate practice from a single filing cabinet into the most trusted planning group in the county. Fellow, American College of Trust and Estate Counsel.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="consult" class="consult">
+      <h2>Request a Consultation</h2>
+      <div class="rule-line" style="margin: 0 auto 26px;"></div>
+      <p class="lead">Every matter begins with a confidential, no-obligation conversation. Tell us what happened; we will tell you honestly whether we can help.</p>
+      <p class="phone">(555) 014-9200</p>
+      <a class="btn" href="mailto:intake@harrisonvance.example">Email Our Intake Team</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <p><strong>Harrison &amp; Vance LLP</strong> &middot; 800 Courthouse Square, Suite 510, Fairview Heights, IL 62208</p>
+        <p>&copy; 2019 Harrison &amp; Vance LLP. Attorney advertising; prior results do not guarantee a similar outcome.</p>
+      </div>
+      <div class="footer-legal">
+        <a href="#privacy">Privacy Policy</a>
+        <a href="#disclaimer">Legal Disclaimer</a>
+        <a class="icon-link" href="https://www.linkedin.com/company/harrison-vance-llp" aria-label="Harrison &amp; Vance LLP on LinkedIn"><span class="icon-in" aria-hidden="true"></span></a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

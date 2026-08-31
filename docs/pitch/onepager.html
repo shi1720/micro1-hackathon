@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>StepFree — one-pager</title>
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { width: 210mm; height: 297mm; }
+  body {
+    font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+    color: #16241f; background: #fbfaf7; font-size: 9.6pt; line-height: 1.45;
+    display: flex; flex-direction: column;
+  }
+  header { background: #0b6e4f; color: #fff; padding: 9mm 12mm 7mm; }
+  .brand { font-size: 8.5pt; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; opacity: .92; }
+  h1 { font-size: 21pt; font-weight: 750; margin: 2.5mm 0 1.5mm; letter-spacing: -.01em; }
+  .sub { font-size: 10.5pt; opacity: .95; max-width: 165mm; }
+  main { flex: 1; padding: 6mm 12mm 4mm; display: grid; grid-template-columns: 1fr 1fr; gap: 5mm 7mm; }
+  h2 { font-size: 10pt; color: #0b6e4f; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 1.6mm; border-bottom: 1.2pt solid #0b6e4f; padding-bottom: .8mm; }
+  p { margin-bottom: 1.8mm; }
+  .stat-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2.5mm; margin: 1mm 0 2mm; }
+  .stat { background: #eef2ee; border-radius: 2mm; padding: 2.4mm 2.6mm; }
+  .stat b { display: block; font-size: 13.5pt; color: #0b6e4f; line-height: 1.15; }
+  .stat span { font-size: 7.3pt; color: #3c4a43; }
+  table { width: 100%; border-collapse: collapse; font-size: 8.3pt; }
+  th, td { text-align: left; padding: 1.5mm 1.8mm; border-bottom: .5pt solid #d8d5cc; vertical-align: top; }
+  th { background: #eef2ee; font-size: 7.6pt; text-transform: uppercase; letter-spacing: .04em; }
+  .yes { color: #0b6e4f; font-weight: 700; } .no { color: #a33; }
+  .flow { font-size: 8.6pt; background: #eef2ee; border-radius: 2mm; padding: 2.6mm 3mm; margin-bottom: 2mm; }
+  .flow b { color: #0b6e4f; }
+  ul { padding-left: 4.5mm; margin-bottom: 1.8mm; }
+  li { margin-bottom: 1mm; }
+  .full { grid-column: 1 / -1; }
+  .results { background: #0b6e4f; color: #fff; border-radius: 2.5mm; padding: 3.5mm 4.5mm; }
+  .results h2 { color: #fff; border-color: #ffffff88; }
+  .results .stat { background: #ffffff14; }
+  .results .stat b { color: #ffd166; } .results .stat span { color: #e9efe9; }
+  .foot { padding: 2.5mm 12mm 4mm; font-size: 7.6pt; color: #4a544e; display: flex; justify-content: space-between; border-top: .6pt solid #d8d5cc; }
+  .cite { font-size: 7pt; color: #6a736d; }
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">⿻ StepFree</div>
+  <h1>The accessibility engineer that fixes your code. And proves it.</h1>
+  <div class="sub">An agentic workflow that repairs WCAG violations in a website's source, verifies every fix with deterministic re-scans, content-integrity and visual checks, and routes judgment calls to a human — with evidence a business owner can hand to their lawyer.</div>
+</header>
+<main>
+  <section>
+    <h2>The problem is a lawsuit, not a lint warning</h2>
+    <div class="stat-row">
+      <div class="stat"><b>5,114</b><span>US web accessibility lawsuits in 2025 (UsableNet)</span></div>
+      <div class="stat"><b>64%</b><span>of defendants earn under $25M — small businesses (UsableNet)</span></div>
+      <div class="stat"><b>95.9%</b><span>of top-1M homepages fail WCAG (WebAIM 2026)</span></div>
+      <div class="stat"><b>€100k</b><span>EAA fines now in force across the EU (per violation, Germany)</span></div>
+    </div>
+    <p>The typical defendant is a bakery, a dental clinic, a law firm — a site built by a freelancer in 2019 that nobody has touched since. A manual audit costs $1,250–$2,750 and a remediation project $350–$550 <i>per page</i>: more than these owners will ever spend, so they wait, and one in four ends up sued again.</p>
+  </section>
+  <section>
+    <h2>Today's options don't fix anything</h2>
+    <table>
+      <tr><th></th><th>Fixes source</th><th>Verifies</th><th>Outcome</th></tr>
+      <tr><td><b>Overlay widgets</b><br><span class="cite">accessiBe, UserWay…</span></td><td class="no">no — JS mask</td><td class="no">no</td><td>FTC fined accessiBe $1M; ~25% of sued sites had a widget installed</td></tr>
+      <tr><td><b>Scanners</b><br><span class="cite">axe, WAVE, Lighthouse</span></td><td class="no">no — reports only</td><td>—</td><td>a PDF of problems, still your job to fix</td></tr>
+      <tr><td><b>Consultants</b></td><td class="yes">yes</td><td class="yes">manually</td><td>$5k–$75k per project, weeks of lead time</td></tr>
+      <tr><td><b>StepFree</b></td><td class="yes">yes — real code</td><td class="yes">automatically</td><td>fixed site + evidence report in under an hour, ~$2 of compute per site</td></tr>
+    </table>
+  </section>
+  <section class="full">
+    <h2>How it works — agents with a deterministic spine</h2>
+    <div class="flow"><b>scan</b> (axe-core) → <b>route</b> to five specialist agents (structure · images¹ · forms · ARIA · contrast²) → <b>verify every fix</b>: re-scan gate + word-level content integrity + pixel diff localized to the elements each fix may touch → <b>retry or roll back</b> what fails → <b>memory</b> keeps color and alt-text conventions consistent across pages → <b>beyond-scanner reviewer</b> hunts what axe can't see (images of text, fake div-buttons, keyboard traps) → <b>human review queue</b> where every judgment call arrives with a drafted fix → <b>evidence report</b>.</div>
+    <p class="cite">¹ the image agent <i>looks at every image</i> (vision) before writing alt text — no filename guessing. &nbsp;² contrast fixes come from a math tool that finds the closest compliant color preserving the brand hue — models supply judgment, never arithmetic. Design choices map 1:1 to documented failure modes of unverified LLM fixes (24 improvements vs 20 regressions, arXiv:2608.24913; ~30% structural damage, arXiv:2605.27716).</p>
+  </section>
+  <section class="results full">
+    <h2>Measured on 12 realistic small-business sites (134 seeded WCAG violations)</h2>
+    <div class="stat-row">
+      <div class="stat"><b>RES_REMEDIATION</b><span>of violations remediated &amp; independently verified (baseline one-shot LLM: RES_BASELINE)</span></div>
+      <div class="stat"><b>RES_REGRESSIONS</b><span>regressions shipped by StepFree (baseline: RES_BASE_REG — every fix gate-checked)</span></div>
+      <div class="stat"><b>RES_COST</b><span>average compute cost per site vs $350–550/page manual remediation</span></div>
+      <div class="stat"><b>RES_REVIEW</b><span>judgment calls routed to humans with drafted fixes — never silently guessed</span></div>
+    </div>
+  </section>
+  <section>
+    <h2>Business</h2>
+    <ul>
+      <li><b>Wedge:</b> $149 one-time "fix &amp; prove" run per site; $49/mo continuous monitor-and-fix. Agency tier $499/mo for 20 client sites — agencies hold thousands of 2019-era SMB sites and eat the legal risk conversation.</li>
+      <li><b>Unit economics:</b> ~$2 measured compute per site run → 95%+ gross margin at the wedge price.</li>
+      <li><b>Market:</b> digital-accessibility software ~$1B by 2030, but the spend it replaces — audits, remediation projects, legal exposure across 5,000+ suits/yr — is far larger. Incumbent revenue (AudioEye $40M, accessiBe ~$50M) proves willingness to pay for a product that doesn't actually fix code.</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Why we win</h2>
+    <ul>
+      <li><b>Honesty as strategy:</b> automation covers ~57% of issues (Deque). We claim verified fixes for the detectable layer and route the rest to humans — the exact claim discipline the FTC fined the market leader for lacking.</li>
+      <li><b>Verification is the moat:</b> anyone can prompt an LLM to "fix accessibility". Shipping it to a stranger's production site takes the guardrail stack — and the evidence trail that survives a legal letter.</li>
+      <li><b>The curb-cut effect:</b> curb cuts were built for wheelchairs and ended up serving everyone. Same here: clearer labels, readable contrast, working keyboards — a better site for every visitor.</li>
+    </ul>
+  </section>
+</main>
+<div class="foot">
+  <span><b>StepFree</b> · built by Shivam Gupta for the micro1 Agentic Workflows Hackathon · Claude Agent SDK + axe-core + Playwright</span>
+  <span>All statistics cited with sources in docs/research/ of the repository</span>
+</div>
+</body>
+</html>

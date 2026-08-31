@@ -1,0 +1,70 @@
+{
+  "product": "StepFree",
+  "stage": "v1",
+  "stageLabel": "Naive agent (single generalist, no verification)",
+  "model": "claude-sonnet-5",
+  "siteDir": "/home/user/micro1-hackathon/fixtures/11-venue",
+  "startedAt": "2026-08-31T11:25:30.037Z",
+  "pages": [
+    {
+      "file": "index.html",
+      "rounds": [
+        {
+          "round": 1,
+          "agent": "generic",
+          "costUsd": 0.13459120000000002,
+          "turns": 15,
+          "durationMs": 65386
+        }
+      ],
+      "flagged": [],
+      "before": {
+        "wcag": {
+          "rules": 5,
+          "nodes": 9
+        },
+        "bestPractice": {
+          "rules": 2,
+          "nodes": 2
+        },
+        "incomplete": 1
+      },
+      "after": {
+        "wcag": {
+          "rules": 0,
+          "nodes": 0
+        },
+        "bestPractice": {
+          "rules": 0,
+          "nodes": 0
+        },
+        "incomplete": 1
+      },
+      "outcome": {
+        "fixed": 11,
+        "introduced": 0,
+        "remaining": 0
+      },
+      "finalIntegrity": {
+        "ok": true,
+        "hardFailures": [],
+        "metrics": {
+          "missingWords": 0,
+          "addedWords": 0,
+          "removedImages": 0,
+          "pixelDiffRatio": 0,
+          "outsideRatio": 0
+        }
+      }
+    }
+  ],
+  "conventions": {},
+  "reviewQueue": [],
+  "totals": {
+    "costUsd": 0.13459120000000002,
+    "agentRuns": 1,
+    "rollbacks": 0,
+    "retries": 0
+  },
+  "finishedAt": "2026-08-31T11:26:38.430Z"
+}

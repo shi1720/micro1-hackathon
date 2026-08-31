@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect width="400" height="300" rx="14" fill="#eaf4fb"/>
+  <path d="M96 96 q40 -26 80 0 q22 16 16 50 q-4 26 -13 47 q-8 19 -17 39 q-6 14 -15 11 q-8 -3 -9 -18 l-3 -28 q-2 -12 -9 -12 q-7 0 -9 12 l-3 28 q-1 15 -9 18 q-9 3 -15 -11 q-9 -20 -17 -39 q-9 -21 -13 -47 q-6 -34 16 -50 Z" fill="#ffffff"/>
+  <path d="M104 112 q8 -12 22 -14" stroke="#cfe6f5" stroke-width="7" fill="none" stroke-linecap="round"/>
+  <g transform="rotate(-24 268 160)">
+    <rect x="196" y="150" width="150" height="26" rx="13" fill="#1f6fb2"/>
+    <rect x="196" y="150" width="150" height="10" rx="5" fill="#3f8ecb"/>
+    <rect x="160" y="146" width="44" height="34" rx="8" fill="#155e93"/>
+    <g fill="#ffffff">
+      <rect x="163" y="122" width="8" height="26" rx="3"/>
+      <rect x="174" y="120" width="8" height="28" rx="3"/>
+      <rect x="185" y="120" width="8" height="28" rx="3"/>
+      <rect x="196" y="122" width="8" height="26" rx="3"/>
+    </g>
+    <path d="M162 112 q22 -14 44 0 q-4 8 -22 8 q-18 0 -22 -8 Z" fill="#7fd1b9"/>
+  </g>
+  <g fill="#8bbfe3">
+    <circle cx="76" cy="66" r="6"/>
+    <circle cx="322" cy="62" r="8"/>
+    <circle cx="348" cy="244" r="6"/>
+    <circle cx="60" cy="232" r="5"/>
+  </g>
+</svg>

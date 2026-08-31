@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wildflour Bakery — Fresh Bread &amp; Pastry in Millbrook, Oregon</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      background: #fdf6ec;
+      color: #5b4636;
+      line-height: 1.6;
+    }
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 0;
+      background: #8c4a28;
+      color: #fdf6ec;
+      padding: 12px 20px;
+      z-index: 100;
+      border-radius: 0 0 4px 0;
+      text-decoration: none;
+      font-size: 15px;
+    }
+    .skip-link:focus {
+      left: 0;
+    }
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid #5b4636;
+      outline-offset: 2px;
+    }
+    header { background: #fdf6ec; border-bottom: 1px solid #e6d3b4; }
+    .topbar {
+      max-width: 960px; margin: 0 auto; padding: 18px 24px;
+      display: flex; justify-content: space-between; align-items: baseline;
+    }
+    .brand { font-size: 22px; font-weight: bold; letter-spacing: 1px; color: #8c4a28; }
+    nav ul { list-style: none; display: flex; gap: 26px; }
+    nav a { color: #8c4a28; text-decoration: none; font-size: 15px; }
+    nav a:hover { text-decoration: underline; }
+    .hero {
+      max-width: 960px; margin: 0 auto; padding: 48px 24px 56px;
+      display: flex; gap: 40px; align-items: center; flex-wrap: wrap;
+    }
+    .hero-text { flex: 1 1 320px; }
+    h1 { font-size: 44px; color: #8c4a28; line-height: 1.15; margin-bottom: 12px; }
+    .tagline { font-size: 19px; font-style: italic; color: #9c5a35; margin-bottom: 26px; }
+    .hero-cta {
+      display: inline-block; background: #8c4a28; color: #fdf6ec;
+      padding: 12px 26px; border-radius: 4px; text-decoration: none; font-size: 16px;
+    }
+    .hero-cta:hover { background: #7a3f21; }
+    .hero img { flex: 1 1 300px; max-width: 440px; width: 100%; border-radius: 10px; }
+    section { max-width: 960px; margin: 0 auto; padding: 44px 24px; }
+    section h2 { font-size: 30px; color: #b3552e; margin-bottom: 16px; }
+    .story p { max-width: 640px; margin-bottom: 14px; font-size: 16px; }
+    .gallery-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px; margin-top: 12px;
+    }
+    figure { background: #fff; border: 1px solid #e6d3b4; border-radius: 10px; overflow: hidden; }
+    figure img { width: 100%; display: block; }
+    figcaption { padding: 12px 14px; font-size: 15px; }
+    figcaption strong { color: #8c4a28; }
+    .price { float: right; color: #7a5c42; }
+    .visit-wrap { display: flex; gap: 40px; flex-wrap: wrap; }
+    .hours-card {
+      background: #f6e9d4; border-radius: 10px; padding: 24px 28px; flex: 1 1 300px;
+    }
+    .hours-card h3 { font-size: 20px; color: #8c4a28; margin-bottom: 10px; }
+    .hours-card ul { list-style: none; }
+    .hours-card li { display: flex; justify-content: space-between; padding: 4px 0; font-size: 15px; }
+    .fine-print { font-size: 13px; color: #7a5c42; margin-top: 12px; }
+    .address-card { flex: 1 1 300px; padding: 8px 0; }
+    .address-card p { margin-bottom: 10px; font-size: 16px; }
+    .address-card a { color: #8c4a28; text-decoration: underline; }
+    footer { background: #40342b; color: #fdf6ec; margin-top: 30px; }
+    .footer-inner {
+      max-width: 960px; margin: 0 auto; padding: 36px 24px;
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;
+    }
+    .footer-brand { font-size: 20px; letter-spacing: 1px; }
+    .social { display: flex; gap: 14px; }
+    .social a {
+      display: inline-flex; width: 40px; height: 40px; border-radius: 50%;
+      background: #5b4636; align-items: center; justify-content: center; text-decoration: none;
+    }
+    .social a:hover { background: #6d5642; }
+    .icon-cam {
+      display: inline-block; width: 20px; height: 16px;
+      border: 2px solid #fdf6ec; border-radius: 4px; position: relative;
+    }
+    .icon-cam::after {
+      content: ""; position: absolute; top: 2px; left: 5px;
+      width: 6px; height: 6px; border: 2px solid #fdf6ec; border-radius: 50%;
+    }
+    .icon-flag {
+      display: inline-block; width: 18px; height: 18px;
+      border-left: 3px solid #fdf6ec; position: relative;
+    }
+    .icon-flag::after {
+      content: ""; position: absolute; top: 1px; left: 0;
+      width: 13px; height: 8px; background: #fdf6ec; border-radius: 0 3px 3px 0;
+    }
+    .colophon { font-size: 13px; color: #b7a08c; }
+    .colophon p { margin-bottom: 4px; }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header>
+    <div class="topbar">
+      <span class="brand">Wildflour Bakery</span>
+      <nav aria-label="Primary">
+        <ul role="list">
+          <li><a href="#story">Our Story</a></li>
+          <li><a href="#gallery">From the Oven</a></li>
+          <li><a href="#visit">Visit Us</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="hero">
+      <div class="hero-text">
+        <h1>Baked before sunrise, gone by noon.</h1>
+        <p class="tagline">Naturally leavened breads and honest pastry, made by hand in small batches since 2014.</p>
+        <a class="hero-cta" href="#gallery">See What's Baking</a>
+      </div>
+      <img src="images/hero-loaf.svg" alt="A golden, crusty artisan loaf of bread resting on a wooden board">
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section id="story" class="story">
+      <h2>Our Story</h2>
+      <p>Wildflour began in a rented church kitchen with one secondhand deck oven and a sourdough starter named Clementine. Ten years on, Clementine is still rising every night, and we are still folding, shaping, and scoring every loaf by hand.</p>
+      <p>We mill a portion of our flour in-house from grain grown in the Willamette Valley, and everything on the counter was baked the same morning you buy it. No freezers, no shortcuts, no preservatives &mdash; just flour, water, salt, and patience.</p>
+      <p>When the case is empty, we close. Most Saturdays that happens well before lunch, so set an alarm.</p>
+    </section>
+
+    <section id="gallery">
+      <h2>From the Oven</h2>
+      <div class="gallery-grid">
+        <figure>
+          <img src="images/croissant.svg" alt="Flaky golden butter croissant on a wooden board">
+          <figcaption><strong>Butter Croissant</strong> <span class="price">$4.25</span><br>Seventy-two layers of European butter, laminated over three days.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/baguette.svg" alt="Golden, crusty French baguette with diagonal scoring marks">
+          <figcaption><strong>Classic Baguette</strong> <span class="price">$4.00</span><br>Crackling crust, open crumb. Baked at 7am and 11am daily.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/cinnamon-roll.svg" alt="Spiral cinnamon roll topped with cream-cheese icing">
+          <figcaption><strong>Morning Roll</strong> <span class="price">$5.50</span><br>Saigon cinnamon, brown sugar, and a river of cream-cheese icing.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/fruit-tart.svg" alt="Round tart with golden crust, vanilla custard, strawberries, and a slice of kiwi">
+          <figcaption><strong>Seasonal Fruit Tart</strong> <span class="price">$6.50</span><br>Whatever the orchard sends us, on vanilla-bean custard.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/sourdough-boule.svg" alt="Rustic round sourdough loaf with curved scoring marks and a dusting of flour">
+          <figcaption><strong>Country Sourdough</strong> <span class="price">$9.00</span><br>Our signature boule: 36-hour ferment, deep bronze crust.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="visit">
+      <h2>Visit Us</h2>
+      <div class="visit-wrap">
+        <div class="hours-card">
+          <h3>Bakery Hours</h3>
+          <ul role="list">
+            <li><span>Tuesday &ndash; Friday</span> <span>7:00am &ndash; 2:00pm</span></li>
+            <li><span>Saturday</span> <span>7:00am &ndash; 1:00pm</span></li>
+            <li><span>Sunday</span> <span>8:00am &ndash; 12:00pm</span></li>
+            <li><span>Monday</span> <span>Closed</span></li>
+          </ul>
+          <p class="fine-print">We bake until it's gone &mdash; weekend loaves often sell out before 11am.</p>
+          <p class="fine-print">Holiday hours are posted on the door and our social pages a week ahead.</p>
+        </div>
+        <div class="address-card">
+          <p><strong>Find us at</strong><br>42 Alder Lane<br>Millbrook, OR 97042</p>
+          <p><strong>Call ahead to reserve a loaf</strong><br><a href="tel:+15550142288">(555) 014-2288</a></p>
+          <p><strong>Wholesale &amp; special orders</strong><br><a href="mailto:hello@wildflourmillbrook.example">hello@wildflourmillbrook.example</a></p>
+          <p>Street parking on Alder Lane is free for two hours. The shop is two blocks east of Millbrook Green, next to the old seed depot.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <p class="footer-brand">Wildflour Bakery</p>
+        <div class="colophon">
+          <p>&copy; 2019 Wildflour Bakery LLC. All rights reserved.</p>
+          <p>42 Alder Lane, Millbrook, Oregon &mdash; baked daily, never shipped.</p>
+        </div>
+      </div>
+      <div class="social">
+        <a href="https://www.instagram.com/wildflourmillbrook" aria-label="Wildflour Bakery on Instagram"><span class="icon-cam" aria-hidden="true"></span></a>
+        <a href="https://www.facebook.com/wildflourmillbrook" aria-label="Wildflour Bakery on Facebook"><span class="icon-flag" aria-hidden="true"></span></a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

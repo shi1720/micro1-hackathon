@@ -1,0 +1,70 @@
+{
+  "product": "StepFree",
+  "stage": "v1",
+  "stageLabel": "Naive agent (single generalist, no verification)",
+  "model": "claude-sonnet-5",
+  "siteDir": "/home/user/micro1-hackathon/fixtures/06-autoshop",
+  "startedAt": "2026-08-31T11:24:00.402Z",
+  "pages": [
+    {
+      "file": "index.html",
+      "rounds": [
+        {
+          "round": 1,
+          "agent": "generic",
+          "costUsd": 0.1205136,
+          "turns": 14,
+          "durationMs": 60599
+        }
+      ],
+      "flagged": [],
+      "before": {
+        "wcag": {
+          "rules": 5,
+          "nodes": 12
+        },
+        "bestPractice": {
+          "rules": 1,
+          "nodes": 1
+        },
+        "incomplete": 0
+      },
+      "after": {
+        "wcag": {
+          "rules": 0,
+          "nodes": 0
+        },
+        "bestPractice": {
+          "rules": 0,
+          "nodes": 0
+        },
+        "incomplete": 0
+      },
+      "outcome": {
+        "fixed": 13,
+        "introduced": 0,
+        "remaining": 0
+      },
+      "finalIntegrity": {
+        "ok": true,
+        "hardFailures": [],
+        "metrics": {
+          "missingWords": 0,
+          "addedWords": 2,
+          "removedImages": 0,
+          "pixelDiffRatio": 0.0009,
+          "outsideRatio": 0.0009
+        }
+      }
+    }
+  ],
+  "conventions": {},
+  "reviewQueue": [],
+  "totals": {
+    "costUsd": 0.1205136,
+    "agentRuns": 1,
+    "rollbacks": 0,
+    "retries": 0
+  },
+  "finishedAt": "2026-08-31T11:25:04.466Z"
+}

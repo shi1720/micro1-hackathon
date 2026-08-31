@@ -1,0 +1,70 @@
+{
+  "product": "StepFree",
+  "stage": "v1",
+  "stageLabel": "Naive agent (single generalist, no verification)",
+  "model": "claude-sonnet-5",
+  "siteDir": "/home/user/micro1-hackathon/fixtures/09-salon",
+  "startedAt": "2026-08-31T11:25:04.472Z",
+  "pages": [
+    {
+      "file": "index.html",
+      "rounds": [
+        {
+          "round": 1,
+          "agent": "generic",
+          "costUsd": 0.1116536,
+          "turns": 12,
+          "durationMs": 47231
+        }
+      ],
+      "flagged": [],
+      "before": {
+        "wcag": {
+          "rules": 5,
+          "nodes": 12
+        },
+        "bestPractice": {
+          "rules": 0,
+          "nodes": 0
+        },
+        "incomplete": 0
+      },
+      "after": {
+        "wcag": {
+          "rules": 0,
+          "nodes": 0
+        },
+        "bestPractice": {
+          "rules": 0,
+          "nodes": 0
+        },
+        "incomplete": 0
+      },
+      "outcome": {
+        "fixed": 12,
+        "introduced": 0,
+        "remaining": 0
+      },
+      "finalIntegrity": {
+        "ok": true,
+        "hardFailures": [],
+        "metrics": {
+          "missingWords": 0,
+          "addedWords": 2,
+          "removedImages": 0,
+          "pixelDiffRatio": 0,
+          "outsideRatio": 0
+        }
+      }
+    }
+  ],
+  "conventions": {},
+  "reviewQueue": [],
+  "totals": {
+    "costUsd": 0.1116536,
+    "agentRuns": 1,
+    "rollbacks": 0,
+    "retries": 0
+  },
+  "finishedAt": "2026-08-31T11:25:55.641Z"
+}

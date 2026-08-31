@@ -1,0 +1,70 @@
+{
+  "product": "StepFree",
+  "stage": "v1",
+  "stageLabel": "Naive agent (single generalist, no verification)",
+  "model": "claude-sonnet-5",
+  "siteDir": "/home/user/micro1-hackathon/fixtures/08-shelter",
+  "startedAt": "2026-08-31T11:24:22.098Z",
+  "pages": [
+    {
+      "file": "index.html",
+      "rounds": [
+        {
+          "round": 1,
+          "agent": "generic",
+          "costUsd": 0.1175778,
+          "turns": 11,
+          "durationMs": 53040
+        }
+      ],
+      "flagged": [],
+      "before": {
+        "wcag": {
+          "rules": 5,
+          "nodes": 11
+        },
+        "bestPractice": {
+          "rules": 1,
+          "nodes": 1
+        },
+        "incomplete": 0
+      },
+      "after": {
+        "wcag": {
+          "rules": 0,
+          "nodes": 0
+        },
+        "bestPractice": {
+          "rules": 0,
+          "nodes": 0
+        },
+        "incomplete": 0
+      },
+      "outcome": {
+        "fixed": 12,
+        "introduced": 0,
+        "remaining": 0
+      },
+      "finalIntegrity": {
+        "ok": true,
+        "hardFailures": [],
+        "metrics": {
+          "missingWords": 0,
+          "addedWords": 0,
+          "removedImages": 0,
+          "pixelDiffRatio": 0,
+          "outsideRatio": 0
+        }
+      }
+    }
+  ],
+  "conventions": {},
+  "reviewQueue": [],
+  "totals": {
+    "costUsd": 0.1175778,
+    "agentRuns": 1,
+    "rollbacks": 0,
+    "retries": 0
+  },
+  "finishedAt": "2026-08-31T11:25:18.304Z"
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Osteria del Ponte</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Georgia, 'Palatino Linotype', serif;
+      background: #161210; color: #e8dcc7; line-height: 1.65;
+    }
+    header { border-bottom: 1px solid #3a2f28; }
+    .masthead {
+      max-width: 880px; margin: 0 auto; padding: 44px 24px 36px; text-align: center;
+    }
+    .masthead img { width: 150px; margin-bottom: 18px; }
+    h1 { font-size: 42px; letter-spacing: 2px; color: #f0e3c8; font-weight: normal; }
+    h1 em { font-style: normal; color: #c0392b; }
+    .muted { color: #9a8f82; }
+    .masthead .muted { font-size: 15px; font-style: italic; margin-top: 8px; }
+    .divider { width: 70px; height: 3px; background: #c0392b; margin: 18px auto 0; }
+    main { max-width: 880px; margin: 0 auto; padding: 20px 24px 60px; }
+    .course { padding: 38px 0; border-bottom: 1px solid #2b231e; }
+    .course-head { display: flex; align-items: baseline; gap: 18px; flex-wrap: wrap; }
+    h2 { font-size: 28px; color: #c0392b; letter-spacing: 1px; font-weight: normal; }
+    .course-intro { font-size: 15px; font-style: italic; }
+    .course-body { display: flex; gap: 36px; align-items: flex-start; flex-wrap: wrap; margin-top: 20px; }
+    .menu-list { list-style: none; flex: 1 1 380px; }
+    .menu-list li { padding: 13px 0; }
+    .dish-row { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; }
+    .dish-name { font-size: 18px; color: #f0e3c8; }
+    .dots { flex: 1; border-bottom: 1px dotted #4a3f36; transform: translateY(-4px); }
+    .dish-price { font-size: 17px; color: #e8c86a; white-space: nowrap; }
+    .dish-desc { font-size: 15px; color: #b8a88e; max-width: 520px; }
+    .course-body img { flex: 0 1 240px; max-width: 260px; width: 100%; border-radius: 8px; }
+    .house-note { margin-top: 34px; text-align: center; }
+    .house-note .muted { font-size: 14px; }
+    footer { border-top: 1px solid #3a2f28; }
+    .footer-inner {
+      max-width: 880px; margin: 0 auto; padding: 34px 24px;
+      display: flex; justify-content: space-between; flex-wrap: wrap; gap: 22px; font-size: 15px;
+    }
+    footer a { color: #e8c86a; }
+    footer p { margin-bottom: 5px; }
+    .footer-inner .muted { font-size: 14px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="masthead">
+      <img src="images/bridge.svg" alt="A stone arch bridge with lantern posts crossing a river under a crescent moon">
+      <h1>Osteria <em>del Ponte</em></h1>
+      <p class="muted">Cucina della nonna, by the old stone bridge &mdash; est. 1998</p>
+      <div class="divider"></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="course">
+      <div class="course-head">
+        <h2>Antipasti</h2>
+        <p class="course-intro muted">Small plates to open the evening, made for sharing</p>
+      </div>
+      <div class="course-body">
+        <ul class="menu-list">
+          <li>
+            <div class="dish-row"><span class="dish-name">Burrata di Puglia</span><span class="dots"></span><span class="dish-price">14</span></div>
+            <p class="dish-desc">Cream-filled mozzarella, blistered cherry tomatoes, basil oil, grilled sourdough.</p>
+          </li>
+          <li>
+            <div class="dish-row"><span class="dish-name">Carpaccio di Manzo</span><span class="dots"></span><span class="dish-price">16</span></div>
+            <p class="dish-desc">Paper-thin beef tenderloin, shaved parmigiano, arugula, lemon and cold-pressed olive oil.</p>
+          </li>
+          <li>
+            <div class="dish-row"><span class="dish-name">Arancini al Tartufo</span><span class="dots"></span><span class="dish-price">12</span></div>
+            <p class="dish-desc">Crisp saffron risotto fritters with black truffle and a molten fontina heart.</p>
+          </li>
+        </ul>
+        <img src="images/spaghetti.svg" alt="A twirled plate of spaghetti garnished with fresh herbs">
+      </div>
+    </section>
+
+    <section class="course">
+      <div class="course-head">
+        <h2>Primi</h2>
+        <p class="course-intro muted">Pasta rolled and cut by hand every afternoon</p>
+      </div>
+      <div class="course-body">
+        <ul class="menu-list">
+          <li>
+            <div class="dish-row"><span class="dish-name">Tagliatelle al Rag&ugrave;</span><span class="dots"></span><span class="dish-price">22</span></div>
+            <p class="dish-desc">Eight-hour beef and pork rag&ugrave; from our grandmother's book, aged parmigiano.</p>
+          </li>
+          <li>
+            <div class="dish-row"><span class="dish-name">Cacio e Pepe</span><span class="dots"></span><span class="dish-price">19</span></div>
+            <p class="dish-desc">Tonnarelli, pecorino romano, cracked Tellicherry pepper. Nothing else, nothing missing.</p>
+          </li>
+          <li>
+            <div class="dish-row"><span class="dish-name">Ravioli di Zucca</span><span class="dots"></span><span class="dish-price">21</span></div>
+            <p class="dish-desc">Roast pumpkin ravioli, brown butter, crushed amaretti, fried sage.</p>
+          </li>
+        </ul>
+        <img src="images/wine.svg" alt="Two glasses of red wine beside a bottle">
+      </div>
+    </section>
+
+    <section class="course">
+      <div class="course-head">
+        <h2>Dolci</h2>
+        <p class="course-intro muted">Sweet endings and something strong to sip</p>
+      </div>
+      <div class="course-body">
+        <ul class="menu-list">
+          <li>
+            <div class="dish-row"><span class="dish-name">Tiramis&ugrave; della Casa</span><span class="dots"></span><span class="dish-price">10</span></div>
+            <p class="dish-desc">Espresso-soaked savoiardi, mascarpone cream, bitter cocoa. Assembled to order.</p>
+          </li>
+          <li>
+            <div class="dish-row"><span class="dish-name">Panna Cotta al Limone</span><span class="dots"></span><span class="dish-price">9</span></div>
+            <p class="dish-desc">Amalfi lemon cream set soft, macerated berries, torn mint.</p>
+          </li>
+          <li>
+            <div class="dish-row"><span class="dish-name">Affogato</span><span class="dots"></span><span class="dish-price">8</span></div>
+            <p class="dish-desc">Fior di latte gelato drowned in a double espresso, hazelnut brittle.</p>
+          </li>
+        </ul>
+        <img src="images/tiramisu.svg" alt="A layered tiramisu slice dusted with cocoa on a cream plate, with a fork and mint sprig">
+      </div>
+    </section>
+
+    <div class="house-note">
+      <p class="muted">A coperto of 2 per guest covers bread, olives, and the good olive oil. Corkage 15.</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <p><strong>Osteria del Ponte</strong></p>
+        <p>17 Riverstone Way, Millbrook, OR 97042</p>
+        <p>Reservations: <a href="tel:+15550143377">(555) 014-3377</a></p>
+      </div>
+      <div>
+        <p>Dinner only. Closed Mondays.</p>
+        <p class="muted">Tuesday &ndash; Sunday, 5:00pm until the last table lingers. Kitchen closes 9:30pm.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

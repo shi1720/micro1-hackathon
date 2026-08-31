@@ -1,0 +1,33 @@
+{
+  "product": "baseline-one-shot",
+  "stage": "baseline",
+  "stageLabel": "One direct prompt with basic instructions (no tools, no verification)",
+  "model": "claude-sonnet-5",
+  "siteDir": "/home/user/micro1-hackathon/fixtures/02-dental",
+  "startedAt": "2026-08-31T11:12:04.126Z",
+  "pages": [
+    {
+      "file": "index.html",
+      "applied": true,
+      "note": "model output written over page",
+      "rounds": [
+        {
+          "round": 1,
+          "agent": "baseline",
+          "costUsd": 0.1486922,
+          "turns": 1,
+          "durationMs": 139506
+        }
+      ]
+    }
+  ],
+  "totals": {
+    "costUsd": 0.1486922,
+    "agentRuns": 1,
+    "rollbacks": 0,
+    "retries": 0
+  },
+  "conventions": {},
+  "reviewQueue": [],
+  "finishedAt": "2026-08-31T11:14:23.633Z"
+}
