@@ -46,19 +46,8 @@ const attr = (tag, name) => {
 };
 
 async function renderToPng(absPath, outPath) {
-  await withPage(
-    async (page) => {
-      await page.setContent(
-        `<html><body style="margin:0;display:grid;place-items:center;background:#fff">
-         <img src="${toUrl(absPath)}" style="max-width:640px;max-height:640px"/></body></html>`
-      );
-      await page.waitForTimeout(120);
-      const el = await page.$('img');
-      const buf = await el.screenshot();
-      writeFileSync(outPath, buf);
-    },
-    { viewport: { width: 700, height: 700 } }
-  );
+  const { renderImageToPng } = await import('../src/agents/tools.mjs');
+  writeFileSync(outPath, await renderImageToPng(absPath));
 }
 
 const results = { stage, model, judgedAt: new Date().toISOString(), pages: [] };

@@ -152,25 +152,24 @@ export function makeStepfreeTools({ workdir, ledger }) {
   return { scan_file, contrast_suggest, check_contrast, view_image, view_page, record_convention, flag_for_review };
 }
 
-async function renderImageToPng(absPath) {
+export async function renderImageToPng(absPath) {
   const ext = extname(absPath).toLowerCase();
   if (ext === '.png') {
     const buf = readFileSync(absPath);
     if (buf.length < 1_500_000) return buf;
   }
-  // Render via the browser: handles SVG (and resizes anything large).
+  // Navigate to the image file directly — file:// subresources inside a
+  // setContent() page are blocked by Chromium, which silently yields a
+  // broken-image glyph. Direct navigation renders reliably (SVG included).
   return withPage(
     async (page) => {
-      const url = toUrl(absPath);
-      await page.setContent(
-        `<html><body style="margin:0;display:grid;place-items:center;background:#fff">
-           <img src="${url}" style="max-width:680px;max-height:680px" /></body></html>`
-      );
-      await page.waitForTimeout(120);
-      const el = await page.$('img');
-      return el.screenshot();
+      await page.goto(toUrl(absPath));
+      await page.waitForTimeout(150);
+      const img = await page.$('img'); // raster files are wrapped in an <img>
+      if (img) return img.screenshot();
+      return page.screenshot(); // SVG documents render as the page itself
     },
-    { viewport: { width: 720, height: 720 } }
+    { viewport: { width: 680, height: 520 } }
   );
 }
 
