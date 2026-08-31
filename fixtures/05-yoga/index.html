@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="english">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Moonrise Yoga — Classes, Schedule &amp; Pricing in Willow Creek</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+         background: #faf6ee; color: #584a68; line-height: 1.6; }
+  h1, h2, h3, h4 { font-family: Georgia, "Times New Roman", serif; color: #463a55; font-weight: 400; }
+  a { color: #584a68; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+  header.site { background: #faf6ee; border-bottom: 1px solid #e3dccd; padding: 18px 0; }
+  header.site .wrap { display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-family: Georgia, serif; font-size: 1.5rem; color: #463a55; text-decoration: none; letter-spacing: 1px; }
+  nav ul { list-style: none; display: flex; gap: 28px; }
+  nav a { text-decoration: none; font-size: 0.95rem; letter-spacing: 0.5px; }
+  nav a:hover { text-decoration: underline; }
+  .hero { padding: 64px 0 48px; }
+  .hero .wrap { display: flex; gap: 48px; align-items: center; }
+  .hero-copy { flex: 1; }
+  .hero h1 { font-size: 2.8rem; margin-bottom: 6px; }
+  .hero-sub { color: #9caf88; font-size: 1.15rem; font-style: italic; margin-bottom: 18px; }
+  .hero p.intro { margin-bottom: 24px; max-width: 44ch; }
+  .hero img { width: 420px; max-width: 45%; border-radius: 12px; }
+  .btn { display: inline-block; background: #584a68; color: #ffffff; text-decoration: none;
+         padding: 12px 26px; border-radius: 24px; font-size: 0.95rem; letter-spacing: 0.5px; }
+  .btn:hover { background: #463a55; }
+  section { padding: 48px 0; }
+  section h2 { font-size: 1.9rem; margin-bottom: 24px; }
+  .card-row { display: flex; gap: 24px; flex-wrap: wrap; }
+  .class-card { flex: 1 1 280px; background: #ffffff; border-radius: 12px; overflow: hidden;
+                box-shadow: 0 2px 10px rgba(70, 58, 85, 0.08); }
+  .class-card img { width: 100%; height: 190px; object-fit: cover; display: block; }
+  .class-card .pad { padding: 18px 20px 22px; }
+  .class-card h3 { font-size: 1.25rem; margin-bottom: 8px; }
+  .class-card p { font-size: 0.95rem; }
+  table { width: 100%; border-collapse: collapse; background: #ffffff; border-radius: 12px; }
+  th, td { text-align: left; padding: 12px 16px; border-bottom: 1px solid #eee7d8; font-size: 0.95rem; }
+  th { font-weight: 600; color: #463a55; background: #f1ebdf; }
+  .divider { display: block; margin: 0 auto 18px; width: 130px; }
+  .slider { display: flex; align-items: center; gap: 18px; }
+  .slides { display: flex; gap: 20px; flex: 1; }
+  blockquote { flex: 1 1 260px; background: #ffffff; border-radius: 12px; padding: 22px 24px;
+               box-shadow: 0 2px 10px rgba(70, 58, 85, 0.08); font-size: 0.98rem; }
+  .quote-author { color: #9caf88; font-style: italic; margin-top: 12px; font-size: 0.95rem; }
+  .slide-btn { width: 44px; height: 44px; border-radius: 50%; border: 2px solid #584a68;
+               background: #ffffff; cursor: pointer; flex: none; position: relative; }
+  .slide-btn i { display: block; width: 10px; height: 10px; border: solid #584a68;
+                 border-width: 0 3px 3px 0; position: absolute; top: 15px; }
+  .slide-btn.prev i { transform: rotate(135deg); left: 17px; }
+  .slide-btn.next i { transform: rotate(-45deg); left: 12px; }
+  .price-row { display: flex; gap: 24px; flex-wrap: wrap; align-items: stretch; }
+  .price-card { flex: 1 1 220px; background: #ffffff; border-radius: 12px; padding: 26px 24px;
+                text-align: center; box-shadow: 0 2px 10px rgba(70, 58, 85, 0.08); }
+  .price-card h4 { font-size: 1.2rem; margin-bottom: 8px; }
+  .price-card .amount { font-size: 2rem; color: #463a55; font-weight: 700; margin: 8px 0; }
+  .price-card p { font-size: 0.9rem; }
+  .promo-card { flex: 1 1 220px; background: #584a68; color: #ffffff; border-radius: 12px;
+                padding: 26px 24px; text-align: center; }
+  .promo-card h4 { color: #ffffff; font-size: 1.2rem; margin-bottom: 8px; }
+  .promo-card .amount { font-size: 2rem; font-weight: 700; margin: 8px 0; }
+  .promo-card p { font-size: 0.9rem; margin-bottom: 16px; }
+  .promo-card .btn { background: #ffffff; color: #463a55; }
+  .visit .wrap { display: flex; gap: 48px; flex-wrap: wrap; }
+  .visit-info { flex: 1 1 300px; }
+  .visit-info p { margin-bottom: 10px; }
+  .signup { flex: 1 1 300px; background: #ffffff; border-radius: 12px; padding: 26px; }
+  .signup label { display: block; font-size: 0.9rem; margin-bottom: 6px; font-weight: 600; }
+  .signup input { width: 100%; padding: 10px 12px; border: 1px solid #cfc6b4; border-radius: 8px;
+                  font-size: 0.95rem; color: #3a3145; background: #ffffff; margin-bottom: 14px; }
+  footer.site { background: #463a55; color: #efe9f5; padding: 32px 0; margin-top: 24px; }
+  footer.site .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 18px; }
+  footer.site p { font-size: 0.9rem; }
+  footer.site a { color: #efe9f5; }
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="index.html">Moonrise Yoga</a>
+    <nav>
+      <ul>
+        <li><a href="#classes">Classes</a></li>
+        <li><a href="#schedule">Schedule</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#visit">Visit</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <h1>Moonrise Yoga</h1>
+        <p class="hero-sub">Slow down. Breathe deep. Begin again.</p>
+        <p class="intro">A neighborhood studio in Willow Creek offering small, unhurried classes
+          for every body and every level of experience. No mirrors, no pressure — just warm light,
+          quiet music, and room to breathe.</p>
+        <a class="btn" href="#pricing">See pricing &amp; passes</a>
+      </div>
+      <img src="images/warrior-pose.svg" alt="Illustration of a person holding warrior two pose on a purple mat at sunrise">
+    </div>
+  </div>
+  <section id="classes">
+    <div class="wrap">
+      <h2>Our classes</h2>
+      <div class="card-row">
+        <div class="class-card">
+          <img src="images/tree-pose.svg">
+          <div class="pad">
+            <h3>Vinyasa Flow</h3>
+            <p>A steady, breath-led sequence that builds heat and balance. Expect standing
+               flows, gentle inversions, and a long, well-earned rest. All levels welcome.</p>
+          </div>
+        </div>
+        <div class="class-card">
+          <img src="images/meditation.svg">
+          <div class="pad">
+            <h3>Candlelight Restorative</h3>
+            <p>Our slowest evening class. Supported postures held for several minutes,
+               guided breathing, and a short seated meditation under soft candlelight.</p>
+          </div>
+        </div>
+        <div class="class-card">
+          <img src="images/studio.svg" alt="Illustration of the studio interior with an arched window, rolled mats, and potted plants">
+          <div class="pad">
+            <h3>Beginner Foundations</h3>
+            <p>A four-week introduction to the essential postures, taught slowly and with
+               plenty of props. Perfect if you have never stepped on a mat before.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="schedule">
+    <div class="wrap">
+      <h2>Weekly schedule</h2>
+      <table>
+        <tr><th>Day</th><th>Morning</th><th>Evening</th></tr>
+        <tr><td>Monday</td><td>7:00 am — Vinyasa Flow</td><td>6:30 pm — Candlelight Restorative</td></tr>
+        <tr><td>Wednesday</td><td>7:00 am — Vinyasa Flow</td><td>6:00 pm — Beginner Foundations</td></tr>
+        <tr><td>Friday</td><td>9:30 am — Gentle Flow</td><td>5:30 pm — Vinyasa Flow</td></tr>
+        <tr><td>Saturday</td><td>8:30 am — Community Class ($8)</td><td>—</td></tr>
+        <tr><td>Sunday</td><td>10:00 am — Slow Sunday Stretch</td><td>7:00 pm — Candlelight Restorative</td></tr>
+      </table>
+    </div>
+  </section>
+  <section id="testimonials">
+    <div class="wrap">
+      <img class="divider" src="images/lotus.svg" alt="">
+      <h2>What students say</h2>
+      <div class="slider">
+        <button class="slide-btn prev" type="button"><i></i></button>
+        <div class="slides">
+          <blockquote>
+            <p>“I walked in nervous and walked out lighter. Dana's beginner series is the
+               kindest introduction to yoga I could have asked for.”</p>
+            <p class="quote-author">— Priya S., member since 2017</p>
+          </blockquote>
+          <blockquote>
+            <p>“The candlelight class on Sundays is the reset button my week needs. I sleep
+               better every single time.”</p>
+            <p class="quote-author">— Marcus T., member since 2018</p>
+          </blockquote>
+          <blockquote>
+            <p>“Small classes, real attention, zero attitude. This studio feels like it was
+               built for actual humans.”</p>
+            <p class="quote-author">— Elena R., drop-in regular</p>
+          </blockquote>
+        </div>
+        <button class="slide-btn next" type="button"><i></i></button>
+      </div>
+    </div>
+  </section>
+  <section id="pricing">
+    <div class="wrap">
+      <h2>Pricing &amp; passes</h2>
+      <div class="price-row">
+        <div class="price-card">
+          <h4>Drop-in</h4>
+          <p class="amount">$18</p>
+          <p>One class, any style. Mats and props always included.</p>
+        </div>
+        <div class="price-card">
+          <h4>10-class pass</h4>
+          <p class="amount">$150</p>
+          <p>Valid for six months. Shareable with one household member.</p>
+        </div>
+        <div class="price-card">
+          <h4>Monthly unlimited</h4>
+          <p class="amount">$95</p>
+          <p>Every class, every week. Pause anytime — no contracts.</p>
+        </div>
+        <div class="promo-card" aria-hidden="true">
+          <h4>New-student special</h4>
+          <p class="amount">$59</p>
+          <p>30 days of unlimited classes for first-time visitors.</p>
+          <a class="btn" href="#visit">Book now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="visit" class="visit">
+    <div class="wrap">
+      <div class="visit-info">
+        <h2>Visit the studio</h2>
+        <p>412 Juniper Lane, Suite 2<br>Willow Creek, OR 97401</p>
+        <p>Phone: <a href="tel:+15550142871">(555) 014-2871</a></p>
+        <p>Email: <a href="mailto:hello@moonriseyoga.example">hello@moonriseyoga.example</a></p>
+        <p>Doors open 15 minutes before each class. Street parking on Juniper Lane is free
+           after 5 pm; the Birch Street garage is a two-minute walk.</p>
+      </div>
+      <form class="signup">
+        <label for="email">Get the monthly schedule by email</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com">
+        <button class="btn" type="submit">Sign up</button>
+      </form>
+    </div>
+  </section>
+</main>
+<footer class="site">
+  <div class="wrap">
+    <p>© 2019 Moonrise Yoga · 412 Juniper Lane, Willow Creek, OR</p>
+    <p><a href="tel:+15550142871">(555) 014-2871</a> · Mon–Sun, first class 7:00 am</p>
+  </div>
+</footer>
+</body>
+</html>

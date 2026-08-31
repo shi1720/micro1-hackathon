@@ -1,0 +1,14 @@
+{
+  "name": "Moonrise Yoga",
+  "kind": "standard",
+  "pages": ["index.html"],
+  "expected": { "wcagNodes": 10, "bestPracticeNodes": 1 },
+  "seeded": [
+    { "rule": "color-contrast", "count": 4, "where": "hero subtitle + three testimonial attributions (sage on cream/white)" },
+    { "rule": "button-name", "count": 2, "where": "testimonial slider prev/next arrow buttons (CSS chevrons, no text)" },
+    { "rule": "image-alt", "count": 2, "where": "Vinyasa Flow and Candlelight Restorative class-card photos" },
+    { "rule": "aria-hidden-focus", "count": 1, "where": "new-student promo card is aria-hidden but contains the Book now link" },
+    { "rule": "html-lang-valid", "count": 1, "where": "html element has lang=\"english\"" },
+    { "rule": "heading-order", "count": 1, "where": "pricing cards jump from h2 to h4 (best practice)" }
+  ]
+}

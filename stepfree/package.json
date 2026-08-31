@@ -1,0 +1,25 @@
+{
+  "name": "stepfree",
+  "version": "0.1.0",
+  "description": "StepFree — the agentic accessibility engineer: scan, fix, verify, prove",
+  "scripts": {
+    "test": "node eval/selftest.mjs",
+    "selftest": "node eval/selftest.mjs",
+    "scan": "node src/cli.mjs scan",
+    "fix": "node src/cli.mjs fix",
+    "verify-fixtures": "node eval/run-eval.mjs verify-fixtures",
+    "eval": "node eval/run-eval.mjs"
+  },
+  "keywords": [],
+  "author": "Shivam Gupta",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "^0.3.251",
+    "@axe-core/playwright": "^4.13.0",
+    "pixelmatch": "^7.2.0",
+    "playwright": "^1.62.1",
+    "pngjs": "^7.0.0",
+    "zod": "^4.5.4"
+  }
+}

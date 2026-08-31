@@ -1,0 +1,15 @@
+{
+  "name": "Wildflour Bakery",
+  "kind": "standard",
+  "pages": ["index.html"],
+  "expected": { "wcagNodes": 11, "bestPracticeNodes": 5 },
+  "seeded": [
+    { "rule": "image-alt", "count": 4, "where": "hero loaf photo + croissant, baguette, and morning-roll gallery cards (fruit tart and sourdough boule have correct alt)" },
+    { "rule": "color-contrast", "count": 5, "where": "italic hero tagline on cream, two fine-print lines in the hours card, two colophon lines in the footer" },
+    { "rule": "link-name", "count": 2, "where": "footer Instagram and Facebook links containing only CSS-drawn icons" },
+    { "rule": "heading-order", "count": 1, "where": "sections jump from the hero h1 straight to h3" },
+    { "rule": "landmark-one-main", "count": 1, "where": "page has header and footer but no main element" },
+    { "rule": "region", "count": 3, "where": "story, gallery, and visit sections sit outside any landmark" }
+  ],
+  "beyondScanner": []
+}
