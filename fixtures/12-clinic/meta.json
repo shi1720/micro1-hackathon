@@ -1,0 +1,17 @@
+{
+  "name": "Lakeside Family Medicine",
+  "kind": "challenge",
+  "pages": ["index.html"],
+  "expected": { "wcagNodes": 11, "bestPracticeNodes": 0 },
+  "seeded": [
+    { "rule": "label", "count": 3, "where": "contact form name input, phone input, and message textarea titled with bare <span> text instead of <label>" },
+    { "rule": "color-contrast", "count": 3, "where": "light teal (#4d9e99) small text: same-day-visits note under hero CTA, insurance coverage note, footer motto" },
+    { "rule": "image-alt", "count": 3, "where": "ambiguity trio: wave-divider.svg, booking-steps.svg, dr-maya-chen.svg all lack alt (see beyondScanner)" },
+    { "rule": "html-has-lang", "count": 1, "where": "<html> element has no lang attribute" },
+    { "rule": "link-name", "count": 1, "where": "footer Facebook icon-only link (inline SVG, no accessible name)" }
+  ],
+  "beyondScanner": [
+    "Ambiguous image-alt fixes (WCAG 1.1.1): the three missing-alt images all fire the same axe rule but need three different judgments. images/wave-divider.svg is a purely decorative wave between sections — the correct fix is alt=\"\" (marking it decorative); inventing a verbose description would be wrong. images/booking-steps.svg is an informative infographic showing the three steps to book (1 call the front desk, 2 choose a time, 3 come visit) — the correct fix is a real descriptive alt that conveys those steps, not alt=\"\" and not a vague label like 'illustration'. images/dr-maya-chen.svg is a portrait beside Dr. Chen's bio — the correct fix is a brief identifying alt such as \"Dr. Maya Chen\"; the adjacent bio already carries the detail.",
+    "Fake buttons (WCAG 2.1.1 / 4.1.2): 'Request an appointment' in the hero is <div class=\"btn\" onclick=...> and 'Patient portal' in the header nav is <div class=\"portal\" onclick=...>. Both are styled like buttons but have no role, no keyboard focus, and no key handling — invisible to axe because divs with click handlers are not checked. They should be a real <button> (scroll action) and a real link (navigation)."
+  ]
+}

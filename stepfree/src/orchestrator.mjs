@@ -37,7 +37,8 @@ export async function fixSite({ siteDir, outDir, stage = 'final', model = DEFAUL
   rmSync(outDir, { recursive: true, force: true });
   mkdirSync(outDir, { recursive: true });
   const workdir = join(outDir, 'site');
-  cpSync(siteDir, workdir, { recursive: true });
+  // meta.json documents the seeded ground truth — agents must never see it.
+  cpSync(siteDir, workdir, { recursive: true, filter: (src) => !src.endsWith('meta.json') });
   const evidenceDir = join(outDir, 'evidence');
   const trajDir = join(outDir, 'trajectories');
   mkdirSync(evidenceDir, { recursive: true });

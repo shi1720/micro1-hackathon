@@ -8,7 +8,8 @@ export async function runBaseline({ siteDir, outDir, model = DEFAULT_MODEL }) {
   rmSync(outDir, { recursive: true, force: true });
   mkdirSync(outDir, { recursive: true });
   const workdir = join(outDir, 'site');
-  cpSync(siteDir, workdir, { recursive: true });
+  // meta.json documents the seeded ground truth — the model must never see it.
+  cpSync(siteDir, workdir, { recursive: true, filter: (src) => !src.endsWith('meta.json') });
   const trajDir = join(outDir, 'trajectories');
   mkdirSync(trajDir, { recursive: true });
 

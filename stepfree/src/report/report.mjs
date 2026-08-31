@@ -84,7 +84,11 @@ function img64(path) {
 
 function renderHtml({ ledger, stats, prose, outDir }) {
   const date = new Date(ledger.startedAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-  const site = ledger.siteDir.split('/').pop();
+  let site = ledger.siteDir.split('/').pop();
+  try {
+    const meta = JSON.parse(readFileSync(join(ledger.siteDir, 'meta.json'), 'utf8'));
+    if (meta.name) site = meta.name;
+  } catch { /* no meta.json — keep directory name */ }
   const pct = stats.wcagBefore ? Math.round(((stats.wcagBefore - stats.wcagAfter) / stats.wcagBefore) * 100) : 100;
 
   const pageRows = ledger.pages.map((p) => {
@@ -117,7 +121,7 @@ function renderHtml({ ledger, stats, prose, outDir }) {
 
   const reviewRows = ledger.reviewQueue.map((i, n) => `
     <article class="review-item">
-      <h4>${n + 1}. ${esc(i.issue)}</h4>
+      <h3>${n + 1}. ${esc(i.issue)}</h3>
       <p class="review-meta"><span>Page: <code>${esc(i.page)}</code></span> <span>WCAG: ${esc(i.wcag)}</span> <span>Where: <code>${esc(String(i.selector).slice(0, 120))}</code></span> <span class="conf conf-${i.confidence}">confidence: ${i.confidence}</span></p>
       <p class="review-fix"><strong>Proposed fix:</strong></p>
       <pre>${esc(i.proposedFix)}</pre>
@@ -159,6 +163,7 @@ function renderHtml({ ledger, stats, prose, outDir }) {
   code { font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size:.92em; background:var(--soft); padding:1px 5px; border-radius:4px; }
   pre { background:#20241f0d; border:1px solid var(--line); border-radius:8px; padding:12px 14px; overflow-x:auto; font-size:13px; font-family: ui-monospace, Menlo, monospace; white-space:pre-wrap; }
   .review-item { border:1px solid var(--line); border-left:4px solid var(--warn); border-radius:8px; padding:6px 18px 14px; margin:16px 0; background:#fff; }
+  .review-item h3 { font-size:17px; }
   .review-meta { font-family: ui-sans-serif, system-ui, sans-serif; font-size:13px; display:flex; flex-wrap:wrap; gap:14px; }
   .conf { font-weight:600; } .conf-high{color:var(--accent);} .conf-medium{color:var(--warn);} .conf-low{color:#933;}
   .method { background:var(--soft); border-radius:10px; padding:18px 22px; font-size:15px; }

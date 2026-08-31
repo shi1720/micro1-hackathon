@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320">
+  <rect width="480" height="320" fill="#d6e9f0"/>
+  <circle cx="416" cy="54" r="28" fill="#f2d98c"/>
+  <rect y="252" width="480" height="68" fill="#9fb87e"/>
+  <path d="M60 252 L60 118 L240 74 L420 118 L420 252 Z" fill="#f4f0e8"/>
+  <path d="M48 122 L240 74 L432 122 L432 136 L240 90 L48 136 Z" fill="#17605c"/>
+  <rect x="84" y="150" width="70 " height="70" rx="4" fill="#8fb0c9"/>
+  <line x1="119" y1="150" x2="119" y2="220" stroke="#f4f0e8" stroke-width="5"/>
+  <line x1="84" y1="185" x2="154" y2="185" stroke="#f4f0e8" stroke-width="5"/>
+  <rect x="326" y="150" width="70" height="70" rx="4" fill="#8fb0c9"/>
+  <line x1="361" y1="150" x2="361" y2="220" stroke="#f4f0e8" stroke-width="5"/>
+  <line x1="326" y1="185" x2="396" y2="185" stroke="#f4f0e8" stroke-width="5"/>
+  <rect x="216" y="160" width="48" height="92" fill="#17605c"/>
+  <circle cx="256" cy="208" r="4" fill="#f2d98c"/>
+  <rect x="206" y="150" width="68" height="10" fill="#c4ddda"/>
+  <rect x="180" y="118" width="120" height="24" rx="4" fill="#ffffff" stroke="#17605c" stroke-width="2"/>
+  <text x="240" y="135" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="600" fill="#17605c">LAKESIDE FAMILY MEDICINE</text>
+  <path d="M216 252 L264 252 L280 320 L200 320 Z" fill="#c9c1b2"/>
+  <path d="M40 252 q-8 -44 22 -64 q8 36 -8 64 Z" fill="#5c8a4f"/>
+  <path d="M440 252 q8 -44 -22 -64 q-8 36 8 64 Z" fill="#5c8a4f"/>
+  <circle cx="130" cy="284" r="14" fill="#6f9e6b"/>
+  <circle cx="350" cy="284" r="14" fill="#6f9e6b"/>
+  <path d="M0 300 q60 -12 120 0 q60 12 120 0 q60 -12 120 0 q60 12 120 0 L480 320 L0 320 Z" fill="#7fb3c9"/>
+</svg>
