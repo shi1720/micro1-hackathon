@@ -46,7 +46,7 @@ Each block: what's on screen, then the words to say verbatim. Record the termina
 
 **[Screen: stepfree/eval/results/summary.md tables, then EVALUATION.md exhibits]**
 
-> Same twelve sites, same model, same evaluator for both systems. On scanner-visible violations: both hit a hundred percent — capability there is saturated, and pretending otherwise would be theater. The separation is in what the scanner can't see. Alt-text truthfulness, judged image-by-image by a stronger vision model: baseline one-point-five out of two, with four outright hallucinations — invented wine glasses, a groundbreaking ceremony that doesn't exist, that silenced phone number. StepFree: FINAL_ALT_SPOKEN, with zero hallucinations. Plus FINAL_REVIEW_SPOKEN scanner-invisible issues found and drafted for human review — fake div buttons, an image-of-text hero — things no automated tool reports at all. Cost per site: about FINAL_COST_SPOKEN of compute, versus three hundred and fifty dollars a page for the manual alternative.
+> Same twelve sites, same model, same evaluator for both systems. On scanner-visible violations: both hit a hundred percent — capability there is saturated, and pretending otherwise would be theater. The separation is in what the scanner can't see. Alt-text truthfulness, judged image-by-image by a stronger vision model: baseline one-point-five out of two, with four outright hallucinations — invented wine glasses, a groundbreaking ceremony that doesn't exist, that silenced phone number. StepFree: one-point-eight out of two, with zero hallucinations. Plus thirty-two scanner-invisible issues found and drafted for human review — fake div buttons, an image-of-text hero — things no automated tool reports at all. Cost per site: about fifty cents of compute, versus three hundred and fifty dollars a page for the manual alternative.
 
 ## 3:50 – 4:25 · The changelog — and what we removed
 
@@ -64,10 +64,10 @@ Each block: what's on screen, then the words to say verbatim. Record the termina
 
 ---
 
-### Numbers to fill before recording (from EVALUATION.md once final measurement lands)
-- FINAL_ALT_SPOKEN — e.g. "one-point-nine out of two"
-- FINAL_REVIEW_SPOKEN — e.g. "eleven"
-- FINAL_COST_SPOKEN — e.g. "a dollar and a half"
+### All numbers in this script are final (from stepfree/eval/results/)
+- alt truthfulness: baseline 1.53 → StepFree 1.80 (zero fabrications)
+- review items: 32, including all 7 planted scanner-invisible traps
+- compute: $5.78 for the 13-page corpus ≈ $0.48/site
 
 ### Editing notes
 - Speed up the long agent run 4–8× with a timer overlay; keep the verification lines readable at 1×.

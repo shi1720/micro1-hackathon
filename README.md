@@ -75,13 +75,13 @@ Full clean-environment walkthrough, including the entire evaluation: **[REPRODUC
 
 | | Baseline (one-shot) | StepFree (final) |
 |---|---|---|
-| WCAG A/AA instances remediated & verified | 134/134 | FINAL_REMEDIATED |
-| Alt-text truthfulness (vision-judged 0–2, Opus judge) | 1.53 — **4 hallucinated/destructive alts** | FINAL_ALT_SCORE |
-| Hidden-content incidents (informative content silenced with `alt=""`) | **1 of 2 runs** — incl. the clinic's booking phone number | FINAL_HIDDEN |
+| WCAG A/AA instances remediated & verified | 134/134 | 134/134 — and **13/13 pages shippable** (clean + undamaged + verified) |
+| Alt-text truthfulness (vision-judged 0–2, Opus judge) | 1.53 — **4 hallucinated/destructive alts** | **1.80** (v3: 1.83) — **zero fabrications in any run**; the only deductions are two decorative-vs-informative judgment calls on menu illustrations whose information is fully present in adjacent text (and which the judge itself scores inconsistently across judging runs — documented in EVALUATION.md) |
+| Hidden-content incidents (informative content silenced with `alt=""`) | **1 of 2 runs** — incl. the clinic's booking phone number | **0** — the image agent must render and look at every image before writing |
 | Run-to-run stability of the above | a coin flip (run 1 silenced the infographic; run 2 didn't) | grounded by construction — perception precedes assertion |
-| Scanner-invisible issues surfaced (images-of-text, fake buttons, keyboard traps) | 0 by definition | FINAL_REVIEW_COUNT, each with a drafted fix |
+| Scanner-invisible issues surfaced (images-of-text, fake buttons, keyboard traps) | 0 by definition | **32** — including **all 7 planted traps** (image-of-text hero, div-soup dropdown, 3 fake `<div>`/`<span>` buttons…), each with a drafted fix |
 | Evidence produced | none — you ship on faith | before/after report, per-fix verification, full agent trajectories |
-| Cost per 13-page corpus (measured) | $2.03 | FINAL_COST |
+| Cost per 13-page corpus (measured) | $2.03 | $5.78 (~$0.48/site) |
 
 The exhibits behind those rows (the invented "two wine glasses", the fabricated groundbreaking ceremony, the silenced infographic with the phone number in it) are in [EVALUATION.md](EVALUATION.md) with the judge's reasoning per image.
 
@@ -97,7 +97,7 @@ Six reproducible configurations, each isolating one mechanism, each measured ide
 
 ## Commercial reality (why this is a company, not a demo)
 
-- **Wedge:** $149 one-time "fix & prove" per site; $49/mo continuous monitoring; $499/mo agency tier (20 sites). Measured COGS ≈ **FINAL_COST_PER_SITE per site run** → >90% gross margin at the wedge price.
+- **Wedge:** $149 one-time "fix & prove" per site; $49/mo continuous monitoring; $499/mo agency tier (20 sites). Measured COGS ≈ **$5.78 (~$0.48/site)_PER_SITE per site run** → >90% gross margin at the wedge price.
 - **Who pays first:** web agencies — they hold thousands of 2019-era SMB sites and already field the "we got a demand letter" call. One agency = hundreds of sites.
 - **Market:** digital-accessibility software heading to ~$1B by 2030; incumbents making $40–50M/yr (AudioEye, accessiBe) prove willingness to pay — for products that *don't fix the code*. The FTC action and 1,000+ suits/year against widget users are the wind at the back of "actually fix it".
 - **Moat:** anyone can prompt a model to fix HTML. The verification stack, the evidence trail, and the honesty posture are what a stranger can trust with their production site — and what survives a legal letter.

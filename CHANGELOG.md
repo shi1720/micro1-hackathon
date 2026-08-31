@@ -74,10 +74,10 @@ A strict gate can't even see the class of change it was built to allow (text rec
 
 **What we tried & why.** (1) A conventions ledger: the first specialist to resolve a color pair or set an alt-text style records it; every later fixer — including on other pages of the site — is instructed to reuse it, so a two-page site gets one accessible palette, not two. (2) A read-only expert reviewer that hunts what axe cannot see (images of text, `<div onclick>` fake buttons, keyboard traps) and may only emit `flag_for_review` items with drafted fixes — it cannot edit. (3) The audit report: deterministic numbers + before/after screenshots, agent-written narrative, honest-scope section.
 
-**Evidence.** FINAL_ROW
-Review lane on the challenge fixtures: FINAL_REVIEW_RESULT
+**Evidence.** 134/134 (100%), 0 introduced, 0 damaged, 13/13 pages shippable; **32 items in the human review queue**; cost $5.78 for the corpus (~$0.48/site), 54 min wall.
+Review lane on the challenge fixtures: the reviewer found **all 7 scanner-invisible traps we planted** — the image-of-text hero (WCAG 1.4.5), the keyboard-dead `<div onclick>` dropdown, the `<span onclick>` fake button, and both fake `<div>` buttons on the clinic — each flagged high-confidence with a copy-pasteable proposed fix, plus legitimate bonus findings we did not plant (missing `autocomplete` for WCAG 1.3.5, a Donate button pointing at the wrong anchor). 7/7 trap recall.
 
-**Decision / learning.** FINAL_LEARNING
+**Decision / learning.** Kept, obviously — this stage is the product. The review lane is where the honest boundary of automation becomes a feature: what cannot be safely automated arrives as a drafted decision instead of a silent guess. And the conventions ledger did its quiet job: the two-page candle shop got one accessible palette, recorded once and reused (see `reports/sample-conventions-08-shelter.json` and the 07-candles trajectories).
 
 ---
 

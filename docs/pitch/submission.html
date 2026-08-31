@@ -64,8 +64,8 @@
     <div class="coverband">
       <div><b>134 / 134</b><span>seeded WCAG violations remediated &amp; independently verified</span></div>
       <div><b>0</b><span>hallucinated image descriptions (the baseline shipped 8 across two runs)</span></div>
-      <div><b>SLOT_REVIEW_TOTAL</b><span>scanner-invisible issues found &amp; drafted for human review</span></div>
-      <div><b>~$SLOT_COST_SITE</b><span>measured compute per site — vs $350–550/page manual remediation</span></div>
+      <div><b>32</b><span>scanner-invisible issues found &amp; drafted for human review</span></div>
+      <div><b>~$0.50</b><span>measured compute per site — vs $350–550/page manual remediation</span></div>
     </div>
     <div class="meta">
       <span><b>Shivam Gupta</b> · micro1 Agentic Workflows Hackathon</span>
@@ -149,12 +149,12 @@
     <div class="quote">On small static pages, the one-shot baseline remediated <b>134/134</b> scanner-detectable instances with zero regressions — frontier-model capability on the <i>scanner-visible</i> layer is saturated, and we say so. The layers that decide whether a real person can use the site are where the systems separate:</div>
     <table>
       <tr><th></th><th>Baseline — one direct prompt</th><th>StepFree — final</th></tr>
-      <tr><td>WCAG A/AA instances remediated &amp; verified</td><td>134/134</td><td class="yes">SLOT_FINAL_REM</td></tr>
-      <tr><td>Alt-text truthfulness (0–2, vision-judged by Claude Opus)</td><td><b>1.53 / 1.37</b> across two runs — <b>4 hallucinated or destructive alts each run</b></td><td class="yes">SLOT_FINAL_ALT — zero hallucinations</td></tr>
+      <tr><td>WCAG A/AA instances remediated &amp; verified</td><td>134/134</td><td class="yes">134/134 · 13/13 pages shippable</td></tr>
+      <tr><td>Alt-text truthfulness (0–2, vision-judged by Claude Opus)</td><td><b>1.53 / 1.37</b> across two runs — <b>4 hallucinated or destructive alts each run</b></td><td class="yes">1.80 (v3: 1.83) — zero hallucinations</td></tr>
       <tr><td>Informative content silenced with <span class="mono">alt=""</span></td><td class="no">1 of 2 runs — including the clinic's booking phone number</td><td class="yes">0 — the image agent must look before writing</td></tr>
-      <tr><td>Scanner-invisible issues surfaced for humans</td><td>0 (by definition)</td><td class="yes">SLOT_REVIEW_TOTAL, each with a drafted fix</td></tr>
+      <tr><td>Scanner-invisible issues surfaced for humans</td><td>0 (by definition)</td><td class="yes">32, each with a drafted fix</td></tr>
       <tr><td>Evidence produced</td><td class="no">none — ship on faith</td><td class="yes">audit report + per-fix verification + full trajectories</td></tr>
-      <tr><td>Measured compute, whole corpus</td><td>$2.03</td><td>$SLOT_FINAL_COST</td></tr>
+      <tr><td>Measured compute, whole corpus</td><td>$2.03</td><td>$5.78 (~$0.48/site)</td></tr>
     </table>
 
     <div class="cols" style="margin-top:4mm">
@@ -174,7 +174,7 @@
           <tr><th></th><th>Human time</th><th>Cost</th></tr>
           <tr><td>Manual remediation</td><td>~28 h</td><td>$4,550–7,150 (at $350–550/page)</td></tr>
           <tr><td>Baseline + due-diligence QA</td><td>~4.3 h</td><td>$2 + QA labor</td></tr>
-          <tr><td><b>StepFree</b></td><td><b>~1 h</b> (review queue + report)</td><td><b>$SLOT_FINAL_COST compute</b></td></tr>
+          <tr><td><b>StepFree</b></td><td><b>~1 h</b> (review queue + report)</td><td><b>$5.78 (~$0.48/site) compute</b></td></tr>
         </table>
         <p style="font-size:7.8pt;color:var(--muted);margin-top:1.5mm">Assumptions stated in docs/research/cost-model.md; primary metric unaffected by them.</p>
       </div>
@@ -195,7 +195,7 @@
       <tr><td><b>v2</b></td><td>deterministic verify loop (re-scan diff, bounded retry)</td><td>134/134; retries fired 0 times on-corpus</td><td>kept — converts "probably fine" into "proven"</td></tr>
       <tr><td><b>v3</b></td><td>5 specialists + knowledge files + contrast math + <b>mandatory image viewing</b></td><td>alt truthfulness <b>1.83, zero hallucinations</b>; silenced infographic 0 → 2</td><td>kept — the load-bearing change</td></tr>
       <tr><td><b>v4</b></td><td>integrity guardrails: word/image inventories, localized pixel diff, auto-rollback</td><td>134/134, 0 rollbacks needed — the reason "0 pages damaged" is a fact, not an assumption</td><td>kept — quiet gates still testify</td></tr>
-      <tr><td><b>final</b></td><td>conventions memory + beyond-scanner review lane + evidence report</td><td>SLOT_FINAL_SUMMARY</td><td>the product</td></tr>
+      <tr><td><b>final</b></td><td>conventions memory + beyond-scanner review lane + evidence report</td><td>134/134 · 32 review items incl. all 7 planted scanner-invisible traps (7/7 recall) · $5.78 corpus</td><td>the product</td></tr>
     </table>
 
     <h3>The experiment we removed: a strict visual-diff gate</h3>
@@ -232,7 +232,7 @@
         </p>
         <ul style="font-size:8.6pt">
           <li>Node 22 · Playwright 1.62 · axe-core (via @axe-core/playwright 4.13) · Claude Agent SDK</li>
-          <li>Full ladder ≈ 2.5–4 h, ≈ $SLOT_LADDER_COST of API compute; single-site demo ≈ 6 min, ≈ $1</li>
+          <li>Full ladder ≈ 2.5–4 h, ≈ $18 of API compute; single-site demo ≈ 6 min, ≈ $1</li>
           <li>All data synthetic &amp; in-repo; scanner + integrity checks fully deterministic; the evaluator refuses to run if fixture ground truth drifts</li>
         </ul>
         <h3>Deliverables in the repository</h3>
@@ -249,7 +249,7 @@
       <div>
         <h3 style="margin-top:0">Why this is a company, not a demo</h3>
         <ul style="font-size:8.8pt">
-          <li><b>Wedge:</b> $149 one-time "fix &amp; prove" per site · $49/mo monitoring · $499/mo agency tier (20 sites). Measured COGS ≈ $SLOT_COST_SITE/site → &gt;90% gross margin.</li>
+          <li><b>Wedge:</b> $149 one-time "fix &amp; prove" per site · $49/mo monitoring · $499/mo agency tier (20 sites). Measured COGS ≈ $0.50/site → &gt;90% gross margin.</li>
           <li><b>First buyers:</b> web agencies — thousands of 2019-era SMB sites, already fielding the demand-letter call.</li>
           <li><b>Market:</b> accessibility software → ~$1B by 2030; incumbents at $40–50M ARR prove willingness to pay — for products that don't fix code. FTC action + 1,000+ suits/yr against widget users are the tailwind for "actually fix it".</li>
           <li><b>Moat:</b> anyone can prompt a model to edit HTML. The verification stack, evidence trail, and honesty posture are what a stranger can trust with production — and what survives a legal letter.</li>
