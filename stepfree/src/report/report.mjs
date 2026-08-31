@@ -44,7 +44,7 @@ function summarize(ledger) {
   return s;
 }
 
-async function writeNarrative({ ledger, stats, workdir, model }) {
+async function writeNarrative({ ledger, stats, workdir, outDir, model }) {
   const input = {
     site: ledger.siteDir.split('/').pop(),
     pages: ledger.pages.map((p) => ({
@@ -58,6 +58,7 @@ async function writeNarrative({ ledger, stats, workdir, model }) {
   };
   const res = await runAgent({
     name: 'reporter', task: 'write report narrative',
+    trajectoryPath: join(outDir, 'trajectories', 'reporter.jsonl'),
     systemPrompt: `You write the narrative sections of a website accessibility remediation report for a small-business owner (not a developer). Tone: clear, direct, professional; no hype, no jargon without a gloss; specific to THIS site's data. You must be honest about limits: automated scanning covers roughly half of accessibility issues, remaining items need their review. Output STRICT JSON only, no markdown fences, with keys: executiveSummary (120-180 words, plain language, mentions the site's own numbers), whatThisMeans (60-100 words on legal/practical significance, mention WCAG 2.2 AA; no legal advice claims), reviewIntro (40-70 words introducing the human-review items and why judgment calls are routed to them), closingRecommendation (50-90 words of concrete next steps).`,
     prompt: `Run data:\n${JSON.stringify(input, null, 2).slice(0, 12000)}`,
     workdir, model, maxTurns: 4, fileTools: [], mcpToolNames: [],

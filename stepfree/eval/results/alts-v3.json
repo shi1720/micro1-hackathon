@@ -1,0 +1,281 @@
+{
+  "stage": "v3",
+  "model": "claude-opus-5",
+  "judgedAt": "2026-08-31T11:47:55.292Z",
+  "pages": [
+    {
+      "fixture": "01-bakery",
+      "page": "index.html",
+      "items": [
+        {
+          "src": "images/hero-loaf.svg",
+          "alt": "Golden-crusted oval loaf resting on a wooden board with wheat stalks",
+          "score": 2,
+          "reason": "Matches the illustration exactly: an oval golden loaf with scored top on a brown wooden board, with wheat stalks flanking it. Concise and useful."
+        },
+        {
+          "src": "images/croissant.svg",
+          "alt": "Flaky golden croissant with layered, curved ends",
+          "score": 2,
+          "reason": "Accurately describes the flat illustration of a golden croissant with curved, layered end lobes; omitting the faint plate behind it is acceptable brevity."
+        },
+        {
+          "src": "images/baguette.svg",
+          "alt": "Diagonally sliced baguette with scored crust, resting on a board",
+          "score": 1,
+          "reason": "\"Diagonally sliced\" misstates the content — the baguette is whole and merely angled diagonally, not cut. Scored crust and resting surface are right, so it is weak rather than wholly wrong."
+        },
+        {
+          "src": "images/cinnamon-roll.svg",
+          "alt": "Spiral cinnamon roll topped with dripping cream-cheese icing",
+          "score": 2,
+          "reason": "Correctly captures the swirled spiral roll with white icing dripping down its sides; concise and contextually right for a bakery item."
+        }
+      ],
+      "costUsd": 0.0693545
+    },
+    {
+      "fixture": "03-trattoria",
+      "page": "index.html",
+      "items": [
+        {
+          "src": "images/spaghetti.svg",
+          "alt": "",
+          "score": 1,
+          "reason": "The image is a recognizable flat illustration of a plate of spaghetti with tomatoes and basil beside a fork — identifiable content that likely signals a pasta section on the menu, not an abstract divider or background flourish. An empty alt hides this from screen reader users; something like 'Illustration of a plate of spaghetti with tomatoes and basil' would be appropriate. Not harmful (nothing false is asserted), but it omits the image's evident key content."
+        },
+        {
+          "src": "images/wine.svg",
+          "alt": "",
+          "score": 1,
+          "reason": "The image clearly depicts a dark green wine bottle with a label next to a glass of red wine, plus a couple of grapes/olives — a meaningful illustration that plausibly heads a wine or drinks section. Empty alt drops that information entirely; it is not an abstract ornament, so silence is only defensible if the section heading fully duplicates it. Weak rather than wrong, since no incorrect content is introduced."
+        }
+      ],
+      "costUsd": 0.040992999999999995
+    },
+    {
+      "fixture": "04-lawfirm",
+      "page": "index.html",
+      "items": [
+        {
+          "src": "images/attorney-harrison.svg",
+          "alt": "Marcus Harrison — request a consultation",
+          "score": 1,
+          "reason": "Image is a flat illustrated portrait of an older man with gray hair, dark navy suit, white shirt and dark red tie. Naming him Marcus Harrison is a reasonable, context-appropriate identification, but the alt adds no visual description and appends '— request a consultation', a call-to-action/destination claim not evident in the image; identical trailing text on both headshots suggests it describes a generic CTA rather than this portrait's actual link (an attorney bio). Useful but weak/potentially misleading."
+        },
+        {
+          "src": "images/attorney-vance.svg",
+          "alt": "Elena Vance — request a consultation",
+          "score": 1,
+          "reason": "Image is a flat illustrated portrait of a woman with long dark hair, gold earrings, a gray-blue jacket and a cream pendant necklace. 'Elena Vance' is a plausible identification for an attorney headshot, but as with item 1 the '— request a consultation' suffix asserts a link purpose not shown in the image and is duplicated verbatim across both portraits, making it generic and possibly inaccurate for the actual destination."
+        }
+      ],
+      "costUsd": 0.0461005
+    },
+    {
+      "fixture": "05-yoga",
+      "page": "index.html",
+      "items": [
+        {
+          "src": "images/tree-pose.svg",
+          "alt": "Illustration of a person balanced in tree pose beside small trees, set against a lavender sunrise circle",
+          "score": 2,
+          "reason": "Image shows a flat illustration of a figure standing in tree pose (one foot to inner thigh, hands overhead) with two small trees on a green ground line and a large pale lavender circle behind. The alt text matches all key elements accurately and concisely; 'sunrise circle' is a mild interpretation but the circle is genuinely present."
+        },
+        {
+          "src": "images/meditation.svg",
+          "alt": "Illustration of a person seated in meditation at night under a crescent moon and stars, flanked by two lit candles",
+          "score": 2,
+          "reason": "Image shows a seated figure in silhouette on a cushion under a night sky with crescent moon and scattered stars, with a lit candle on each side. Alt text accurately captures the subject, night setting, moon/stars and the two candles at appropriate length."
+        }
+      ],
+      "costUsd": 0.0299395
+    },
+    {
+      "fixture": "06-autoshop",
+      "page": "index.html",
+      "items": [
+        {
+          "src": "images/car-lift.svg",
+          "alt": "Illustration of a red car raised on a lift with a technician working beneath it",
+          "score": 2,
+          "reason": "Image shows a red car raised on a two-post lift with a technician standing underneath holding a tool, plus a toolbox and shop lamp. The alt accurately captures the key content (red car on lift, technician beneath) and is appropriately concise for a service illustration."
+        },
+        {
+          "src": "images/oil-change.svg",
+          "alt": "Illustration of an oil can pouring oil over a car",
+          "score": 2,
+          "reason": "Image shows a red oil can with a spout releasing a yellow oil drop, positioned above a dark car silhouette. The alt matches the depicted content and conveys the oil-change concept concisely without hallucinated details."
+        }
+      ],
+      "costUsd": 0.040767
+    },
+    {
+      "fixture": "07-candles",
+      "page": "index.html",
+      "items": [
+        {
+          "src": "images/amber-jar.svg",
+          "alt": "Lit candle in an amber apothecary jar with a kraft label",
+          "score": 2,
+          "reason": "Image shows a flat illustration of a lit candle in an amber/honey-colored apothecary jar with a dark lid and a light rectangular label with text lines; the alt matches the vessel, color, flame and label. 'Kraft label' is a slight stretch (label is cream) but the description is accurate and concise for a product image."
+        },
+        {
+          "src": "images/pine-tin.svg",
+          "alt": "Lit candle in a brushed-steel travel tin beside a pine sprig and pinecone",
+          "score": 2,
+          "reason": "Image shows a lit candle in a grey brushed-metal travel tin with a label, with a small green pine tree on the left and a green sprig with a small brown round pinecone/nut on the right. The alt correctly names the tin, the flame, and the pine and pinecone elements without padding."
+        },
+        {
+          "src": "images/lavender-jar.svg",
+          "alt": "Lit candle in a glass jar flanked by sprigs of lavender",
+          "score": 2,
+          "reason": "Image shows a lit candle in a pale blue-tinted glass jar with a wooden lid and cream label, with purple lavender-like sprigs on both the left and right sides. The alt accurately captures the vessel, the lit flame, and the flanking lavender."
+        }
+      ],
+      "costUsd": 0.0439065
+    },
+    {
+      "fixture": "07-candles",
+      "page": "about.html",
+      "items": [
+        {
+          "src": "images/workshop.svg",
+          "alt": "Illustration of a worker pouring melted wax into jars at a workshop table",
+          "score": 2,
+          "reason": "The flat illustration shows a person at a workshop bench tipping a pitcher of golden wax into a container, with jars/vessels lined up on the table — exactly what the alt text says. It is concise, accurate, and appropriate for an 'Our Story' candle-making page."
+        }
+      ],
+      "costUsd": 0.020224
+    },
+    {
+      "fixture": "08-shelter",
+      "page": "index.html",
+      "items": [
+        {
+          "src": "images/dog-biscuit.svg",
+          "alt": "Illustration of Biscuit, a brown hound-mix dog with floppy ears, wearing a red collar",
+          "score": 2,
+          "reason": "Matches the image exactly: a flat-illustration brown hound-type dog face with long floppy ears and a red collar (with gold tag). Concise, names the pet, and is appropriate for an adoption listing context."
+        },
+        {
+          "src": "images/cat-luna.svg",
+          "alt": "Illustration of Luna, a black cat with green eyes, wearing a purple collar",
+          "score": 2,
+          "reason": "Accurate and specific: the illustration shows a black cat face with bright green eyes, pink inner ears and a purple collar with a round tag. Names the pet and captures the distinguishing features without padding."
+        },
+        {
+          "src": "images/rabbit-clover.svg",
+          "alt": "Illustration of Clover, a gray lop-eared rabbit",
+          "score": 2,
+          "reason": "Correct: a gray rabbit illustration with drooping lop ears, whiskers and pink nose. Naming Clover plus color and ear type conveys the key content; the small decorative leaf/heart accents are reasonably omitted."
+        }
+      ],
+      "costUsd": 0.0410005
+    },
+    {
+      "fixture": "09-salon",
+      "page": "index.html",
+      "items": [
+        {
+          "src": "images/stylist-ava.svg",
+          "alt": "Portrait of Ava Moreau with long brown hair and gold hoop earrings, wearing a mauve top",
+          "score": 2,
+          "reason": "The flat illustration shows a woman with long brown hair, small gold hoop earrings, and a mauve/rose top on a pink background — the alt text matches every visible detail and is concise. Naming the stylist (Ava Moreau) is appropriate for a team/staff portrait context. Only nitpick is that it's an illustrated avatar rather than a photo, which doesn't materially mislead."
+        },
+        {
+          "src": "images/products.svg",
+          "alt": "Salon shelf with scissors, a comb, and bottles of shampoo and styling product",
+          "score": 2,
+          "reason": "The image depicts a shelf holding open scissors, a black comb, a teal pump/spray bottle and a pink bottle — the alt accurately conveys the tools and product bottles without over-describing this supporting decorative-ish salon graphic. Labeling the bottles shampoo/styling product is a reasonable inference consistent with the salon context."
+        }
+      ],
+      "costUsd": 0.034897
+    },
+    {
+      "fixture": "10-news",
+      "page": "index.html",
+      "items": [
+        {
+          "src": "images/bridge.svg",
+          "alt": "Arched Maple Street bridge with a crane and traffic cones staged at the near approach",
+          "score": 2,
+          "reason": "The flat illustration shows an arched dark bridge over water with a yellow crane on the deck and three orange traffic cones clustered at the left-hand approach; the alt text names each of these key elements accurately and concisely."
+        },
+        {
+          "src": "images/market.svg",
+          "alt": "Two farmers market stalls with fruit displays and a shopper carrying a basket",
+          "score": 2,
+          "reason": "Matches the image: two awninged market stalls (red and green), crates of orange and green fruit plus round yellow/pink produce, and a figure with a basket standing between them. Accurate and appropriately brief."
+        },
+        {
+          "src": "images/library.svg",
+          "alt": "Columned library building with a wheelbarrow and shrubs beside the entrance",
+          "score": 2,
+          "reason": "Correctly conveys the columned civic/library facade with steps and door, the shrubs flanking the entrance, and the small yellow wheeled cart at right; 'wheelbarrow' is a minor stretch for the two-wheeled cart but not misleading."
+        }
+      ],
+      "costUsd": 0.059709
+    },
+    {
+      "fixture": "11-venue",
+      "page": "index.html",
+      "items": [
+        {
+          "src": "images/hero-title.svg",
+          "alt": "Host Unforgettable Events at The Foundry",
+          "score": 2,
+          "reason": "The image is a decorative title graphic whose only content is the text 'HOST UNFORGETTABLE EVENTS / at The Foundry' with a diamond rule; the alt text transcribes that text accurately and concisely, which is the correct treatment for a text-as-image heading."
+        },
+        {
+          "src": "images/loft.svg",
+          "alt": "The Loft's brick-walled sitting area with a green sofa and two tall arched windows",
+          "score": 2,
+          "reason": "Matches the illustration: a brick-walled interior with a green sofa (red and yellow cushions), two tall arched windows, plus a pendant light and rug. Accurate, specific, and appropriately concise; minor omissions (pendant lamp, rug) are not key content."
+        },
+        {
+          "src": "images/courtyard.svg",
+          "alt": "The Courtyard at night with string lights, planters, and cocktail tables under a full moon",
+          "score": 2,
+          "reason": "Accurately reflects the night-time outdoor scene: strung café lights between posts, potted plants on a table, round-topped cocktail tables, and a full moon in a starry sky. Concise and conveys the venue's evening atmosphere."
+        }
+      ],
+      "costUsd": 0.044991
+    },
+    {
+      "fixture": "12-clinic",
+      "page": "index.html",
+      "items": [
+        {
+          "src": "images/wave-divider.svg",
+          "alt": "",
+          "score": 2,
+          "reason": "Image is a purely decorative teal wave divider with no informational content; an empty alt is the correct choice and keeps it out of the accessibility tree."
+        },
+        {
+          "src": "images/booking-steps.svg",
+          "alt": "Three steps to get started: 1) Call the front desk at (555) 014-6090, 2) Choose a time, most visits scheduled within two weeks, 3) Come visit us at 18 Lakeshore Drive",
+          "score": 2,
+          "reason": "Accurately transcribes the three-step infographic including step labels, phone number, 'most visits within two weeks', and the address; conveys all the text content baked into the graphic."
+        },
+        {
+          "src": "images/dr-maya-chen.svg",
+          "alt": "Dr. Maya Chen, smiling in a white coat with a stethoscope and ID badge",
+          "score": 2,
+          "reason": "Matches the illustrated portrait: a smiling woman with dark bob hair in a white coat with a stethoscope and ID badge; concise and appropriate for a staff bio context (naming the person is right here)."
+        }
+      ],
+      "costUsd": 0.041757
+    }
+  ],
+  "aggregate": {
+    "judged": 30,
+    "mean": 1.833,
+    "dist": {
+      "0": 0,
+      "1": 5,
+      "2": 25
+    },
+    "costUsd": 0.514
+  }
+}

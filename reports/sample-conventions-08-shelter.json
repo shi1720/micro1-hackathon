@@ -1,0 +1,27 @@
+{
+  "landmark:donate-band": {
+    "value": "Moved .donate-band div inside <main>, right after the last <section>, instead of leaving it as a sibling between </main> and <footer>.",
+    "rationale": "The donate call-to-action is part of the primary page content, not header/footer chrome, so it belongs inside the main landmark to satisfy the 'region' rule without altering visual layout or content order.",
+    "recordedAt": "2026-08-31T11:56:38.020Z"
+  },
+  "alt-style:pet-avatar-illustrations": {
+    "value": "\"Cartoon portrait of [Name], a [color/notable feature] [species] [wearing a [color] collar, if present]\"",
+    "rationale": "Pet card images are decorative-illustration avatars carrying identity info not otherwise stated (color, breed cues, collar); concise consistent phrasing avoids redundant 'image of' and matches the informative-image style used across the adoption grid.",
+    "recordedAt": "2026-08-31T11:57:04.545Z"
+  },
+  "label-style:field-name-div-to-label": {
+    "value": "Converted `.field-name` divs into `<label class=\"field-name\" for=\"...\">` elements associated via id, rather than adding aria-label, to preserve visible styling and satisfy WCAG 3.3.2.",
+    "rationale": "Nearby text already visually served as a label; converting it to a real <label> keeps the design identical while fixing the missing accessible name.",
+    "recordedAt": "2026-08-31T11:57:31.935Z"
+  },
+  "widget:consent-checkbox-div-to-input": {
+    "value": "Replaced `<div class=\"consent\" role=\"checkbox\" tabindex=\"0\"><span class=\"box\"></span>...</div>` with a native `<input type=\"checkbox\" id=\"consent\" class=\"box\"><label for=\"consent\">...</label>` pair, restyled via CSS (appearance:none on .box, .consent label overrides for font-weight/size/color) to preserve the original visual appearance exactly.",
+    "rationale": "The page has no JavaScript, so the fake role=\"checkbox\" div had no keyboard/state behavior to preserve; per guidance the native element is the correct fix over patching in aria-checked, and it also gives real keyboard/form functionality that was previously missing entirely.",
+    "recordedAt": "2026-08-31T11:58:32.684Z"
+  },
+  "color:#8ab98f-on-#ffffff": {
+    "value": "replace foreground with #4e8254",
+    "rationale": "Original brand green #8ab98f on white only achieved 2.23:1 contrast for the .pet-age text; darkening to #4e8254 (same hue, deltaL 0.225) reaches 4.52:1, meeting WCAG AA 4.5:1 for normal text while preserving the brand green look.",
+    "recordedAt": "2026-08-31T11:58:57.880Z"
+  }
+}

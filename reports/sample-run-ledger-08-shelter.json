@@ -1,0 +1,228 @@
+{
+  "product": "StepFree",
+  "stage": "final",
+  "stageLabel": "StepFree (memory, human review lane, report)",
+  "model": "claude-sonnet-5",
+  "siteDir": "/home/user/micro1-hackathon/fixtures/08-shelter",
+  "startedAt": "2026-08-31T11:56:20.480Z",
+  "pages": [
+    {
+      "file": "index.html",
+      "rounds": [
+        {
+          "round": 1,
+          "agent": "structure",
+          "costUsd": 0.05544160000000001,
+          "turns": 5,
+          "durationMs": 19521,
+          "verify": {
+            "fixed": 1,
+            "introduced": 0,
+            "assignedRemaining": 0
+          },
+          "integrity": {
+            "ok": true,
+            "hardFailures": [],
+            "advisories": [],
+            "metrics": {
+              "missingWords": 0,
+              "addedWords": 0,
+              "removedImages": 0,
+              "pixelDiffRatio": 0,
+              "outsideRatio": 0
+            }
+          }
+        },
+        {
+          "round": 1,
+          "agent": "media",
+          "costUsd": 0.050737800000000007,
+          "turns": 10,
+          "durationMs": 25166,
+          "verify": {
+            "fixed": 3,
+            "introduced": 0,
+            "assignedRemaining": 0
+          },
+          "integrity": {
+            "ok": true,
+            "hardFailures": [],
+            "advisories": [],
+            "metrics": {
+              "missingWords": 0,
+              "addedWords": 0,
+              "removedImages": 0,
+              "pixelDiffRatio": 0,
+              "outsideRatio": 0
+            }
+          }
+        },
+        {
+          "round": 1,
+          "agent": "forms",
+          "costUsd": 0.0647022,
+          "turns": 7,
+          "durationMs": 23111,
+          "verify": {
+            "fixed": 4,
+            "introduced": 0,
+            "assignedRemaining": 0
+          },
+          "integrity": {
+            "ok": true,
+            "hardFailures": [],
+            "advisories": [],
+            "metrics": {
+              "missingWords": 0,
+              "addedWords": 0,
+              "removedImages": 0,
+              "pixelDiffRatio": 0,
+              "outsideRatio": 0
+            }
+          }
+        },
+        {
+          "round": 1,
+          "agent": "aria",
+          "costUsd": 0.12386960000000001,
+          "turns": 9,
+          "durationMs": 57356,
+          "verify": {
+            "fixed": 1,
+            "introduced": 0,
+            "assignedRemaining": 0
+          },
+          "integrity": {
+            "ok": true,
+            "hardFailures": [],
+            "advisories": [],
+            "metrics": {
+              "missingWords": 0,
+              "addedWords": 0,
+              "removedImages": 0,
+              "pixelDiffRatio": 0,
+              "outsideRatio": 0
+            }
+          }
+        },
+        {
+          "round": 1,
+          "agent": "contrast",
+          "costUsd": 0.03878040000000001,
+          "turns": 7,
+          "durationMs": 19687,
+          "verify": {
+            "fixed": 3,
+            "introduced": 0,
+            "assignedRemaining": 0
+          },
+          "integrity": {
+            "ok": true,
+            "hardFailures": [],
+            "advisories": [],
+            "metrics": {
+              "missingWords": 0,
+              "addedWords": 0,
+              "removedImages": 0,
+              "pixelDiffRatio": 0,
+              "outsideRatio": 0
+            }
+          }
+        }
+      ],
+      "flagged": [],
+      "before": {
+        "wcag": {
+          "rules": 5,
+          "nodes": 11
+        },
+        "bestPractice": {
+          "rules": 1,
+          "nodes": 1
+        },
+        "incomplete": 0
+      },
+      "after": {
+        "wcag": {
+          "rules": 0,
+          "nodes": 0
+        },
+        "bestPractice": {
+          "rules": 0,
+          "nodes": 0
+        },
+        "incomplete": 0
+      },
+      "outcome": {
+        "fixed": 12,
+        "introduced": 0,
+        "remaining": 0
+      },
+      "finalIntegrity": {
+        "ok": true,
+        "hardFailures": [],
+        "metrics": {
+          "missingWords": 0,
+          "addedWords": 0,
+          "removedImages": 0,
+          "pixelDiffRatio": 0,
+          "outsideRatio": 0
+        }
+      }
+    }
+  ],
+  "conventions": {
+    "landmark:donate-band": {
+      "value": "Moved .donate-band div inside <main>, right after the last <section>, instead of leaving it as a sibling between </main> and <footer>.",
+      "rationale": "The donate call-to-action is part of the primary page content, not header/footer chrome, so it belongs inside the main landmark to satisfy the 'region' rule without altering visual layout or content order.",
+      "recordedAt": "2026-08-31T11:56:38.020Z"
+    },
+    "alt-style:pet-avatar-illustrations": {
+      "value": "\"Cartoon portrait of [Name], a [color/notable feature] [species] [wearing a [color] collar, if present]\"",
+      "rationale": "Pet card images are decorative-illustration avatars carrying identity info not otherwise stated (color, breed cues, collar); concise consistent phrasing avoids redundant 'image of' and matches the informative-image style used across the adoption grid.",
+      "recordedAt": "2026-08-31T11:57:04.545Z"
+    },
+    "label-style:field-name-div-to-label": {
+      "value": "Converted `.field-name` divs into `<label class=\"field-name\" for=\"...\">` elements associated via id, rather than adding aria-label, to preserve visible styling and satisfy WCAG 3.3.2.",
+      "rationale": "Nearby text already visually served as a label; converting it to a real <label> keeps the design identical while fixing the missing accessible name.",
+      "recordedAt": "2026-08-31T11:57:31.935Z"
+    },
+    "widget:consent-checkbox-div-to-input": {
+      "value": "Replaced `<div class=\"consent\" role=\"checkbox\" tabindex=\"0\"><span class=\"box\"></span>...</div>` with a native `<input type=\"checkbox\" id=\"consent\" class=\"box\"><label for=\"consent\">...</label>` pair, restyled via CSS (appearance:none on .box, .consent label overrides for font-weight/size/color) to preserve the original visual appearance exactly.",
+      "rationale": "The page has no JavaScript, so the fake role=\"checkbox\" div had no keyboard/state behavior to preserve; per guidance the native element is the correct fix over patching in aria-checked, and it also gives real keyboard/form functionality that was previously missing entirely.",
+      "recordedAt": "2026-08-31T11:58:32.684Z"
+    },
+    "color:#8ab98f-on-#ffffff": {
+      "value": "replace foreground with #4e8254",
+      "rationale": "Original brand green #8ab98f on white only achieved 2.23:1 contrast for the .pet-age text; darkening to #4e8254 (same hue, deltaL 0.225) reaches 4.52:1, meeting WCAG AA 4.5:1 for normal text while preserving the brand green look.",
+      "recordedAt": "2026-08-31T11:58:57.880Z"
+    }
+  },
+  "reviewQueue": [
+    {
+      "page": "index.html",
+      "selector": ".donate-band a.btn (text \"Donate\", href=\"#inquiry\")",
+      "issue": "The \"Donate\" call-to-action in the yellow donate band doesn't lead anywhere donation-related — it points to #inquiry, the same \"Adoption inquiry\" contact form used by \"Meet the animals\" and \"Ask about Biscuit/Luna/Clover\". That form has no donation amount field, no payment step, and no mention of donating. A user who activates \"Donate\" (via mouse, keyboard, or screen reader) lands on an unrelated adoption-inquiry form with zero indication their intended action (giving money) is even possible there. This is a link-purpose/expected-behavior mismatch that a scanner cannot detect because the link has perfectly valid, non-empty text — the problem is semantic, not structural.",
+      "wcag": "2.4.4 Link Purpose (In Context)",
+      "proposedFix": "Either (a) point href=\"#inquiry\" to a real donation page/payment processor (e.g. a hosted Stripe/PayPal/GiveButter donate page) if one exists, or (b) if donations are meant to go through this same contact form, relabel the section/form so the mismatch is honest, e.g. add a short line above the submit button or a dedicated donate form: '<a class=\"btn\" href=\"https://givebutter.com/secondchancecf\" target=\"_blank\" rel=\"noopener\">Donate</a>'. This needs a human decision because it depends on whether the rescue actually has a donation processor set up — I can't guess the real URL.",
+      "confidence": "medium",
+      "flaggedAt": "2026-08-31T12:00:44.057Z"
+    },
+    {
+      "page": "index.html",
+      "selector": "#name, #phone, #email inputs in .inquiry-panel form",
+      "issue": "The \"Full name\", \"Phone\", and \"Email\" inputs have no `autocomplete` attribute. Axe's autocomplete-valid rule only flags an *invalid* autocomplete value — it does not require one to be present, so this passes automated scanning even though the inputs clearly map to standard personal-information fields. Without it, browser/AT autofill and personalization features (used heavily by people with motor or cognitive disabilities to avoid retyping this exact kind of data) don't kick in for this form.",
+      "wcag": "1.3.5 Identify Input Purpose (AA)",
+      "proposedFix": "Add matching autocomplete attributes:\n&lt;input type=\"text\" id=\"name\" name=\"name\" autocomplete=\"name\"&gt;\n&lt;input type=\"tel\" id=\"phone\" name=\"phone\" autocomplete=\"tel\"&gt;\n&lt;input type=\"email\" id=\"email\" name=\"email\" autocomplete=\"email\"&gt;",
+      "confidence": "high",
+      "flaggedAt": "2026-08-31T12:00:47.581Z"
+    }
+  ],
+  "totals": {
+    "costUsd": 0.5138008000000001,
+    "agentRuns": 6,
+    "rollbacks": 0,
+    "retries": 0
+  },
+  "finishedAt": "2026-08-31T12:00:59.718Z"
+}

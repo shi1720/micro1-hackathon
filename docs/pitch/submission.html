@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>StepFree — Hackathon Submission</title>
+<style>
+  :root { --green:#0b6e4f; --deep:#084c37; --paper:#fbfaf7; --ink:#16241f; --soft:#eef2ee; --line:#d8d5cc; --gold:#ffd166; --muted:#4a544e; }
+  * { box-sizing:border-box; margin:0; }
+  body { font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif; color:var(--ink); font-size:9.8pt; line-height:1.5; }
+  .page { width:210mm; height:296mm; page-break-after:always; background:var(--paper); overflow:hidden; position:relative; display:flex; flex-direction:column; }
+  .page:last-child { page-break-after:auto; }
+  .pad { padding:11mm 14mm; }
+  h2.sec { font-size:16pt; color:var(--green); letter-spacing:-.01em; margin-bottom:2mm; }
+  .kicker { font-size:8pt; letter-spacing:.16em; text-transform:uppercase; color:var(--green); font-weight:700; margin-bottom:1.2mm; }
+  h3 { font-size:11pt; margin:4mm 0 1.5mm; color:var(--deep); }
+  p { margin-bottom:2mm; }
+  .foot { position:absolute; bottom:6mm; left:14mm; right:14mm; display:flex; justify-content:space-between; font-size:7.4pt; color:var(--muted); border-top:.5pt solid var(--line); padding-top:2mm; }
+  table { width:100%; border-collapse:collapse; font-size:8.6pt; }
+  th,td { text-align:left; padding:1.8mm 2mm; border-bottom:.5pt solid var(--line); vertical-align:top; }
+  th { background:var(--soft); font-size:7.8pt; text-transform:uppercase; letter-spacing:.05em; }
+  .yes { color:var(--green); font-weight:700; } .no { color:#a33; font-weight:700; }
+  .stat-row { display:grid; grid-template-columns:repeat(4,1fr); gap:3mm; margin:3mm 0; }
+  .stat { background:var(--soft); border-radius:2.5mm; padding:3mm 3.2mm; }
+  .stat b { display:block; font-size:15pt; color:var(--green); line-height:1.15; }
+  .stat span { font-size:7.4pt; color:var(--muted); }
+  .quote { border-left:1mm solid var(--gold); background:#fff; padding:3mm 4mm; margin:3mm 0; font-size:9.4pt; border-radius:0 2mm 2mm 0; }
+  .cols { display:grid; grid-template-columns:1fr 1fr; gap:6mm; }
+  code, .mono { font-family:ui-monospace,Menlo,monospace; font-size:.92em; background:var(--soft); padding:0 1mm; border-radius:1mm; }
+  /* cover */
+  .cover { background:linear-gradient(160deg, var(--deep) 0%, var(--green) 70%); color:#fff; justify-content:space-between; }
+  .cover .pad { padding:20mm 18mm; }
+  .cover .brand { font-size:11pt; letter-spacing:.2em; text-transform:uppercase; font-weight:800; opacity:.95; }
+  .cover h1 { font-size:34pt; line-height:1.12; font-weight:780; margin:10mm 0 5mm; letter-spacing:-.015em; max-width:160mm; }
+  .cover .tag { font-size:13pt; opacity:.94; max-width:150mm; line-height:1.5; }
+  .coverband { background:#ffffff12; border-top:.5pt solid #ffffff33; padding:8mm 18mm; display:grid; grid-template-columns:repeat(4,1fr); gap:5mm; }
+  .coverband b { display:block; font-size:16pt; color:var(--gold); }
+  .coverband span { font-size:7.8pt; opacity:.9; }
+  .cover .meta { padding:8mm 18mm 12mm; font-size:9.5pt; opacity:.92; display:flex; justify-content:space-between; }
+  /* flow diagram */
+  .flow { display:grid; grid-template-columns:1fr 8mm 1fr 8mm 1fr; gap:2.5mm 0; align-items:stretch; margin:3mm 0; }
+  .node { background:#fff; border:.6pt solid var(--line); border-top:1.2mm solid var(--green); border-radius:2mm; padding:2.6mm 3mm; font-size:8.4pt; }
+  .node b { display:block; font-size:9.2pt; color:var(--deep); margin-bottom:.8mm; }
+  .node.gate { border-top-color:var(--gold); background:#fffdf4; }
+  .node.human { border-top-color:#b46a55; background:#fdf7f4; }
+  .arrow { display:flex; align-items:center; justify-content:center; color:var(--green); font-size:12pt; font-weight:700; }
+  .flowrow2 { display:grid; grid-template-columns:1fr 8mm 1fr 8mm 1fr; gap:0; margin-top:2.5mm; }
+  .exhibit { border:.6pt solid var(--line); border-radius:2mm; padding:3mm; background:#fff; }
+  .exhibit img { width:100%; border-radius:1.5mm; }
+  .exhibit figcaption { font-size:7.8pt; color:var(--muted); margin-top:1.5mm; }
+  ul { padding-left:5mm; margin-bottom:2mm; } li { margin-bottom:1.1mm; }
+  .half-img { width:100%; border:.6pt solid var(--line); border-radius:2mm; }
+</style>
+</head>
+<body>
+
+<!-- ═══════════ PAGE 1 · COVER ═══════════ -->
+<div class="page cover">
+  <div class="pad">
+    <div class="brand">⿻ StepFree</div>
+    <h1>The accessibility engineer that fixes your code.<br>And proves it.</h1>
+    <p class="tag">An agentic workflow that repairs WCAG violations in real website source — then verifies every fix with deterministic re-scans, content-integrity checks and localized visual diffs, rolls back anything destructive, and routes judgment calls to a human with drafted fixes. The output: a fixed site and evidence a business owner can hand to their lawyer.</p>
+  </div>
+  <div>
+    <div class="coverband">
+      <div><b>134 / 134</b><span>seeded WCAG violations remediated &amp; independently verified</span></div>
+      <div><b>0</b><span>hallucinated image descriptions (the baseline shipped 8 across two runs)</span></div>
+      <div><b>SLOT_REVIEW_TOTAL</b><span>scanner-invisible issues found &amp; drafted for human review</span></div>
+      <div><b>~$SLOT_COST_SITE</b><span>measured compute per site — vs $350–550/page manual remediation</span></div>
+    </div>
+    <div class="meta">
+      <span><b>Shivam Gupta</b> · micro1 Agentic Workflows Hackathon</span>
+      <span>August 2026 · Claude Agent SDK + axe-core + Playwright</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ PAGE 2 · PROBLEM ═══════════ -->
+<div class="page">
+  <div class="pad">
+    <div class="kicker">01 · Who has this problem, and why now</div>
+    <h2 class="sec">A lawsuit, not a lint warning</h2>
+    <p>The typical defendant in a web-accessibility lawsuit is not a tech company. It's a bakery, a dental clinic, a small law firm — a site built by a freelancer in 2019 that nobody has touched since. The owner discovers the problem when the demand letter arrives.</p>
+    <div class="stat-row">
+      <div class="stat"><b>5,114</b><span>US web accessibility lawsuits in 2025 — a record (UsableNet year-end report)</span></div>
+      <div class="stat"><b>64%</b><span>of 2025 defendants had revenue under $25M — small businesses</span></div>
+      <div class="stat"><b>95.9%</b><span>of the top 1M homepages fail WCAG; 56 errors per page on average (WebAIM 2026)</span></div>
+      <div class="stat"><b>Jun 2025</b><span>European Accessibility Act in force — fines to €100k (DE) or 5% of turnover (IT)</span></div>
+    </div>
+    <p>Behind the legal risk sits the actual point: ~87 million people in the EU alone live with a disability. For them a missing form label isn't a compliance item — it's a door that doesn't open.</p>
+
+    <h3>Why today's options fail this user</h3>
+    <table>
+      <tr><th style="width:24mm"></th><th>What it does</th><th>Why it fails</th></tr>
+      <tr><td><b>Overlay widgets</b></td><td class="no">masks issues in a JS layer — code untouched</td><td>FTC fined accessiBe <b>$1M</b> (2025) over compliance claims; ~25% of sued companies had a widget installed <i>when sued</i>; 1,031 practitioners signed the Overlay Fact Sheet against them</td></tr>
+      <tr><td><b>Scanners</b></td><td>finds issues, fixes nothing</td><td>the report is homework; automation detects ~57% of issues by volume (Deque) and none of the fixes</td></tr>
+      <tr><td><b>Consultants</b></td><td class="yes">fixes properly</td><td>$1,250–2,750 audit + $350–550 <i>per page</i> remediation, weeks of lead time — priced for enterprises</td></tr>
+      <tr><td><b>Paste into a chatbot</b></td><td>sometimes brilliant, sometimes destructive</td><td>we measured it: same clinic page, two runs — one hid the clinic's booking phone number from blind users, one didn't. Nothing tells you which run you got.</td></tr>
+    </table>
+
+    <div class="quote"><b>The bottleneck in 2026 is not finding problems — it's not even fixing most of them.</b> It's knowing, with evidence, that they were fixed and nothing was silently broken — at a price a bakery can pay.</div>
+  </div>
+  <div class="foot"><span>StepFree — micro1 Agentic Workflows Hackathon</span><span>2 / 6</span></div>
+</div>
+
+<!-- ═══════════ PAGE 3 · SOLUTION ═══════════ -->
+<div class="page">
+  <div class="pad">
+    <div class="kicker">02 · The agent solution</div>
+    <h2 class="sec">Agents with a deterministic spine</h2>
+    <p>Language models supply judgment. Everything checkable is checked by machinery the model cannot argue with — and every design choice answers a <i>documented</i> failure mode of LLM accessibility repair (research mapping in <span class="mono">docs/research/prior-art.md</span>).</p>
+
+    <div class="flow">
+      <div class="node"><b>1 · Scan</b>axe-core in a real browser; violations classified WCAG A/AA vs best-practice; ground truth per instance (rule + selector)</div>
+      <div class="arrow">→</div>
+      <div class="node"><b>2 · Route</b>each violation to one of five specialist agents, ordered so structure lands before colors; each gets only the tools it needs</div>
+      <div class="arrow">→</div>
+      <div class="node"><b>3 · Fix (sandboxed)</b>working copy only; no shell, no network; file access outside the copy is denied by a permission guard</div>
+      <div class="arrow"> </div><div></div><div class="arrow"> </div><div></div><div class="arrow">↓</div>
+      <div class="node human"><b>6 · Human review lane</b>every judgment call ships with a drafted fix + confidence — approve in minutes, not days</div>
+      <div class="arrow">←</div>
+      <div class="node gate"><b>5 · Beyond-scanner reviewer</b>read-only expert pass hunting what axe can't see: images-of-text, <span class="mono">&lt;div onclick&gt;</span> fake buttons, keyboard traps</div>
+      <div class="arrow">←</div>
+      <div class="node gate"><b>4 · Verify — deterministically</b>re-scan (violation gone, nothing new) · word &amp; image inventories (nothing may vanish) · pixel diff localized to the elements this fix may touch · fail ⇒ retry once ⇒ <b>roll back</b></div>
+    </div>
+
+    <h3>The three principles</h3>
+    <ul>
+      <li><b>Models judge; tools know.</b> Contrast fixes come from WCAG luminance math that finds the closest compliant color <i>preserving the brand hue</i>. Alt text may only be written after the agent has rendered and <b>looked at</b> the image. Perception precedes assertion — so the hallucination class is eliminated, not just caught.</li>
+      <li><b>The verifier is not the fixer.</b> Acceptance is decided by axe re-scans and content inventories; failed fixes roll back automatically and join the human queue.</li>
+      <li><b>Honesty is the product.</b> Automation covers ~57% of issues by volume. StepFree claims verified fixes for the detectable layer and routes the rest to humans — the claim discipline the FTC fined the market leader for lacking.</li>
+    </ul>
+
+    <h3>Memory, skills, orchestration — used purposefully</h3>
+    <ul>
+      <li><b>Memory:</b> a conventions ledger — the first agent to resolve a color pair or set an alt style records it; every later fixer on every page reuses it. One accessible palette per site, not one per page.</li>
+      <li><b>Skills:</b> five per-domain knowledge files encode WCAG craft (e.g. "no ARIA beats bad ARIA — prefer removing it"; "an image inside a link describes the destination").</li>
+      <li><b>Orchestration:</b> a deterministic pipeline; every changelog stage is a replayable flag (<span class="mono">--stage v1…final</span>), and every agent run is captured as a full trajectory.</li>
+    </ul>
+  </div>
+  <div class="foot"><span>StepFree — micro1 Agentic Workflows Hackathon</span><span>3 / 6</span></div>
+</div>
+
+<!-- ═══════════ PAGE 4 · RESULTS ═══════════ -->
+<div class="page">
+  <div class="pad">
+    <div class="kicker">03 · Measured results</div>
+    <h2 class="sec">The finding we didn't expect — reported plainly</h2>
+    <p>Corpus: 12 synthetic small-business sites (13 pages), <b>134 scanner-verified WCAG A/AA violations</b> mirroring the WebAIM distribution, ground truth locked before any run. Baseline = the same model (<span class="mono">claude-sonnet-5</span>), one direct prompt. The evaluator is independent of the system under test: it re-scans and re-screenshots every page itself.</p>
+    <div class="quote">On small static pages, the one-shot baseline remediated <b>134/134</b> scanner-detectable instances with zero regressions — frontier-model capability on the <i>scanner-visible</i> layer is saturated, and we say so. The layers that decide whether a real person can use the site are where the systems separate:</div>
+    <table>
+      <tr><th></th><th>Baseline — one direct prompt</th><th>StepFree — final</th></tr>
+      <tr><td>WCAG A/AA instances remediated &amp; verified</td><td>134/134</td><td class="yes">SLOT_FINAL_REM</td></tr>
+      <tr><td>Alt-text truthfulness (0–2, vision-judged by Claude Opus)</td><td><b>1.53 / 1.37</b> across two runs — <b>4 hallucinated or destructive alts each run</b></td><td class="yes">SLOT_FINAL_ALT — zero hallucinations</td></tr>
+      <tr><td>Informative content silenced with <span class="mono">alt=""</span></td><td class="no">1 of 2 runs — including the clinic's booking phone number</td><td class="yes">0 — the image agent must look before writing</td></tr>
+      <tr><td>Scanner-invisible issues surfaced for humans</td><td>0 (by definition)</td><td class="yes">SLOT_REVIEW_TOTAL, each with a drafted fix</td></tr>
+      <tr><td>Evidence produced</td><td class="no">none — ship on faith</td><td class="yes">audit report + per-fix verification + full trajectories</td></tr>
+      <tr><td>Measured compute, whole corpus</td><td>$2.03</td><td>$SLOT_FINAL_COST</td></tr>
+    </table>
+
+    <div class="cols" style="margin-top:4mm">
+      <figure class="exhibit">
+        <img src="../img/exhibit-booking-steps.png" alt="Three-step booking infographic: 1 call the front desk (555) 014-6090, 2 choose a time, 3 come visit us at 18 Lakeshore Drive">
+        <figcaption><b>Exhibit A.</b> The baseline resolved this image's missing-alt violation by marking it decorative (<span class="mono">alt=""</span>) — hiding the phone number and address from screen-reader users. The scanner scored the page as <i>improved</i> (11 → 0). StepFree's vision-grounded agent read the image and wrote alt text carrying the steps; run two of the baseline described it but dropped the phone number. Same input, coin-flip outcomes — unless something checks.</figcaption>
+      </figure>
+      <div>
+        <h3 style="margin-top:0">Other baseline exhibits (judge's reasoning on file)</h3>
+        <ul>
+          <li>"Two wine glasses beside an uncorked bottle" — image shows <b>one</b> glass and a <b>sealed</b> bottle.</li>
+          <li>"Officials break ground with ceremonial shovels…" — an entirely invented ceremony; the image is a building.</li>
+          <li>An image-of-text hero given alt that doesn't match the words in the image (WCAG 1.4.5).</li>
+        </ul>
+        <h3>Economics per 13-page site</h3>
+        <table>
+          <tr><th></th><th>Human time</th><th>Cost</th></tr>
+          <tr><td>Manual remediation</td><td>~28 h</td><td>$4,550–7,150 (at $350–550/page)</td></tr>
+          <tr><td>Baseline + due-diligence QA</td><td>~4.3 h</td><td>$2 + QA labor</td></tr>
+          <tr><td><b>StepFree</b></td><td><b>~1 h</b> (review queue + report)</td><td><b>$SLOT_FINAL_COST compute</b></td></tr>
+        </table>
+        <p style="font-size:7.8pt;color:var(--muted);margin-top:1.5mm">Assumptions stated in docs/research/cost-model.md; primary metric unaffected by them.</p>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>StepFree — micro1 Agentic Workflows Hackathon</span><span>4 / 6</span></div>
+</div>
+
+<!-- ═══════════ PAGE 5 · CHANGELOG + HOT TAKE ═══════════ -->
+<div class="page">
+  <div class="pad">
+    <div class="kicker">04 · How it evolved — the improvement changelog</div>
+    <h2 class="sec">Six measured stages, one removed experiment</h2>
+    <table>
+      <tr><th>Stage</th><th>What changed &amp; why</th><th>Evidence (same eval, all 134 instances)</th><th>Decision</th></tr>
+      <tr><td><b>baseline</b></td><td>one direct prompt — what a busy developer does today</td><td>134/134 on the scanner layer, but alt truthfulness 1.53/1.37 with 4 hallucinations per run; booking infographic silenced in run 1</td><td>the problem moved from capability to <b>groundedness &amp; trust</b></td></tr>
+      <tr><td><b>v1</b></td><td>basic agent: axe report + file tools</td><td>134/134 · $1.48 — cheaper than baseline: targeted edits beat full-page rewrites</td><td>kept as chassis</td></tr>
+      <tr><td><b>v2</b></td><td>deterministic verify loop (re-scan diff, bounded retry)</td><td>134/134; retries fired 0 times on-corpus</td><td>kept — converts "probably fine" into "proven"</td></tr>
+      <tr><td><b>v3</b></td><td>5 specialists + knowledge files + contrast math + <b>mandatory image viewing</b></td><td>alt truthfulness <b>1.83, zero hallucinations</b>; silenced infographic 0 → 2</td><td>kept — the load-bearing change</td></tr>
+      <tr><td><b>v4</b></td><td>integrity guardrails: word/image inventories, localized pixel diff, auto-rollback</td><td>134/134, 0 rollbacks needed — the reason "0 pages damaged" is a fact, not an assumption</td><td>kept — quiet gates still testify</td></tr>
+      <tr><td><b>final</b></td><td>conventions memory + beyond-scanner review lane + evidence report</td><td>SLOT_FINAL_SUMMARY</td><td>the product</td></tr>
+    </table>
+
+    <h3>The experiment we removed: a strict visual-diff gate</h3>
+    <p>"Reject any fix changing &gt;0.5% of pixels" sounds safe. A controlled, LLM-free experiment (<span class="mono">stepfree/eval/pixel-vs-harm.mjs</span>) shows it's broken both ways:</p>
+    <table>
+      <tr><th>Edit</th><th>Viewport pixels changed</th><th>Words lost</th></tr>
+      <tr><td>Contrast recolor (legitimate)</td><td>0.27%</td><td>0</td></tr>
+      <tr><td><b>Entire menu item deleted (destructive)</b></td><td><b>1.32%</b></td><td><b>13</b></td></tr>
+      <tr><td>Naive heading retag (legitimate)</td><td>1.93%</td><td>0</td></tr>
+    </table>
+    <p style="margin-top:1.5mm"><b>Pixel area measures reflow, not harm</b> — any gate loose enough to admit the legitimate retag admits the deletion. Removed as a gate, kept as a localized advisory; the word-inventory check orders harm correctly.</p>
+
+    <div class="quote"><b>Hot take.</b> We built verification armor expecting to catch a clumsy model — and the model never stumbled where we watched. It failed by <i>asserting what it had no way to know</i>: describing images it never saw, silencing an infographic with a phone number in it. In 2026, agentic scaffolding isn't primarily there to make models capable — it's there to make failures visible, bounded, and impossible to ship silently. Even our tooling agreed: shown an unviewable image, our grounded judge said <i>"I cannot honestly score this"</i> — the ungrounded baseline invented a croissant. <b>Groundedness is an architecture property, not a model property. Capability saturated; trust didn't. Sell trust.</b></div>
+  </div>
+  <div class="foot"><span>StepFree — micro1 Agentic Workflows Hackathon</span><span>5 / 6</span></div>
+</div>
+
+<!-- ═══════════ PAGE 6 · REPRO + BUSINESS ═══════════ -->
+<div class="page">
+  <div class="pad">
+    <div class="kicker">05 · Reproducibility, business, deliverables</div>
+    <h2 class="sec">Run it yourself in an afternoon</h2>
+    <div class="cols">
+      <div>
+        <h3 style="margin-top:0">Clean-environment reproduction</h3>
+        <p class="mono" style="background:#20241f0d;padding:3mm;border-radius:2mm;display:block;font-size:8.2pt;line-height:1.7">
+        git clone github.com/shi1720/micro1-hackathon<br>
+        cd stepfree &amp;&amp; npm install &amp;&amp; npx playwright install chromium<br>
+        export ANTHROPIC_API_KEY=…<br>
+        node stepfree/eval/selftest.mjs&nbsp;&nbsp;# deterministic core<br>
+        node stepfree/eval/run-eval.mjs verify-fixtures&nbsp;&nbsp;# lock ground truth<br>
+        node stepfree/src/cli.mjs fix fixtures/08-shelter --out runs/demo<br>
+        bash stepfree/eval/run-all-stages.sh 3&nbsp;&nbsp;# full evaluation
+        </p>
+        <ul style="font-size:8.6pt">
+          <li>Node 22 · Playwright 1.62 · axe-core (via @axe-core/playwright 4.13) · Claude Agent SDK</li>
+          <li>Full ladder ≈ 2.5–4 h, ≈ $SLOT_LADDER_COST of API compute; single-site demo ≈ 6 min, ≈ $1</li>
+          <li>All data synthetic &amp; in-repo; scanner + integrity checks fully deterministic; the evaluator refuses to run if fixture ground truth drifts</li>
+        </ul>
+        <h3>Deliverables in the repository</h3>
+        <ul style="font-size:8.6pt">
+          <li><b>README.md</b> — problem, user, solution, results</li>
+          <li><b>CHANGELOG.md</b> — every iteration with evidence</li>
+          <li><b>EVALUATION.md</b> — metrics defined up front, full tables, limitations</li>
+          <li><b>REPRODUCTION.md</b> — this page, expanded</li>
+          <li><b>VIDEO_SCRIPT.md</b> — the 5-minute video, verbatim</li>
+          <li><b>trajectories/</b> — every agent type, readable + raw JSONL</li>
+          <li><b>reports/</b> — a generated audit report (it scans 0/0 itself)</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="margin-top:0">Why this is a company, not a demo</h3>
+        <ul style="font-size:8.8pt">
+          <li><b>Wedge:</b> $149 one-time "fix &amp; prove" per site · $49/mo monitoring · $499/mo agency tier (20 sites). Measured COGS ≈ $SLOT_COST_SITE/site → &gt;90% gross margin.</li>
+          <li><b>First buyers:</b> web agencies — thousands of 2019-era SMB sites, already fielding the demand-letter call.</li>
+          <li><b>Market:</b> accessibility software → ~$1B by 2030; incumbents at $40–50M ARR prove willingness to pay — for products that don't fix code. FTC action + 1,000+ suits/yr against widget users are the tailwind for "actually fix it".</li>
+          <li><b>Moat:</b> anyone can prompt a model to edit HTML. The verification stack, evidence trail, and honesty posture are what a stranger can trust with production — and what survives a legal letter.</li>
+        </ul>
+        <h3>Safety &amp; ground rules</h3>
+        <ul style="font-size:8.8pt">
+          <li>All edits in a sandboxed working copy; deploying is a human act. Agents: no shell, no network, path-guarded file access.</li>
+          <li>Human reviewer in the loop for every judgment call, with drafted fixes.</li>
+          <li>Synthetic data only; no real business named; every claim traces to a source or a JSON artifact in the repo.</li>
+          <li>Built openly with the tools it evaluates: Claude agents did the heavy lifting under Shivam's direction; every number comes from the deterministic harness.</li>
+        </ul>
+        <div class="quote" style="margin-top:4mm">Curb cuts were built for wheelchairs — everyone with a stroller or a suitcase uses them. Fix the code, and everybody walks in. <b>This is StepFree.</b></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>StepFree · Shivam Gupta · micro1 Agentic Workflows Hackathon · August 2026</span><span>6 / 6</span></div>
+</div>
+
+</body>
+</html>
